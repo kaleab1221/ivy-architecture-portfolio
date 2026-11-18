@@ -1,0 +1,1027 @@
+[
+  {
+    "id": "ivy-01",
+    "code": "ADD-01",
+    "title": "Apartment Building Addis",
+    "subtitle": "Contemporary Multi-Family Urban Living",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Private Real Estate Developer",
+    "scale": "G+6 Floors / 4,200 m²",
+    "scope": "Architectural Design, Structural & MEP Engineering",
+    "description": "A refined modern residential building designed for dense urban living in Addis Ababa. Featuring sculpted recessed balconies, charcoal steel brise-soleil screening, and lush integrated planter boxes that bring private greenery into every unit. Day and evening lighting schemes highlight the clean rectilinear white volumes.",
+    "keyFeatures": [
+      "Recessed cantilevered balconies",
+      "Integrated micro-gardens & planters",
+      "Architectural LED night illumination",
+      "Underground parking & private entrance"
+    ],
+    "images": [
+      "images/projects/ivy-01/page_02_img1.jpeg",
+      "images/projects/ivy-01/page_03_img1.jpeg",
+      "images/projects/ivy-01/page_04_img1.jpeg",
+      "images/projects/ivy-01/page_05_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-01/page_02_img1.jpeg"
+  },
+  {
+    "id": "ivy-02",
+    "code": "ADD-02",
+    "title": "Asnakech Luxury Residence & Apartments",
+    "subtitle": "Bespoke Multi-Level Living & Sky Terrace",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Addis Ababa / Asnakech, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Private Client",
+    "scale": "G+3 Luxury Suites / 1,850 m²",
+    "scope": "Architectural Design, Interior Architecture & Landscape",
+    "description": "An intimate residential enclave combining ground-floor secure garage and garden entry with grand open-concept family suites and an expansive rooftop pergola entertainment terrace. Complete interior architecture showcases Italian minimalist furniture, ambient ceiling troughs, and floor-to-ceiling glass fenestrations.",
+    "keyFeatures": [
+      "Panoramic glass facade systems",
+      "Rooftop timber pergola sky lounge",
+      "Open-concept salon & dining salon",
+      "Master suite with bespoke wardrobe system"
+    ],
+    "images": [
+      "images/projects/ivy-02/page_06_img1.jpeg",
+      "images/projects/ivy-02/page_07_img2.jpeg",
+      "images/projects/ivy-02/page_07_img3.jpeg",
+      "images/projects/ivy-02/page_07_img4.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-02/page_06_img1.jpeg"
+  },
+  {
+    "id": "ivy-03",
+    "code": "JUB-01",
+    "title": "Juba Mall & Luxury Apartments",
+    "subtitle": "Twin High-Rise Towers & Atrium Galleria",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Juba, South Sudan",
+    "city": "Juba",
+    "country": "South Sudan",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "South Sudan Urban Development Corp",
+    "scale": "Twin G+10 Towers / 48,000 m²",
+    "scope": "Masterplanning, Architectural Design, Interior Mall Design",
+    "description": "A landmark civic and commercial destination in the heart of Juba. The complex features two 10-story high-rise towers for luxury residences and corporate penthouses flanking a four-story central skylight atrium shopping galleria with escalators, retail boutiques, dining concourses, and palm-lined pedestrian boulevards.",
+    "keyFeatures": [
+      "Twin high-rise towers with panoramic balconies",
+      "Multi-tiered glass atrium shopping galleria",
+      "Curved digital display ribbon & escalators",
+      "Central pedestrian boulevard & valet drop-off"
+    ],
+    "images": [
+      "images/projects/ivy-03/page_08_img1.jpeg",
+      "images/projects/ivy-03/page_09_img1.jpeg",
+      "images/projects/ivy-03/page_10_img1.jpeg",
+      "images/projects/ivy-03/page_11_img2.jpeg",
+      "images/projects/ivy-03/page_12_img1.jpeg",
+      "images/projects/ivy-03/page_13_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-03/page_08_img1.jpeg"
+  },
+  {
+    "id": "ivy-04",
+    "code": "JUB-02",
+    "title": "Juba Mixed-Use Commercial Complex",
+    "subtitle": "Urban Commercial Podium & Luxury Residences",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Juba, South Sudan",
+    "city": "Juba",
+    "country": "South Sudan",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Private Investment Group",
+    "scale": "G+6 Floors / 9,600 m²",
+    "scope": "Turnkey Construction & Architectural Supervision",
+    "description": "Currently under construction in Juba, this dynamic commercial center integrates premium ground-floor retail, banking halls, and flexible corporate office space with luxury residential units on upper levels. The reflective tinted curtain wall delivers high solar shading performance in the equatorial climate.",
+    "keyFeatures": [
+      "Active urban street-level retail frontage",
+      "High-performance solar control curtain wall",
+      "Bicycle and pedestrian friendly streetscape",
+      "Executive suites on upper levels"
+    ],
+    "images": [
+      "images/projects/ivy-04/page_15_img1.jpeg",
+      "images/projects/ivy-04/page_16_img1.jpeg",
+      "images/projects/ivy-04/page_14_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-04/page_15_img1.jpeg"
+  },
+  {
+    "id": "ivy-05",
+    "code": "ADD-03",
+    "title": "Sevita Real Estate Tower",
+    "subtitle": "22-Story Commercial & Residential Skyscraper",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Bole Road, Alem Building, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2025",
+    "client": "Sevita Real Estate Group",
+    "scale": "22 Stories / 32,500 m²",
+    "scope": "Comprehensive Architectural & Structural Tower Design",
+    "description": "Standing on prime Bole Road, the Sevita Tower is an iconic glass-and-steel skyscraper engineered to define the Addis Ababa skyline. The tower incorporates a bustling street-level restaurant terrace, luxury retail shopping podium, Grade-A corporate offices, and serviced residential apartments crowned by an illuminated sky crown.",
+    "keyFeatures": [
+      "Full-height monolithic curtain wall facade",
+      "Street-level cafe & pedestrian promenade",
+      "Integrated solar louvers and LED facade illumination",
+      "Multi-level subterranean automated parking"
+    ],
+    "images": [
+      "images/projects/ivy-05/page_17_img1.jpeg",
+      "images/projects/ivy-05/page_18_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-05/page_17_img1.jpeg"
+  },
+  {
+    "id": "ivy-06",
+    "code": "ADD-04",
+    "title": "Hayat Association Apartment Project",
+    "subtitle": "Community-Centric Urban Housing & Retail Arcade",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Hayat, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Hayat Housing Association",
+    "scale": "G+5 Floors / 3,800 m²",
+    "scope": "Architectural Design & Cost Engineering",
+    "description": "Designed for the vibrant Hayat neighborhood, this project fuses middle-density family housing with an active ground-floor commercial galleria including supermarket, specialty coffee house, and secure residential lobby with outdoor piazza seating.",
+    "keyFeatures": [
+      "Ground floor market & coffee shop arcade",
+      "Family-oriented multi-bedroom apartments",
+      "Private balconies overlooking neighborhood life",
+      "Durable low-maintenance textured finishes"
+    ],
+    "images": [
+      "images/projects/ivy-06/page_19_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-06/page_19_img1.jpeg"
+  },
+  {
+    "id": "ivy-07",
+    "code": "ADD-05",
+    "title": "Ministry of Defense Apartment Complex",
+    "subtitle": "Curvilinear Multi-Tower Officers Complex",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "6 Kilo, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Federal Ministry of Defense",
+    "scale": "G+8 Twin Connected Towers / 14,000 m²",
+    "scope": "Architectural Design & Security Masterplanning",
+    "description": "Commissioned for the 6 Kilo district, this twin-tower complex provides secure, dignified housing for defense personnel. Distinctive aerodynamic curved roof forms capture breezes and channel rainwater, connected by high-level communal pedestrian sky bridges.",
+    "keyFeatures": [
+      "Sculptural curved canopy crowns",
+      "Central sky bridges connecting towers",
+      "Integrated perimeter security design",
+      "Abundant open green space & parking"
+    ],
+    "images": [
+      "images/projects/ivy-07/page_20_img1.jpeg",
+      "images/projects/ivy-07/page_20_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-07/page_20_img1.jpeg"
+  },
+  {
+    "id": "ivy-08",
+    "code": "ADD-06",
+    "title": "Luxury Residence for Hagbes Family",
+    "subtitle": "Cantilevered Modernist Estate with Lap Pool",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Bisrate Gebriel, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Starting Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Hagbes Family",
+    "scale": "Private Estate / 950 m²",
+    "scope": "Turnkey Architectural Design, Landscape & Supervision",
+    "description": "A modernist private residence in the prestigious Bisrate Gebriel neighborhood. The architecture is defined by dramatic interlocking white cantilevered volumes, floor-to-ceiling glass pavilions, warm timber soffits, an illuminated swimming pool, and terraced landscaped gardens.",
+    "keyFeatures": [
+      "Cantilevered upper volume framing pool view",
+      "Integrated outdoor lounge & sunken pool terrace",
+      "Warm natural teak wood ceiling soffits",
+      "Smart home climate and security integration"
+    ],
+    "images": [
+      "images/projects/ivy-08/page_21_img1.jpeg",
+      "images/projects/ivy-08/page_22_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-08/page_21_img1.jpeg"
+  },
+  {
+    "id": "ivy-09",
+    "code": "ERB-01",
+    "title": "Erbil Mixed-Use Commercial Tower",
+    "subtitle": "24-Story High-Rise with Vertical Gardens",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Erbil City, Kurdistan Region, Iraq",
+    "city": "Erbil",
+    "country": "Iraq",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "Mode Taxi International Group",
+    "scale": "24 Stories / 28,000 m²",
+    "scope": "International Architectural Concept & Structural Design",
+    "description": "An international commission in Erbil, this slender 24-story tower integrates regional headquarters offices with luxury serviced apartments. Stepped green balconies climb the building facade, providing micro-climate cooling and dramatic night-time facade illumination along Erbil's main artery.",
+    "keyFeatures": [
+      "Vertical hanging gardens & recessed balconies",
+      "Louvered double-height commercial podium",
+      "Iconic illuminated crown and branding",
+      "High thermal mass cladding for desert climate"
+    ],
+    "images": [
+      "images/projects/ivy-09/page_23_img1.jpeg",
+      "images/projects/ivy-09/page_24_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-09/page_23_img1.jpeg"
+  },
+  {
+    "id": "ivy-10",
+    "code": "ADD-07",
+    "title": "Sarbet Mixed-Use Landmark Tower",
+    "subtitle": "Commercial Retail Podium & High-Rise Apartments",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Sarbet, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Sarbet Commercial Developers",
+    "scale": "16 Stories / 22,000 m²",
+    "scope": "Architectural Design, Structural & Construction Planning",
+    "description": "Situated in the bustling diplomatic enclave of Sarbet, this 16-story tower combines an imposing natural stone commercial podium housing an international bank branch and gourmet supermarket with modern residential apartments and a scenic glass-enclosed rooftop lounge.",
+    "keyFeatures": [
+      "Triple-entrance retail & bank arcade",
+      "Limestone and granite clad commercial podium",
+      "Rooftop observation conservatory",
+      "Dedicated multi-level vehicular basement"
+    ],
+    "images": [
+      "images/projects/ivy-10/page_25_img1.jpeg",
+      "images/projects/ivy-10/page_26_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-10/page_25_img1.jpeg"
+  },
+  {
+    "id": "ivy-11",
+    "code": "ADD-08",
+    "title": "Kokeb Tower & Hospitality Expansion",
+    "subtitle": "26-Story Tower & Fine Dining Restaurant Interior",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "24, Kokeb Building, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "Kokeb Enterprises",
+    "scale": "26 Stories / 36,000 m²",
+    "scope": "High-Rise Architecture & Bespoke Interior Design",
+    "description": "An ambitious expansion of the landmark Kokeb complex, adding a soaring 26-story mixed-use tower. The project includes world-class interior architecture for a flagship fine-dining restaurant featuring parametric acoustic wall panels, integrated warm linear LED lighting, and outdoor pergola terraces.",
+    "keyFeatures": [
+      "Slender high-rise profile with distinctive vertical finning",
+      "Parametric slatted timber restaurant interior",
+      "Ambient integrated cove & linear illumination",
+      "Bespoke hospitality seating & private dining suites"
+    ],
+    "images": [
+      "images/projects/ivy-11/page_27_img1.jpeg",
+      "images/projects/ivy-11/page_28_img1.jpeg",
+      "images/projects/ivy-11/page_29_img1.jpeg",
+      "images/projects/ivy-11/page_30_img1.jpeg",
+      "images/projects/ivy-11/page_31_img1.jpeg",
+      "images/projects/ivy-11/page_32_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-11/page_27_img1.jpeg"
+  },
+  {
+    "id": "ivy-12",
+    "code": "ADD-09",
+    "title": "Hagbes Showroom & Machinery Sales Center",
+    "subtitle": "Aerodynamic Aerofoil Glass Pavilion",
+    "typology": "Corporate & Showrooms",
+    "category": "corporate",
+    "location": "Gelan, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Hagbes Pvt. Ltd. Co.",
+    "scale": "Pavilion & Concourse / 12,000 m²",
+    "scope": "Architectural Design, Structural Steel & Site Planning",
+    "description": "An architectural tour de force along the Addis-Adama industrial highway in Gelan. Designed for heavy machinery, agriculture equipment, and automotive sales, the pavilion features a monumental sweeping curved roof reminiscent of an airplane wing, enclosing a 16-meter column-free glass showroom concourse.",
+    "keyFeatures": [
+      "Sweeping aerodynamic curved steel roofline",
+      "Column-free structural glass curtain wall",
+      "Heavy equipment exhibition concourse",
+      "Outdoor tractor and excavator display boulevard"
+    ],
+    "images": [
+      "images/projects/ivy-12/page_33_img1.jpeg",
+      "images/projects/ivy-12/page_34_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-12/page_33_img1.jpeg"
+  },
+  {
+    "id": "ivy-13",
+    "code": "HOS-01",
+    "title": "Wachamo University Research Campus",
+    "subtitle": "Colonnaded Agriculture Lab & Postgraduate Center",
+    "typology": "Education & Campus",
+    "category": "education",
+    "location": "Hosanna, Ethiopia",
+    "city": "Hosanna",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2023",
+    "client": "Wachamo University / Ministry of Education",
+    "scale": "3 Buildings / 18,500 m²",
+    "scope": "Campus Masterplanning & Architectural Design",
+    "description": "A major expansion of Wachamo University in Hosanna, comprising a classical colonnaded Agricultural Laboratory with a central biophilic lightwell, a 6-story Postgraduate Academic Facility with outdoor access stair towers, and a specialized Poultry Research Laboratory.",
+    "keyFeatures": [
+      "Modern classical colonnade perimeter",
+      "Central lightwell atrium for natural ventilation",
+      "Specialized wet and dry research laboratories",
+      "External egress stairs with graphic architectural articulation"
+    ],
+    "images": [
+      "images/projects/ivy-13/page_35_img1.jpeg",
+      "images/projects/ivy-13/page_35_img2.jpeg",
+      "images/projects/ivy-13/page_36_img1.jpeg",
+      "images/projects/ivy-13/page_36_img2.jpeg",
+      "images/projects/ivy-13/page_14_img1.jpeg",
+      "images/projects/ivy-13/page_37_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-13/page_35_img1.jpeg"
+  },
+  {
+    "id": "ivy-14",
+    "code": "SID-01",
+    "title": "Bensa Coffee Pulping & Processing Plant",
+    "subtitle": "Agro-Industrial Eco-Facility in Sidama",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Bensa, Sidama, Ethiopia",
+    "city": "Bensa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Specialty Coffee Cooperative",
+    "scale": "Industrial Site / 45,000 m²",
+    "scope": "Industrial Masterplan, Environmental Engineering",
+    "description": "Nestled in the highlands of world-renowned coffee terroir Sidama, this facility harmonizes heavy agro-industrial processing with ecological sustainability. Includes pulping stations, tiered sun drying beds, washing canals, and biological water treatment sedimentation ponds.",
+    "keyFeatures": [
+      "Ecological wastewater recycling lagoons",
+      "Solar drying bed optimization layout",
+      "Gravitational washing flumes",
+      "Heavy truck logistics and weighing infrastructure"
+    ],
+    "images": [
+      "images/projects/ivy-14/page_37_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-14/page_37_img1.jpeg"
+  },
+  {
+    "id": "ivy-15",
+    "code": "JUB-03",
+    "title": "Juba Central Fire Brigade Station",
+    "subtitle": "Emergency Response & Civic Dispatch Command",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Juba, South Sudan",
+    "city": "Juba",
+    "country": "South Sudan",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "City of Juba Civil Defense",
+    "scale": "Civic Station & Grounds / 15,000 m²",
+    "scope": "Masterplan, Structural Spaceframe Design & Construction",
+    "description": "The primary emergency fire and rescue hub for Juba, engineered for sub-minute dispatch times. Features a high-bay red structural steel spaceframe canopy housing heavy fire apparatus, observation drill towers, crew living dormitories, and rapid egress slipways.",
+    "keyFeatures": [
+      "Long-span red structural truss bay",
+      "Rapid-dispatch turnaround loop roadway",
+      "Integrated firefighter quarters & training tower",
+      "Heavy equipment maintenance shop"
+    ],
+    "images": [
+      "images/projects/ivy-15/page_38_img1.jpeg",
+      "images/projects/ivy-15/page_67_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-15/page_38_img1.jpeg"
+  },
+  {
+    "id": "ivy-16",
+    "code": "JUB-04",
+    "title": "ADRA NGO Regional Headquarters",
+    "subtitle": "Corporate Office Pavilion & Executive Suites",
+    "typology": "Corporate & Showrooms",
+    "category": "corporate",
+    "location": "Juba, South Sudan",
+    "city": "Juba",
+    "country": "South Sudan",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "ADRA International",
+    "scale": "G+3 Headquarters / 3,400 m²",
+    "scope": "Architectural Design, Interior Fit-Out & Supervision",
+    "description": "Regional headquarters for the global humanitarian agency ADRA in Juba. The building pairs an elegant glass facade with horizontal solar brise-soleil shading, accompanied by rich executive interior suites featuring black marble paneling, leather boardroom furnishings, and energy-efficient lighting.",
+    "keyFeatures": [
+      "Equatorial solar shading louvers",
+      "Double-glazed acoustic curtain wall",
+      "Executive boardroom with bookmatched marble",
+      "Integrated perimeter security buffer"
+    ],
+    "images": [
+      "images/projects/ivy-16/page_39_img1.jpeg",
+      "images/projects/ivy-16/page_40_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-16/page_39_img1.jpeg"
+  },
+  {
+    "id": "ivy-17",
+    "code": "ADD-10",
+    "title": "Hagbes Regional Headquarters & Kality Hub",
+    "subtitle": "Corporate Office Expansion & Flagship Interior Fitout",
+    "typology": "Corporate & Showrooms",
+    "category": "corporate",
+    "location": "Kality, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Hagbes Pvt. Ltd. Co.",
+    "scale": "G+5 Office Tower / 14,200 m²",
+    "scope": "Architecture, Interior Architecture & MEP Engineering",
+    "description": "A comprehensive corporate headquarters expansion representing premier industrial brands Hitachi, Daewoo, and Higer. Includes an illuminated 12-meter continuous reception counter, double-height naturally lit atrium galleries, ergonomic open-plan workstations, and heavy freight loading docks.",
+    "keyFeatures": [
+      "12-meter illuminated corporate reception counter",
+      "Double-height central glass atrium concourse",
+      "Acoustic timber slat ceilings and linear LED lights",
+      "Heavy transport loading dock & logistics yard"
+    ],
+    "images": [
+      "images/projects/ivy-17/page_41_img1.jpeg",
+      "images/projects/ivy-17/page_42_img1.jpeg",
+      "images/projects/ivy-17/page_43_img1.jpeg",
+      "images/projects/ivy-17/page_44_img1.jpeg",
+      "images/projects/ivy-17/page_45_img1.jpeg",
+      "images/projects/ivy-17/page_46_img1.jpeg",
+      "images/projects/ivy-17/page_47_img1.jpeg",
+      "images/projects/ivy-17/page_48_img1.jpeg",
+      "images/projects/ivy-17/page_62_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-17/page_41_img1.jpeg"
+  },
+  {
+    "id": "ivy-18",
+    "code": "SSD-01",
+    "title": "GPOC Petrol VIP Residences & Modular Camp",
+    "subtitle": "Oil Field Accommodation & Pre-Engineered Compound",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Wizeen Camp / Unity State, South Sudan",
+    "city": "Wizeen Camp",
+    "country": "South Sudan",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Greater Pioneer Operating Company (GPOC)",
+    "scale": "Multi-Unit Base Camp / 500+ Residents",
+    "scope": "Modular Prefab Design, Turnkey Camp Construction",
+    "description": "Constructed in challenging remote conditions in South Sudan, this complex provides high-comfort accommodation for petroleum executives and technical staff. Consists of 2-story serviced VIP apartment blocks, stilt-mounted insulated prefab living quarters, central dining, sports, and healthcare facilities.",
+    "keyFeatures": [
+      "Climate-resilient elevated stilt modular units",
+      "VIP executive serviced apartment blocks",
+      "Autonomous power & water treatment network",
+      "Central community recreation and dining pavilions"
+    ],
+    "images": [
+      "images/projects/ivy-18/page_49_img1.jpeg",
+      "images/projects/ivy-18/page_49_img2.jpeg",
+      "images/projects/ivy-18/page_52_img1.jpeg",
+      "images/projects/ivy-18/page_52_img2.jpeg",
+      "images/projects/ivy-18/page_52_img3.jpeg",
+      "images/projects/ivy-18/page_53_img1.jpeg",
+      "images/projects/ivy-18/page_53_img2.jpeg",
+      "images/projects/ivy-18/page_64_img1.jpeg",
+      "images/projects/ivy-18/page_64_img2.jpeg",
+      "images/projects/ivy-18/page_60_img1.jpeg",
+      "images/projects/ivy-18/page_61_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-18/page_49_img1.jpeg"
+  },
+  {
+    "id": "ivy-19",
+    "code": "ARS-01",
+    "title": "Arsi University College of Agriculture Campus",
+    "subtitle": "80-Hectare Comprehensive University Masterplan",
+    "typology": "Education & Campus",
+    "category": "education",
+    "location": "Assela, Oromia, Ethiopia",
+    "city": "Assela",
+    "country": "Ethiopia",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2023",
+    "client": "Arsi University / Ministry of Education",
+    "scale": "80 Hectares / 65,000 m² Built",
+    "scope": "Campus Masterplan, Infrastructure & Building Design",
+    "description": "A transformative campus masterplan spanning 80 hectares in Assela. The comprehensive scheme unifies academic lecture theaters, agronomy laboratories, faculty offices, student dormitories, experimental farms, and central civic plazas into a cohesive pedestrian-oriented university town.",
+    "keyFeatures": [
+      "Hierarchical pedestrian campus street network",
+      "Experimental agronomy test fields",
+      "Central administrative & library monumental quad",
+      "Sustainable stormwater detention and landscaping"
+    ],
+    "images": [
+      "images/projects/ivy-19/page_50_img1.jpeg",
+      "images/projects/ivy-19/page_50_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-19/page_50_img1.jpeg"
+  },
+  {
+    "id": "ivy-20",
+    "code": "GAM-01",
+    "title": "Gambella University College of Health Compound",
+    "subtitle": "Medical Campus & Olympic Stadium Masterplan",
+    "typology": "Education & Campus",
+    "category": "education",
+    "location": "Gambella, Ethiopia",
+    "city": "Gambella",
+    "country": "Ethiopia",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Gambella University",
+    "scale": "100 Hectares / Olympic Arena & Campus",
+    "scope": "Full Campus Masterplan & Architectural Engineering",
+    "description": "A premier regional higher-education medical hub in Gambella. Featuring state-of-the-art medical classrooms, teaching clinics, a regulation Olympic track and field athletic stadium with spectator grandstands, student housing villages, and tropical shaded canopy walkways.",
+    "keyFeatures": [
+      "Olympic standard athletics stadium & grandstand",
+      "Specialized health science clinical wings",
+      "Micro-climate passive cooling architecture",
+      "Dense tree-lined pedestrian circulation spines"
+    ],
+    "images": [
+      "images/projects/ivy-20/page_51_img1.jpeg",
+      "images/projects/ivy-20/page_51_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-20/page_51_img1.jpeg"
+  },
+  {
+    "id": "ivy-21",
+    "code": "JUB-05",
+    "title": "PHCC General Hospital Complex",
+    "subtitle": "Emergency Medical Center & Clinical Inpatient Facility",
+    "typology": "Healthcare & Hospitality",
+    "category": "healthcare",
+    "location": "Juba, South Sudan",
+    "city": "Juba",
+    "country": "South Sudan",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Ministry of Health, South Sudan",
+    "scale": "Hospital Campus / 120 Beds",
+    "scope": "Medical Architecture, Clinical Planning & Engineering",
+    "description": "A vital regional hospital in Juba designed to international healthcare standards. Features a grand arched drop-off portico for ambulances, modern reception and triage zones, sterile pathology testing laboratories, and bright 24-bed acute inpatient wards with direct garden courtyard views.",
+    "keyFeatures": [
+      "Emergency ambulance drop-off portico",
+      "Certified sterile clinical testing labs",
+      "Inpatient recovery wards with green views",
+      "Independent backup solar and medical oxygen plants"
+    ],
+    "images": [
+      "images/projects/ivy-21/page_54_img1.jpeg",
+      "images/projects/ivy-21/page_54_img2.jpeg",
+      "images/projects/ivy-21/page_55_img1.jpeg",
+      "images/projects/ivy-21/page_55_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-21/page_54_img1.jpeg"
+  },
+  {
+    "id": "ivy-22",
+    "code": "ADD-11",
+    "title": "Torhailoch Golf Club Luxury Estate",
+    "subtitle": "Modernist Fairway Villa with Infinity Dining Deck",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Torhailoch Golf Club, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Private Estate Owner",
+    "scale": "Private Villa / 1,100 m²",
+    "scope": "Architectural Design, Structural & Landscape Supervision",
+    "description": "Fronting the greens of the Torhailoch Golf Club, this estate exemplifies minimalist luxury living. The design features expansive outdoor dining decks with night-lit swimming pools, full-height sliding glass pocket doors, and master suites looking out over private manicured fairways.",
+    "keyFeatures": [
+      "Direct fairway golf course orientation",
+      "Outdoor alfresco dining pavilion & sun terrace",
+      "Master suite with bespoke walk-in dressing lounge",
+      "Multi-layered warm exterior perimeter lighting"
+    ],
+    "images": [
+      "images/projects/ivy-22/page_56_img1.jpeg",
+      "images/projects/ivy-22/page_56_img2.jpeg",
+      "images/projects/ivy-22/page_57_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-22/page_56_img1.jpeg"
+  },
+  {
+    "id": "ivy-23",
+    "code": "BIS-01",
+    "title": "Bishoftu Hora Lake Dining & Leisure Pavilion",
+    "subtitle": "Terraced Hillside Lakeside Hospitality",
+    "typology": "Healthcare & Hospitality",
+    "category": "hospitality",
+    "location": "Bishoftu Hora Lake, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Hospitality Ventures",
+    "scale": "Restaurant & Grounds / 4,500 m²",
+    "scope": "Architectural Concept, Landscape Architecture",
+    "description": "Cascading down the volcanic caldera slopes of scenic Lake Hora in Bishoftu. The multi-tiered restaurant features expansive umbrella-shaded dining decks, an open-air amphitheater garden with sculptural seating benches, and vehicular parking seamlessly woven into dense tropical landscaping.",
+    "keyFeatures": [
+      "Multi-tiered cantilevered open-air dining decks",
+      "Panoramic 180° crater lake vistas",
+      "Organic sculptural garden seating benches",
+      "Lakeside arrival promenade and tree-canopied parking"
+    ],
+    "images": [
+      "images/projects/ivy-23/page_58_img1.jpeg",
+      "images/projects/ivy-23/page_58_img2.jpeg",
+      "images/projects/ivy-23/page_58_img3.jpeg",
+      "images/projects/ivy-23/page_59_img1.jpeg",
+      "images/projects/ivy-23/page_59_img2.jpeg",
+      "images/projects/ivy-23/page_59_img3.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-23/page_58_img1.jpeg"
+  },
+  {
+    "id": "ivy-24",
+    "code": "ARS-02",
+    "title": "Assela Referral Hospital Biophilic Cafe",
+    "subtitle": "MCH Teaching Hospital Communal Pavilion",
+    "typology": "Healthcare & Hospitality",
+    "category": "hospitality",
+    "location": "Assela, Ethiopia",
+    "city": "Assela",
+    "country": "Ethiopia",
+    "status": "Design & Construction",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Assela Teaching Hospital",
+    "scale": "Pavilion / 480 m²",
+    "scope": "Turnkey Architecture & Construction",
+    "description": "An inviting social respite for doctors, patients, and families at the Assela Referral Hospital. The biophilic two-story glass pavilion incorporates hanging garden trellis planters, open-air rooftop coffee lounge, and pedestrian crosswalk access.",
+    "keyFeatures": [
+      "Biophilic vertical green walls and hanging planters",
+      "Rooftop outdoor coffee viewing terrace",
+      "High-transparency glazed social space",
+      "Direct accessibility to hospital main concourse"
+    ],
+    "images": [
+      "images/projects/ivy-24/page_63_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-24/page_63_img1.jpeg"
+  },
+  {
+    "id": "ivy-25",
+    "code": "AFA-01",
+    "title": "Evergreen 2,000-Hectare Farm & Avocado Oil Plant",
+    "subtitle": "Mega Agro-Industrial Estate & Cold-Press Factory",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Ewa Woreda, Afar Region, Ethiopia",
+    "city": "Afar Region",
+    "country": "Ethiopia",
+    "status": "Design & Supervision",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Ever-Green Construction / Organic Farming PLC",
+    "scale": "2,000 Hectares / 28,000 m² Processing Plant",
+    "scope": "Agricultural Masterplanning, Industrial Architecture",
+    "description": "One of the most expansive private agro-industrial developments in the Horn of Africa. Masterplan spans 2,000 hectares of precision-irrigated avocado orchards, an autonomous 'Minimum Viable City' community for workers, and an industrial cold-press avocado oil processing factory.",
+    "keyFeatures": [
+      "2,000-hectare precision canal irrigation grid",
+      "High-capacity avocado oil processing refinery",
+      "Autonomous worker community housing & clinic",
+      "Logistics highway connection and cold-chain staging"
+    ],
+    "images": [
+      "images/projects/ivy-25/page_65_img1.jpeg",
+      "images/projects/ivy-25/page_65_img11.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-25/page_65_img1.jpeg"
+  },
+  {
+    "id": "ivy-26",
+    "code": "AFA-02",
+    "title": "Kingdon Salt Processing Factory",
+    "subtitle": "Industrial Salt Refinery & Logistics Terminal",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Afedera, Afar, Ethiopia",
+    "city": "Afedera",
+    "country": "Ethiopia",
+    "status": "Under Design",
+    "statusType": "design",
+    "year": "2024",
+    "client": "Kingdon Industrial Chemicals",
+    "scale": "Refinery Facility / 18,000 m²",
+    "scope": "Industrial Architecture & Heavy Civil Engineering",
+    "description": "Positioned in the mineral-rich Afar salt flats near Lake Afedera. The facility is engineered for harsh desert conditions, comprising heavy truck intake scales, a 200-meter automated refining and iodization warehouse, administrative offices, and high-volume freight logistics dispatch.",
+    "keyFeatures": [
+      "200-meter clear-span automated refining warehouse",
+      "Heavy freight truck scale and staging loop",
+      "Desert-hardened corrosion resistant materials",
+      "Autonomous power generation and water desalinization"
+    ],
+    "images": [
+      "images/projects/ivy-26/page_66_img1.jpeg",
+      "images/projects/ivy-26/page_66_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-26/page_66_img1.jpeg"
+  },
+  {
+    "id": "ivy-27",
+    "code": "BIS-02",
+    "title": "Gafat Armament Engineering Defense Complex",
+    "subtitle": "Ministry of Defense Masterplan & Helipad Facility",
+    "typology": "Industrial & Infrastructure",
+    "category": "industrial",
+    "location": "Dakaka, Bishoftu, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Under Construction",
+    "statusType": "construction",
+    "year": "2023",
+    "client": "Federal Ministry of Defense",
+    "scale": "45 Hectares / High-Security Complex",
+    "scope": "Masterplan, Structural & Civil Supervision",
+    "description": "A high-security defense engineering installation in Bishoftu. The masterplan integrates secure engineering research pavilions, an executive rooftop helipad, an outdoor sports arena with terraced seating, and dense forest security buffers.",
+    "keyFeatures": [
+      "Certified rooftop helicopter landing pad",
+      "Secure engineering laboratories & command center",
+      "Outdoor amphitheater sports arena",
+      "Natural forest eco-buffer and access control"
+    ],
+    "images": [
+      "images/projects/ivy-27/page_68_img1.jpeg",
+      "images/projects/ivy-27/page_69_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-27/page_68_img1.jpeg"
+  },
+  {
+    "id": "ivy-28",
+    "code": "ADD-12",
+    "title": "King Nejashi Islamic Center & Monumental Arch Tower",
+    "subtitle": "Monumental Grand Mosque & 45-Story Arch Skyscraper",
+    "typology": "Monumental Civic & Cultural",
+    "category": "monumental",
+    "location": "Bulgaria / AU Area, Addis Ababa, Ethiopia",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "KNIC Foundation / Islamic Affairs Council",
+    "scale": "45 Stories + Grand Mosque / 85,000 m²",
+    "scope": "Masterplanning, Monumental Architecture & Engineering",
+    "description": "An epochal cultural and architectural landmark for the African continent, situated near the African Union Headquarters in Addis Ababa. The project unites an awe-inspiring 45-story Arch Skyscraper featuring a soaring central Islamic arch void lined with intricate golden geometric mashrabiya filigree, alongside a grand congregational mosque with four towering 75-meter minarets, cultural conference center, and sweeping civic prayer plazas.",
+    "keyFeatures": [
+      "Iconic 45-story Arch Skyscraper with monumental arch void",
+      "Intricate gold mashrabiya geometric latticework",
+      "Grand congregational mosque with four 75m minarets",
+      "Continental civic plaza accommodating 25,000 worshippers"
+    ],
+    "images": [
+      "images/projects/ivy-28/page_70_img1.jpeg",
+      "images/projects/ivy-28/page_71_img1.jpeg",
+      "images/projects/ivy-28/page_72_img1.jpeg",
+      "images/projects/ivy-28/page_73_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-28/page_70_img1.jpeg"
+  },
+  {
+    "id": "ivy-29",
+    "code": "BIS-03",
+    "title": "Bethelem Academy Comprehensive Campus",
+    "subtitle": "K-12 Educational Compound & Olympic Athletics Track",
+    "typology": "Education & Campus",
+    "category": "education",
+    "location": "Bishoftu, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Partially Started",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Bethelem Educational Foundation",
+    "scale": "KG to Preparatory Campus / 22,000 m²",
+    "scope": "Masterplan, Architecture & Athletic Facility Engineering",
+    "description": "A progressive educational campus designed around a bold V-shaped academic building featuring vibrant polychromatic solar louvers. The grounds incorporate an Olympic running track, soccer pitch, tennis and basketball courts, early learning daycare facilities, and landscaped study courtyards.",
+    "keyFeatures": [
+      "Iconic V-shaped academic wing with rainbow louvers",
+      "Full regulation running track & soccer stadium",
+      "Dedicated kindergarten through preparatory zones",
+      "Internal tree-canopied play and assembly courtyards"
+    ],
+    "images": [
+      "images/projects/ivy-29/page_76_img1.jpeg",
+      "images/projects/ivy-29/page_77_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-29/page_76_img1.jpeg"
+  },
+  {
+    "id": "ivy-30",
+    "code": "BIS-04",
+    "title": "Anne Academy & Daycare Facility",
+    "subtitle": "Early Childhood Learning Center & Play Courtyard",
+    "typology": "Education & Campus",
+    "category": "education",
+    "location": "Bishoftu, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Completed",
+    "statusType": "completed",
+    "year": "2023",
+    "client": "Anne Academy",
+    "scale": "Multi-Story School / 2,400 m²",
+    "scope": "Turnkey Architectural Design & Construction",
+    "description": "A completed early childhood and primary learning academy in Bishoftu. The architecture utilizes colorful educational alphabet murals, secure exterior circulation towers, sheltered playground courtyards, and child-scaled learning environments.",
+    "keyFeatures": [
+      "Playful typographic facade branding",
+      "Enclosed safe playground courtyard",
+      "External security stair towers",
+      "Naturally illuminated high-ceiling classrooms"
+    ],
+    "images": [
+      "images/projects/ivy-30/page_74_img1.jpeg",
+      "images/projects/ivy-30/page_74_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-30/page_74_img1.jpeg"
+  },
+  {
+    "id": "ivy-31",
+    "code": "BIS-05",
+    "title": "Villa Neoclassique Bishoftu",
+    "subtitle": "4-Story Classical Residence & Rooftop Pergola",
+    "typology": "Residential",
+    "category": "residential",
+    "location": "Bishoftu, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Completed",
+    "statusType": "completed",
+    "year": "2023",
+    "client": "Private Client",
+    "scale": "G+3 Luxury Villa / 680 m²",
+    "scope": "Turnkey Architecture & Construction",
+    "description": "A stately residence reflecting neoclassical symmetry fused with modern luxury. Features grand double-height Corinthian entrance columns, arched French balconies with wrought-iron railings, stone balustrades, and a rooftop pergola lounge.",
+    "keyFeatures": [
+      "Double-height neoclassical portico columns",
+      "Arched French balconies with decorative balustrades",
+      "Rooftop timber pergola viewing deck",
+      "Private ground floor carriage garage"
+    ],
+    "images": [
+      "images/projects/ivy-31/page_75_img1.jpeg",
+      "images/projects/ivy-31/page_75_img2.jpeg",
+      "images/projects/ivy-31/page_75_img3.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-31/page_75_img1.jpeg"
+  },
+  {
+    "id": "ivy-32",
+    "code": "ARB-01",
+    "title": "Arbaminch Highway Motel & Fueling Station",
+    "subtitle": "Integrated Southern Rift Roadside Travel Hub",
+    "typology": "Mixed-Use & Commercial",
+    "category": "mixed-use",
+    "location": "Arbaminch, Ethiopia",
+    "city": "Arbaminch",
+    "country": "Ethiopia",
+    "status": "Partially Started",
+    "statusType": "construction",
+    "year": "2024",
+    "client": "Southern Rift Logistics Ltd.",
+    "scale": "Commercial Complex / 8,500 m²",
+    "scope": "Architectural Design & Commercial Site Planning",
+    "description": "Strategically positioned along the main transportation artery into Arbaminch and the Southern Rift Valley. The complex combines a multi-story guest motel, retail convenience center, high-clearance vehicle canopy fuel station, and heavy transport staging yards.",
+    "keyFeatures": [
+      "Multi-story hospitality guest motel",
+      "High-capacity fuel canopy for passenger and freight vehicles",
+      "Roadside convenience retail and cafe",
+      "Spacious highway turning radius and parking lots"
+    ],
+    "images": [
+      "images/projects/ivy-32/page_78_img1.jpeg",
+      "images/projects/ivy-32/page_79_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-32/page_78_img1.jpeg"
+  },
+  {
+    "id": "ivy-33",
+    "code": "BIS-06",
+    "title": "Noora Cliffside Lake Resort",
+    "subtitle": "Volcanic Basalt Bluff Hospitality & Finishing Design",
+    "typology": "Healthcare & Hospitality",
+    "category": "hospitality",
+    "location": "Bishoftu, Ethiopia",
+    "city": "Bishoftu",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "Noora Resort Group",
+    "scale": "Cliffside Resort / 6,200 m²",
+    "scope": "Architectural Design, Cliff Engineering & Finishes",
+    "description": "A daring feat of cliffside engineering perched atop the sheer volcanic basalt crags overlooking Bishoftu's crater lake. The design features stepped timber suites, thatched pavilion roofs celebrating Ethiopian vernacular craft, and cantilevered glass observation walkways suspended over the abyss.",
+    "keyFeatures": [
+      "Cantilevered cliff-hanging suite terraces",
+      "Traditional thatched conical roof pavilions",
+      "Panoramic crater lake infinity vistas",
+      "Engineered basalt rock anchoring systems"
+    ],
+    "images": [
+      "images/projects/ivy-33/page_80_img1.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-33/page_80_img1.jpeg"
+  },
+  {
+    "id": "ivy-34",
+    "code": "GON-01",
+    "title": "Gondar Heritage G+10 Hotel",
+    "subtitle": "Curvilinear High-Rise Hotel at Urban Intersection",
+    "typology": "Healthcare & Hospitality",
+    "category": "hospitality",
+    "location": "Gondar, Ethiopia",
+    "city": "Gondar",
+    "country": "Ethiopia",
+    "status": "Design Phase",
+    "statusType": "design",
+    "year": "2025",
+    "client": "Gondar Hospitality Corp",
+    "scale": "G+10 Floors / 11,500 m²",
+    "scope": "Architectural Design, Structural & Facade Engineering",
+    "description": "Located at a prominent three-way boulevard intersection in the historic imperial city of Gondar. The 10-story hotel features an aerodynamic curvilinear corner facade, rhythmic vertical solar shading louvers, ground floor retail, and a top-floor sky lounge commanding views across the city.",
+    "keyFeatures": [
+      "Curvilinear corner landmark facade",
+      "Passive solar vertical brise-soleil louvers",
+      "Ground-level street-activated retail arcade",
+      "Rooftop panoramic sky restaurant"
+    ],
+    "images": [
+      "images/projects/ivy-34/page_81_img1.jpeg",
+      "images/projects/ivy-34/page_81_img2.jpeg"
+    ],
+    "heroImage": "images/projects/ivy-34/page_81_img1.jpeg"
+  }
+]

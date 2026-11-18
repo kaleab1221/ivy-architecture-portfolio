@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IVY CONSTRUCTION & TRADING | Architectural Portfolio & Engineering Practice</title>
+  <meta name="description" content="IVY Construction & Trading Co. Ltd. — Architectural design, mega masterplanning, structural engineering, and general contracting across East Africa and the Middle East.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0b'/><text y='70' x='12' font-family='sans-serif' font-weight='900' font-size='65' fill='%23c5a880'>IVY</text></svg>">
+  
+  <!-- Typography (Swiss grotesque & monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER (BIG.DK STYLE)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Brand -->
+        <a href="#projects" class="brand-wrapper">
+          <div class="brand-logo">
+            IVY<span class="logo-dot"></span>
+          </div>
+          <div class="brand-sub">
+            <span>CONSTRUCTION &amp; TRADING</span>
+            <span>ARCHITECTURE // PRACTICE</span>
+          </div>
+        </a>
+
+        <!-- Main Nav -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#projects" class="nav-link active">Projects</a></li>
+            <li><a href="#practice" class="nav-link">Practice</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Offices</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Monograph PDF</span>
+          </a>
+
+          <a href="#contact" class="btn-action btn-accent">
+            <span>Request Proposal</span>
+          </a>
+
+          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+            </svg>
+          </button>
+
+          <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">IVY<span class="logo-dot"></span></div>
+      <button id="mobileNavClose" class="modal-close-btn" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#practice" class="mobile-nav-link">Practice</a></li>
+      <li><a href="#services" class="mobile-nav-link">Services</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Offices &amp; Contact</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 1rem;">
+      <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action" style="text-align: center; justify-content: center; padding: 1rem;">
+        Download Monograph PDF
+      </a>
+      <a href="#contact" class="btn-action btn-accent" style="text-align: center; justify-content: center; padding: 1rem;">
+        Request Proposal
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         HERO SECTION (BIG IMMERSIVE ARCHITECTURAL SHOWCASE)
+         ======================================================================== -->
+    <section class="hero-section">
+      <div id="heroSliderContainer" class="hero-slider-container"></div>
+      <div class="hero-overlay"></div>
+      
+      <div class="container hero-content">
+        <div id="heroTag" class="hero-tag">
+          <span>[ADD-12]</span> <span>/</span> <span>MONUMENTAL CIVIC &amp; CULTURAL</span>
+        </div>
+        <h1 id="heroTitle" class="hero-title">
+          King Nejashi Islamic Center &amp; Monumental Arch Tower
+        </h1>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Location</span>
+            <span id="heroLocation" class="hero-meta-val">Bulgaria / AU Area, Addis Ababa</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Typology</span>
+            <span id="heroTypology" class="hero-meta-val">Cultural &amp; High-Rise Arch Skyscraper</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Scale</span>
+            <span id="heroScale" class="hero-meta-val">45 Stories + Grand Mosque / 85,000 m²</span>
+          </div>
+          <div class="hero-meta-item">
+            <button id="heroExploreBtn" class="btn-action btn-accent" style="padding: 0.6rem 1.25rem;">
+              <span>Explore Case Study →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero controls -->
+      <div class="hero-controls">
+        <button id="heroPrevBtn" class="hero-btn" aria-label="Previous showcase">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button id="heroNextBtn" class="hero-btn" aria-label="Next showcase">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         STATISTICS BANNER (PRACTICE REACH)
+         ======================================================================== -->
+    <section class="stats-banner">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span id="statProjects" class="stat-number">34+</span>
+            <span class="stat-label">Architectural Commissions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2,000+</span>
+            <span class="stat-label">Hectares Masterplanned</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Operating Nations (ET, SS, IQ)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Turnkey Design-Build Delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PROJECTS SECTION (BIG MATRIX TOOLBAR + MULTI-VIEW)
+         ======================================================================== -->
+    <section id="projects">
+      <!-- Sticky Toolbar -->
+      <div class="portfolio-toolbar">
+        <div class="container">
+          <div class="toolbar-inner">
+            <!-- Typology Tabs -->
+            <div id="typologyFilters" class="typology-filters"></div>
+
+            <!-- Toolbar Right (Search + View Switchers) -->
+            <div class="toolbar-right">
+              <!-- Search -->
+              <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search works, city, client...">
+              </div>
+
+              <!-- View Switchers -->
+              <div class="view-switcher">
+                <button id="viewGridBtn" class="view-btn active" title="Grid View">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Grid</span>
+                </button>
+                <button id="viewListBtn" class="view-btn" title="Table / Index View">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                  <span>Index</span>
+                </button>
+                <button id="viewMapBtn" class="view-btn" title="Regional Matrix View">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                  </svg>
+                  <span>Regions</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Sub-filter bar -->
+          <div class="sub-filters-bar">
+            <div id="statusPills" class="status-pills">
+              <span class="status-pill active" data-status="all">All Statuses</span>
+              <span class="status-pill" data-status="completed">Completed</span>
+              <span class="status-pill" data-status="construction">Under Construction</span>
+              <span class="status-pill" data-status="design">Design Phase</span>
+            </div>
+            <div id="resultsCount" class="results-count">
+              Showing 34 of 34 Works
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Project Views Container -->
+      <div class="container projects-container">
+        <!-- View 1: Grid View -->
+        <div id="viewGridContainer" class="projects-grid"></div>
+
+        <!-- View 2: List / Index View (Table) -->
+        <div id="viewListContainer" style="display: none;"></div>
+
+        <!-- View 3: Map / Territory Matrix View -->
+        <div id="viewMapContainer" class="territory-view" style="display: none;"></div>
+      </div>
+    </section>
+
+    <!-- Floating Hover Preview Card (BIG Table Feature) -->
+    <div id="hoverPreviewCard" class="hover-preview-card">
+      <img id="hoverPreviewImg" src="" alt="Project Preview">
+      <div class="preview-info">
+        <div id="hoverPreviewTitle" class="preview-title"></div>
+        <div id="hoverPreviewMeta" class="preview-meta"></div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         PRACTICE / ABOUT SECTION (BIG MANIFESTO)
+         ======================================================================== -->
+    <section id="practice" class="practice-section">
+      <div class="container">
+        <div class="section-eyebrow">// PRACTICE PROFILE</div>
+        <h2 class="section-headline">
+          Pragmatic Architecture &amp; Precision Engineering for a Rapidly Urbanizing World
+        </h2>
+
+        <div class="practice-grid">
+          <div>
+            <p class="practice-lead-text">
+              IVY Construction &amp; Trading Co. Ltd. operates at the confluence of visionary architectural design, rigorous structural engineering, and heavy-duty general construction.
+            </p>
+            <p class="practice-body-text">
+              With landmark projects spanning Ethiopia, South Sudan, and Iraq, our multidisciplinary practice resolves complex programmatic, climatic, and logistical challenges. From 45-story commercial arch skyscrapers and university medical campuses to remote modular energy camps and agricultural processing hubs, we turn ambitious concepts into enduring physical realities.
+            </p>
+            <p class="practice-body-text">
+              Our unique integration of architectural design with direct contracting and international material trading ensures zero friction between conceptual geometry and precision on-site execution.
+            </p>
+
+            <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action btn-accent" style="padding: 0.85rem 1.5rem;">
+                Download Complete Portfolio (81 Pages PDF)
+              </a>
+              <a href="#contact" class="btn-action" style="padding: 0.85rem 1.5rem;">
+                Schedule Practice Consultation
+              </a>
+            </div>
+          </div>
+
+          <!-- Disciplines -->
+          <div class="disciplines-grid">
+            <div class="discipline-card">
+              <h3 class="discipline-name">01. Architectural Design &amp; Masterplanning</h3>
+              <p class="discipline-desc">Curating landmark forms, high-rise urban towers, cultural monuments, and large-scale university and industrial masterplans.</p>
+            </div>
+            <div class="discipline-card">
+              <h3 class="discipline-name">02. Civil, Structural &amp; MEP Engineering</h3>
+              <p class="discipline-desc">Advanced seismic analysis, long-span steel spaceframes, post-tensioned concrete, and equatorial passive cooling systems.</p>
+            </div>
+            <div class="discipline-card">
+              <h3 class="discipline-name">03. General Contracting &amp; Turnkey Construction</h3>
+              <p class="discipline-desc">End-to-end site management, concrete batching, modular prefab deployment, and on-time industrial delivery.</p>
+            </div>
+            <div class="discipline-card">
+              <h3 class="discipline-name">04. Interior Architecture &amp; Bespoke FF&amp;E</h3>
+              <p class="discipline-desc">Parametric timber surfaces, luxury hospitality interiors, executive suites, and acoustic engineering.</p>
+            </div>
+            <div class="discipline-card">
+              <h3 class="discipline-name">05. Supply Chain &amp; Construction Trading</h3>
+              <p class="discipline-desc">Direct procurement of specialized construction materials, heavy machinery logistics, and regional distribution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SERVICES SECTION
+         ======================================================================== -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-eyebrow">// INTEGRATED CAPABILITIES</div>
+        <h2 class="section-headline">
+          End-to-End Capabilities from Concept to Ribbon Cutting
+        </h2>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="service-num">[01]</span>
+            <h3 class="service-title">High-Rise &amp; Mixed-Use Development</h3>
+            <p class="service-desc">Complete architectural and engineering design for mixed-use towers, combining shopping gallerias, Grade-A commercial office space, and luxury residential suites.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num">[02]</span>
+            <h3 class="service-title">Campus &amp; Institutional Masterplanning</h3>
+            <p class="service-desc">Multi-hectare university compounds, medical teaching hospitals, specialized research laboratories, and Olympic-grade sports stadiums.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num">[03]</span>
+            <h3 class="service-title">Luxury Residential &amp; Estates</h3>
+            <p class="service-desc">Custom modernist cantilevered villas, fairway golf residences, and multi-family residential developments with bespoke interior fitouts.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num">[04]</span>
+            <h3 class="service-title">Industrial, Energy &amp; Agro-Processing</h3>
+            <p class="service-desc">Heavy industrial processing plants, salt refineries, coffee wet-mills, oilfield base camps, and 2,000-hectare agricultural estates.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num">[05]</span>
+            <h3 class="service-title">Civic, Defense &amp; Emergency Hubs</h3>
+            <p class="service-desc">Long-span fire rescue stations, high-security defense engineering complexes with helipads, and cultural places of worship.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-num">[06]</span>
+            <h3 class="service-title">Turnkey Construction &amp; Trading</h3>
+            <p class="service-desc">Seamless procurement, international freight forwarding, heavy equipment mobilization, and turnkey construction management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT & OFFICES SECTION (RFP SUBMISSION)
+         ======================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-eyebrow">// REGIONAL PRESENCE &amp; INQUIRIES</div>
+        <h2 class="section-headline">
+          Initiate a Project Consultation
+        </h2>
+
+        <div class="contact-grid">
+          <!-- Office cards -->
+          <div class="offices-cards">
+            <div class="office-box">
+              <span class="office-country">Headquarters // Ethiopia</span>
+              <h3 class="office-city">Addis Ababa</h3>
+              <div class="office-details">
+                <p>Bole Subcity, Prime Commercial District</p>
+                <p>Near Alem Building Corridor, Addis Ababa, Ethiopia</p>
+                <p style="margin-top: 0.5rem;">Email: info@ivyconstruction.com</p>
+                <p>Tel: +251 91 123 4567 / +251 11 654 3210</p>
+              </div>
+            </div>
+
+            <div class="office-box">
+              <span class="office-country">Regional Operations // South Sudan</span>
+              <h3 class="office-city">Juba Office</h3>
+              <div class="office-details">
+                <p>Central Commercial Sector, Juba</p>
+                <p>Serving Juba, Unity State &amp; East African Operations</p>
+                <p style="margin-top: 0.5rem;">Email: juba@ivyconstruction.com</p>
+                <p>Tel: +211 92 000 1234</p>
+              </div>
+            </div>
+
+            <div class="office-box">
+              <span class="office-country">Official Documentation</span>
+              <h3 class="office-city">81-Page Monograph</h3>
+              <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Download the complete high-resolution project dossier containing all architectural renders, plans, and technical specifications.
+              </p>
+              <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action btn-accent" style="width: 100%; text-align: center; justify-content: center;">
+                Download Portfolio PDF (7.3 MB)
+              </a>
+            </div>
+          </div>
+
+          <!-- Request for Proposal Form -->
+          <div>
+            <form id="rfpForm" class="rfp-form">
+              <h3 class="font-display" style="font-size: 1.35rem; text-transform: uppercase;">Request for Proposal (RFP)</h3>
+              <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">
+                Submit your project brief for architectural review, feasibility analysis, or general contracting inquiry.
+              </p>
+
+              <div class="form-group">
+                <label class="form-label" for="clientName">Full Name / Organization *</label>
+                <input type="text" id="clientName" class="form-input" placeholder="e.g. Hagbes Private Limited Co." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clientEmail">Corporate Email *</label>
+                <input type="email" id="clientEmail" class="form-input" placeholder="contact@organization.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="projectTypology">Project Typology</label>
+                <select id="projectTypology" class="form-select">
+                  <option value="high-rise">High-Rise &amp; Mixed-Use Tower</option>
+                  <option value="residential">Luxury Residential / Multi-Family</option>
+                  <option value="commercial">Corporate Headquarters / Showroom</option>
+                  <option value="campus">University Campus / Healthcare Facility</option>
+                  <option value="industrial">Agro-Industrial / Manufacturing / Camp</option>
+                  <option value="general">Turnkey General Construction</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="projectLocation">Project Location</label>
+                <input type="text" id="projectLocation" class="form-input" placeholder="e.g. Addis Ababa, Juba, or Regional">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="projectBrief">Project Brief &amp; Scope Requirements *</label>
+                <textarea id="projectBrief" class="form-textarea" placeholder="Detail approximate site area, floor count, schedule, and scope of services required..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                Submit Consultation Request →
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER (BIG MONOCHROME BRUTALIST)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2>IVY CONSTRUCTION &amp; TRADING</h2>
+          <p>
+            An integrated architecture, engineering, and construction practice shaping the skyline and infrastructure of East Africa.
+          </p>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Typologies</h4>
+            <ul>
+              <li><a href="#projects">Residential</a></li>
+              <li><a href="#projects">Mixed-Use Towers</a></li>
+              <li><a href="#projects">Corporate HQ</a></li>
+              <li><a href="#projects">University Campuses</a></li>
+              <li><a href="#projects">Industrial &amp; Energy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Hubs</h4>
+            <ul>
+              <li><a href="#projects">Addis Ababa, ET</a></li>
+              <li><a href="#projects">Juba, SS</a></li>
+              <li><a href="#projects">Bishoftu, ET</a></li>
+              <li><a href="#projects">Erbil, IQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Practice</h4>
+            <ul>
+              <li><a href="#practice">Philosophy</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download>Monograph PDF</a></li>
+              <li><a href="#contact">Contact &amp; RFP</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 IVY CONSTRUCTION &amp; TRADING CO. LTD. ALL RIGHTS RESERVED.
+        </div>
+        <div class="mono">
+          ETHIOPIA // SOUTH SUDAN // IRAQ // INTERNATIONAL
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT CASE STUDY DRAWER / MODAL (THE BIG DEEP-DIVE)
+       ======================================================================== -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-drawer">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span id="modalCodeTag" class="modal-code-tag">IVY-00</span>
+          <h2 id="modalProjectTitle" class="modal-project-title">PROJECT TITLE</h2>
+        </div>
+
+        <div class="modal-actions">
+          <button id="modalPrevBtn" class="modal-nav-btn" title="Previous Project (Arrow Left)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="modalNextBtn" class="modal-nav-btn" title="Next Project (Arrow Right)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <button id="modalCloseBtn" class="modal-close-btn" title="Close (ESC)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Gallery Viewer -->
+        <div>
+          <div class="gallery-viewer">
+            <div id="galleryStage" class="gallery-stage"></div>
+            <button id="galleryPrevBtn" class="gallery-btn btn-prev" aria-label="Previous image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button id="galleryNextBtn" class="gallery-btn btn-next" aria-label="Next image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <div id="galleryCounter" class="gallery-counter">1 / 1</div>
+          </div>
+
+          <!-- Thumbnails -->
+          <div id="galleryThumbs" class="gallery-thumbs"></div>
+        </div>
+
+        <!-- Specifications & Concept Narrative -->
+        <div class="modal-specs-grid">
+          <div>
+            <h3 class="project-narrative-title">Architectural Statement</h3>
+            <p id="projectDescription" class="project-description"></p>
+
+            <h4 class="font-display" style="font-size: 1.1rem; text-transform: uppercase; margin-bottom: 1rem;">
+              Key Architectural Innovations
+            </h4>
+            <ul id="projectFeaturesList" class="features-list"></ul>
+          </div>
+
+          <!-- Sidebar Specs -->
+          <aside class="specs-sidebar">
+            <div class="spec-entry">
+              <span class="spec-label">Client</span>
+              <span id="specClient" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Location</span>
+              <span id="specLocation" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Typology</span>
+              <span id="specTypology" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Status</span>
+              <span id="specStatus" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Scale / Area</span>
+              <span id="specScale" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Scope of Services</span>
+              <span id="specScope" class="spec-value"></span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">Year</span>
+              <span id="specYear" class="spec-value"></span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toastNotice" class="toast-notice"></div>
+
+  <!-- Embedded fallback data & Main App Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

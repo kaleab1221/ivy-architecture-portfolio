@@ -1,0 +1,11 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Intermediate extraction scripts
+extract.py
+organize_portfolio.py
+public/
+
+# Logs
+*.log
