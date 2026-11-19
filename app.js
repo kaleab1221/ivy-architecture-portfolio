@@ -313,6 +313,43 @@ Transmitted via IVY Integrated Architecture Portfolio Monograph`
     });
   }
 
+  // ============================================================================
+  // 6. MOBILE NAVIGATION DRAWER CONTROLLER
+  // ============================================================================
+  function initMobileNav() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const drawer = document.getElementById('mobileNavDrawer');
+    const closeBtn = document.getElementById('mobileNavClose');
+    const backdrop = document.getElementById('mobileNavBackdrop');
+    const links = document.querySelectorAll('.mobile-nav-item');
+
+    if (!menuBtn || !drawer) return;
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      if (backdrop) backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      if (backdrop) backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+    links.forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+  }
+
   // Initialize all controllers on DOM ready
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -320,5 +357,6 @@ Transmitted via IVY Integrated Architecture Portfolio Monograph`
     initTableLedger();
     initForm();
     initSmoothScroll();
+    initMobileNav();
   });
 })();

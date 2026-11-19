@@ -81,9 +81,39 @@
         <a href="../IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="monograph-btn" title="Download Monograph PDF">
           Monograph PDF
         </a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
     </div>
   </header>
+
+    <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <a href="../index.html" class="brand-link" aria-label="IVY Home">
+        <span class="brand-serif">IVY</span>
+        <span class="brand-sub">Architecture &middot; Construction</span>
+      </a>
+      <button id="mobileNavClose" class="mobile-nav-close" aria-label="Close navigation">&times;</button>
+    </div>
+    <nav class="mobile-nav-menu">
+      <a href="../index.html#featured" class="mobile-nav-item">Featured</a>
+      <a href="../index.html#portfolio" class="mobile-nav-item">Portfolio</a>
+      <a href="../index.html#services" class="mobile-nav-item">Services</a>
+      <a href="../index.html#credentials" class="mobile-nav-item">Credentials</a>
+      <a href="../index.html#leadership" class="mobile-nav-item">Leadership</a>
+      <a href="../index.html#clients" class="mobile-nav-item">Clients</a>
+      <a href="../index.html#contact" class="mobile-nav-item">Contact</a>
+    </nav>
+    <div class="mobile-nav-contact-footer">
+      <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
+        WhatsApp Bureau &rarr;
+      </a>
+    </div>
+  </div>
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
 
   <main id="main-content">
     <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
@@ -289,34 +319,9 @@
 
     <footer class="editorial-footer">
     <div class="editorial-container">
-      <!-- Top Footer Main Grid: 4 Architectural Columns -->
-      <div class="footer-primary-grid">
-        <!-- Col 1: Practice Profile & Certifications -->
-        <div class="footer-col footer-col-brand">
-          <a href="../index.html" class="footer-brand-title" aria-label="IVY Architecture & Construction Home">
-            <span class="brand-serif">IVY</span>
-            <span class="brand-sub">Architecture &middot; Engineering &middot; Construction</span>
-          </a>
-          <p class="footer-mission-statement">
-            An integrated multidisciplinary practice delivering landmark commercial towers, multi-family residential communities, civic masterplans, and heavy infrastructure across East Africa and the Middle East.
-          </p>
-          <div class="footer-badges-list">
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>Grade-1 General Contractor (MUDI Registered)</span>
-            </div>
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>ISO 9001:2015 Quality Management Certified</span>
-            </div>
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>Cross-Border Logistics &amp; Material Procurement</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Col 2: International Operating Bureaus -->
+      <!-- 2-Column Minimal Architectural Studio Footer -->
+      <div class="footer-primary-grid footer-two-col">
+        <!-- Col 1: International Operating Bureaus -->
         <div class="footer-col footer-col-bureaus">
           <h4 class="footer-heading-mono">[01] Operating Bureaus</h4>
           <div class="footer-bureau-item">
@@ -334,16 +339,16 @@
           </div>
         </div>
 
-        <!-- Col 3: Direct Inquiries & Communications -->
+        <!-- Col 2: Direct Inquiries & Communications -->
         <div class="footer-col footer-col-comms">
-          <h4 class="footer-heading-mono">[02] Communications</h4>
+          <h4 class="footer-heading-mono">[02] Communications &amp; Inquiries</h4>
           <ul class="footer-contact-links">
             <li>
               <span class="contact-lbl">Direct Partner Line:</span>
               <a href="tel:+251911234567" class="footer-link-active">+251 91 123 4567</a>
             </li>
             <li>
-              <span class="contact-lbl">Instant Messaging:</span>
+              <span class="contact-lbl">Instant Partner Chat:</span>
               <a href="https://wa.me/251911234567?text=Hello%20IVY%20Architecture,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="whatsapp-footer-link">
                 WhatsApp Business Bureau &rarr;
               </a>
@@ -357,37 +362,15 @@
               <a href="mailto:tenders@ivyconstruction.com">tenders@ivyconstruction.com</a>
             </li>
           </ul>
-          <div class="footer-monograph-box">
-            <span class="mono-meta">Monograph Documentation</span>
-            <p class="mono-text">81-page high-resolution architectural monograph with plans, sections, and specifications.</p>
-            <a href="../IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="footer-monograph-action">
-              Download PDF (7.3 MB) &darr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 4: Practice Index & Navigation -->
-        <div class="footer-col footer-col-nav">
-          <h4 class="footer-heading-mono">[03] Practice Index</h4>
-          <ul class="footer-nav-list">
-            <li><a href="../index.html#featured">Featured Spreads</a></li>
-            <li><a href="../index.html#portfolio">Architectural Portfolio (33)</a></li>
-            <li><a href="../index.html#services">Integrated Disciplines</a></li>
-            <li><a href="../index.html#credentials">Institutional Credentials</a></li>
-            <li><a href="../index.html#leadership">Practice Leadership</a></li>
-            <li><a href="../index.html#clients">Commissioning Clients</a></li>
-            <li><a href="../index.html#contact">Consultation Brief</a></li>
-          </ul>
         </div>
       </div>
 
       <!-- Bottom Sub-Footer Bar with Hairline Divider -->
       <div class="footer-bottom-bar">
         <div class="footer-legal-copy">
-          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
+          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; Statutory License: FDRE-MUDI-GC-001 &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
         </div>
         <div class="footer-bottom-tools">
-          <span class="footer-reg-no">Statutory License: FDRE-MUDI-GC-001</span>
           <button id="footerBackToTop" class="footer-back-to-top" type="button" aria-label="Return to top of page">
             Back to Top &uarr;
           </button>

@@ -5,7 +5,7 @@ Builds the complete hybrid editorial architecture website for IVY Architecture &
 - Hero: "Building a better environment." + Refined multidisciplinary lead
 - 6 Featured Projects: Large full-bleed editorial spreads with Newsreader serif
 - Section #portfolio (Card Grid):
-  - Category Filter Tabs:
+  - Category Filter Tabs with horizontal swipe on mobile & tablet:
     ALL PROJECTS (33), FEATURED WORKS (8), RESIDENTIAL (7), MIXED-USE (7),
     CORPORATE (3), EDUCATION & HEALTH (6), INDUSTRIAL (5), HOSPITALITY (4)
   - Live instant search input
@@ -16,7 +16,12 @@ Builds the complete hybrid editorial architecture website for IVY Architecture &
 - Leadership (Multidisciplinary directors)
 - Verified Clients (30 real corporate & institutional entities)
 - Contact: Simplified 4-field Consultation Brief + direct WhatsApp
-- Elevated Professional Architectural Footer with Studios, Communications & Legal
+- Streamlined 2-Column Minimal Architectural Studio Footer:
+  - [01] Operating Bureaus (Addis Ababa [HQ], Juba, Erbil)
+  - [02] Communications & Inquiries (Partner phone, WhatsApp, Emails)
+  - Sub-footer copyright, statutory license, and Back to Top button
+  - REMOVED: Column 1 brand lockup, Monograph Documentation box, and [03] Practice Index
+- Responsive Mobile Navigation Drawer & Hamburger Menu
 - 33 Static Project Pages with fact sheets, drawings, and galleries
 - Synchronizes all files to root and public/
 """
@@ -61,34 +66,9 @@ def picture_tag(img_src, alt_text, css_class="", is_lazy=True, prefix=""):
 def render_professional_footer(home_prefix=""):
     return f"""  <footer class="editorial-footer">
     <div class="editorial-container">
-      <!-- Top Footer Main Grid: 4 Architectural Columns -->
-      <div class="footer-primary-grid">
-        <!-- Col 1: Practice Profile & Certifications -->
-        <div class="footer-col footer-col-brand">
-          <a href="{home_prefix}index.html" class="footer-brand-title" aria-label="IVY Architecture & Construction Home">
-            <span class="brand-serif">IVY</span>
-            <span class="brand-sub">Architecture &middot; Engineering &middot; Construction</span>
-          </a>
-          <p class="footer-mission-statement">
-            An integrated multidisciplinary practice delivering landmark commercial towers, multi-family residential communities, civic masterplans, and heavy infrastructure across East Africa and the Middle East.
-          </p>
-          <div class="footer-badges-list">
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>Grade-1 General Contractor (MUDI Registered)</span>
-            </div>
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>ISO 9001:2015 Quality Management Certified</span>
-            </div>
-            <div class="footer-badge-item">
-              <span class="badge-dot"></span>
-              <span>Cross-Border Logistics &amp; Material Procurement</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Col 2: International Operating Bureaus -->
+      <!-- 2-Column Minimal Architectural Studio Footer -->
+      <div class="footer-primary-grid footer-two-col">
+        <!-- Col 1: International Operating Bureaus -->
         <div class="footer-col footer-col-bureaus">
           <h4 class="footer-heading-mono">[01] Operating Bureaus</h4>
           <div class="footer-bureau-item">
@@ -106,16 +86,16 @@ def render_professional_footer(home_prefix=""):
           </div>
         </div>
 
-        <!-- Col 3: Direct Inquiries & Communications -->
+        <!-- Col 2: Direct Inquiries & Communications -->
         <div class="footer-col footer-col-comms">
-          <h4 class="footer-heading-mono">[02] Communications</h4>
+          <h4 class="footer-heading-mono">[02] Communications &amp; Inquiries</h4>
           <ul class="footer-contact-links">
             <li>
               <span class="contact-lbl">Direct Partner Line:</span>
               <a href="tel:+251911234567" class="footer-link-active">+251 91 123 4567</a>
             </li>
             <li>
-              <span class="contact-lbl">Instant Messaging:</span>
+              <span class="contact-lbl">Instant Partner Chat:</span>
               <a href="https://wa.me/251911234567?text=Hello%20IVY%20Architecture,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="whatsapp-footer-link">
                 WhatsApp Business Bureau &rarr;
               </a>
@@ -129,37 +109,15 @@ def render_professional_footer(home_prefix=""):
               <a href="mailto:tenders@ivyconstruction.com">tenders@ivyconstruction.com</a>
             </li>
           </ul>
-          <div class="footer-monograph-box">
-            <span class="mono-meta">Monograph Documentation</span>
-            <p class="mono-text">81-page high-resolution architectural monograph with plans, sections, and specifications.</p>
-            <a href="{home_prefix}IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="footer-monograph-action">
-              Download PDF (7.3 MB) &darr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 4: Practice Index & Navigation -->
-        <div class="footer-col footer-col-nav">
-          <h4 class="footer-heading-mono">[03] Practice Index</h4>
-          <ul class="footer-nav-list">
-            <li><a href="{home_prefix}index.html#featured">Featured Spreads</a></li>
-            <li><a href="{home_prefix}index.html#portfolio">Architectural Portfolio (33)</a></li>
-            <li><a href="{home_prefix}index.html#services">Integrated Disciplines</a></li>
-            <li><a href="{home_prefix}index.html#credentials">Institutional Credentials</a></li>
-            <li><a href="{home_prefix}index.html#leadership">Practice Leadership</a></li>
-            <li><a href="{home_prefix}index.html#clients">Commissioning Clients</a></li>
-            <li><a href="{home_prefix}index.html#contact">Consultation Brief</a></li>
-          </ul>
         </div>
       </div>
 
       <!-- Bottom Sub-Footer Bar with Hairline Divider -->
       <div class="footer-bottom-bar">
         <div class="footer-legal-copy">
-          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
+          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; Statutory License: FDRE-MUDI-GC-001 &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
         </div>
         <div class="footer-bottom-tools">
-          <span class="footer-reg-no">Statutory License: FDRE-MUDI-GC-001</span>
           <button id="footerBackToTop" class="footer-back-to-top" type="button" aria-label="Return to top of page">
             Back to Top &uarr;
           </button>
@@ -167,6 +125,33 @@ def render_professional_footer(home_prefix=""):
       </div>
     </div>
   </footer>"""
+
+def render_mobile_drawer(home_prefix=""):
+    return f"""  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <a href="{home_prefix}index.html" class="brand-link" aria-label="IVY Home">
+        <span class="brand-serif">IVY</span>
+        <span class="brand-sub">Architecture &middot; Construction</span>
+      </a>
+      <button id="mobileNavClose" class="mobile-nav-close" aria-label="Close navigation">&times;</button>
+    </div>
+    <nav class="mobile-nav-menu">
+      <a href="{home_prefix}index.html#featured" class="mobile-nav-item">Featured</a>
+      <a href="{home_prefix}index.html#portfolio" class="mobile-nav-item">Portfolio</a>
+      <a href="{home_prefix}index.html#services" class="mobile-nav-item">Services</a>
+      <a href="{home_prefix}index.html#credentials" class="mobile-nav-item">Credentials</a>
+      <a href="{home_prefix}index.html#leadership" class="mobile-nav-item">Leadership</a>
+      <a href="{home_prefix}index.html#clients" class="mobile-nav-item">Clients</a>
+      <a href="{home_prefix}index.html#contact" class="mobile-nav-item">Contact</a>
+    </nav>
+    <div class="mobile-nav-contact-footer">
+      <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
+        WhatsApp Bureau &rarr;
+      </a>
+    </div>
+  </div>
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>"""
 
 print(f"Loaded {len(PROJECTS)} projects. Building static project pages...")
 
@@ -300,9 +285,15 @@ for i, p in enumerate(PROJECTS):
         <a href="../IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="monograph-btn" title="Download Monograph PDF">
           Monograph PDF
         </a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  {render_mobile_drawer("../")}
 
   <main id="main-content">
     <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
@@ -684,9 +675,15 @@ homepage_html = f"""<!DOCTYPE html>
         <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="monograph-btn" title="Download Official Monograph (81 Pages PDF)">
           Monograph PDF
         </a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  {render_mobile_drawer("")}
 
   <main id="main-content">
     <!-- ========================================================================
@@ -808,7 +805,7 @@ homepage_html = f"""<!DOCTYPE html>
           <span class="portfolio-verified-count">33 Verified Commissions</span>
         </div>
 
-        <!-- Category Filter Tabs Bar (Exact User Counts) -->
+        <!-- Category Filter Tabs Bar (Exact User Counts, Horizontal Swipe on Mobile) -->
         <div class="category-filter-bar" role="tablist" aria-label="Portfolio Category Filters">
           <button class="category-tab-btn active" data-category="all" role="tab" aria-selected="true">
             <span>All Projects</span> <span class="tab-count">(33)</span>
