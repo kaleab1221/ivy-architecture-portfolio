@@ -1262,6 +1262,25 @@ img {
   color: var(--text-primary);
 }
 
+.form-status-notice {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.form-status-notice.success {
+  border-left: 3px solid var(--accent-bronze);
+  color: var(--text-primary);
+}
+
+.form-status-notice.error {
+  border-left: 3px solid #d9534f;
+  color: #d9534f;
+}
+
 /* ==========================================================================
    10. FOOTER
    ========================================================================== */

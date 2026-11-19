@@ -192,6 +192,58 @@
       });
     }
 
+    // Project Inquiry Form Submission
+    const inquiryForm = document.getElementById('projectInquiryForm');
+    if (inquiryForm) {
+      inquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = (document.getElementById('clientName')?.value || '').trim();
+        const org = (document.getElementById('clientOrganization')?.value || '').trim();
+        const email = (document.getElementById('clientEmail')?.value || '').trim();
+        const phone = (document.getElementById('clientPhone')?.value || '').trim();
+        const typology = document.getElementById('projectTypology')?.value || '';
+        const location = (document.getElementById('projectLocation')?.value || '').trim();
+        const description = (document.getElementById('projectDescription')?.value || '').trim();
+        const statusNotice = document.getElementById('formStatusNotice');
+
+        if (!name || !org || !email || !phone || !typology || !location || !description) {
+          if (statusNotice) {
+            statusNotice.style.display = 'block';
+            statusNotice.className = 'form-status-notice error';
+            statusNotice.textContent = 'Please complete all required fields (* marked) before transmitting your brief.';
+          }
+          return;
+        }
+
+        const subject = encodeURIComponent(`[Project Brief] ${typology} - ${org} (${name})`);
+        const body = encodeURIComponent(
+          `IVY ARCHITECTURE & CONSTRUCTION — PROJECT INQUIRY BRIEF\n` +
+          `=======================================================\n\n` +
+          `FULL NAME: ${name}\n` +
+          `ORGANIZATION: ${org}\n` +
+          `CORPORATE EMAIL: ${email}\n` +
+          `TELEPHONE: ${phone}\n` +
+          `PROJECT TYPOLOGY: ${typology}\n` +
+          `PROJECT LOCATION: ${location}\n\n` +
+          `BRIEF & SCOPE REQUIREMENTS:\n${description}\n\n` +
+          `=======================================================\n` +
+          `Transmitted via ivy-architecture-portfolio.vercel.app`
+        );
+
+        window.location.href = `mailto:info@ivyconstruction.com?subject=${subject}&body=${body}`;
+
+        if (statusNotice) {
+          statusNotice.style.display = 'block';
+          statusNotice.className = 'form-status-notice success';
+          statusNotice.innerHTML = `
+            <strong>Project brief compiled.</strong><br>
+            Your local email client has been launched with your structured technical brief addressed to <em>info@ivyconstruction.com</em>.<br>
+            If your mail client did not open automatically, please send this brief directly to <a href="mailto:info@ivyconstruction.com" style="color: var(--accent-bronze); text-decoration: underline;">info@ivyconstruction.com</a> or telephone us at <strong>+251 91 123 4567</strong>.
+          `;
+        }
+      });
+    }
+
     // Back to Top button
     if (el.backToTopBtn) {
       el.backToTopBtn.addEventListener('click', () => {
