@@ -494,7 +494,8 @@ for idx, fp in enumerate(featured_projects):
     f_year = fp.get("year", "")
     f_cat = fp.get("typology", "")
     f_desc = fp.get("description", "")
-    f_hero = fp.get("heroImage", "")
+    f_images = fp.get("images", [])
+    f_hero = fp.get("heroImage") or (f_images[0] if f_images else "")
     f_scope = fp.get("scope", "")
 
     featured_section_html += f"""
@@ -557,7 +558,8 @@ for p in PROJECTS:
     p_scale = p.get("scale", "")
     p_desc = p.get("description", "")
     p_client = p.get("client", "")
-    p_hero = p.get("heroImage", "")
+    p_images = p.get("images", [])
+    p_hero = p.get("heroImage") or (p_images[0] if p_images else "")
     p_is_feat = "true" if p.get("featured", False) else "false"
 
     cards_html += f"""
