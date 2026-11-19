@@ -352,7 +352,6 @@ for i, p in enumerate(PROJECTS):
         <a href="../index.html#services" class="nav-item">Services</a>
         <a href="../index.html#credentials" class="nav-item">Credentials</a>
         <a href="../index.html#leadership" class="nav-item">Leadership</a>
-        <a href="../index.html#contact" class="nav-item">Contact</a>
       </nav>
 
       <div class="header-tools">
@@ -766,7 +765,6 @@ homepage_html = f"""<!DOCTYPE html>
         <a href="#services" class="nav-item">Services</a>
         <a href="#credentials" class="nav-item">Credentials</a>
         <a href="#leadership" class="nav-item">Leadership</a>
-        <a href="#contact" class="nav-item">Contact</a>
       </nav>
 
       <div class="header-tools">

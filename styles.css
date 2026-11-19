@@ -142,7 +142,8 @@ button {
   padding: 0 clamp(1.5rem, 4vw, 3.5rem);
 }
 
-/* Portfolio Container: Expands across the display to fit 4 columns gracefully */
+/* Portfolio & Header Containers: Expands across the display to fit gracefully */
+.editorial-header .editorial-container,
 #portfolio .editorial-container {
   width: 100%;
   max-width: min(96vw, 1920px);
@@ -152,6 +153,7 @@ button {
 
 @media (max-width: 768px) {
   .editorial-container,
+  .editorial-header .editorial-container,
   #portfolio .editorial-container {
     padding: 0 1.25rem;
   }
@@ -228,6 +230,7 @@ button {
 .editorial-header {
   position: sticky;
   top: 0;
+  width: 100%;
   height: var(--header-height);
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--rule-color);
@@ -242,6 +245,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(1rem, 2vw, 2.5rem);
   width: 100%;
   overflow: visible;
 }
@@ -249,12 +253,14 @@ button {
 .brand-link {
   display: flex;
   align-items: baseline;
-  gap: 0.85rem;
+  gap: clamp(0.55rem, 0.9vw, 0.85rem);
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 .brand-serif {
   font-family: var(--font-sans);
-  font-size: 2.25rem;
+  font-size: clamp(1.95rem, 2.2vw, 2.25rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -263,16 +269,17 @@ button {
 
 .brand-sub {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: clamp(0.72rem, 0.8vw, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-secondary);
   border-left: 1px solid var(--rule-color);
-  padding-left: 0.85rem;
+  padding-left: clamp(0.6rem, 0.8vw, 0.85rem);
+  white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .brand-sub {
     display: none;
   }
@@ -281,11 +288,12 @@ button {
 .editorial-nav {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: clamp(1.15rem, 1.8vw, 2.25rem);
   list-style: none;
+  flex-shrink: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .editorial-nav {
     display: none;
   }
@@ -293,13 +301,15 @@ button {
 
 .nav-item {
   font-family: var(--font-sans);
-  font-size: 1.02rem;
+  font-size: clamp(0.88rem, 0.95vw, 1rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-primary);
   position: relative;
   padding: 0.4rem 0;
+  white-space: nowrap;
+  text-decoration: none;
 }
 .nav-item:hover {
   color: var(--accent-muted);
@@ -321,7 +331,8 @@ button {
 .header-tools {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: clamp(0.65rem, 1vw, 1.25rem);
+  flex-shrink: 0;
 }
 
 .theme-toggle {
@@ -1962,7 +1973,7 @@ button {
   transition: all var(--transition-subtle);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .mobile-menu-btn {
     display: flex;
   }
