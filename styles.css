@@ -488,9 +488,9 @@ button {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(10, 10, 10, 0.94) 0%,
-    rgba(10, 10, 10, 0.82) 42%,
-    rgba(10, 10, 10, 0.52) 72%,
+    rgba(10, 10, 10, 0.96) 0%,
+    rgba(10, 10, 10, 0.88) 48%,
+    rgba(10, 10, 10, 0.58) 78%,
     transparent 100%
   ), linear-gradient(
     to bottom,
@@ -528,15 +528,15 @@ button {
 
 .hero-meta-strip {
   font-family: var(--font-sans);
-  font-size: clamp(0.88rem, 1.1vw, 1.1rem);
+  font-size: clamp(1.2rem, 1.65vw, 1.65rem);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #E5A65D;
   display: flex;
   align-items: center;
-  gap: 0.95rem;
-  margin-bottom: clamp(1.2rem, 2.2vh, 1.85rem);
+  gap: 1.15rem;
+  margin-bottom: clamp(1.5rem, 2.8vh, 2.5rem);
   flex-wrap: wrap;
 }
 
@@ -546,29 +546,29 @@ button {
 
 .hero-editorial-headline {
   font-family: var(--font-sans);
-  font-size: clamp(3.25rem, 6.2vw, 5.85rem);
+  font-size: clamp(4.5rem, 9.3vw, 8.75rem);
   font-weight: 800;
-  line-height: 1.04;
+  line-height: 1.02;
   letter-spacing: -0.035em;
   color: var(--text-primary);
-  max-width: 1300px;
-  margin-bottom: clamp(1.35rem, 2.6vh, 2.25rem);
-  text-shadow: 0 3px 28px rgba(0, 0, 0, 0.55);
+  max-width: 1550px;
+  margin-bottom: clamp(1.85rem, 3.5vh, 3rem);
+  text-shadow: 0 4px 35px rgba(0, 0, 0, 0.65);
 }
 
 .hero-editorial-lead {
-  font-size: clamp(1.25rem, 1.65vw, 1.65rem);
-  line-height: 1.62;
+  font-size: clamp(1.65rem, 2.45vw, 2.45rem);
+  line-height: 1.55;
   color: #dedbd2;
-  max-width: 1000px;
-  margin-bottom: clamp(2.25rem, 4vh, 3.25rem);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+  max-width: 1250px;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
 }
 
 .hero-actions-row {
   display: flex;
   align-items: center;
-  gap: clamp(1.15rem, 1.8vw, 1.65rem);
+  gap: clamp(1.35rem, 2.2vw, 2.25rem);
   flex-wrap: wrap;
 }
 
@@ -576,11 +576,11 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1rem, 1.8vh, 1.25rem) clamp(2rem, 2.4vw, 2.85rem);
+  padding: clamp(1.35rem, 2.4vh, 1.85rem) clamp(2.85rem, 3.4vw, 4.25rem);
   background-color: #FFFFFF;
   color: #0a0a09;
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(19px, 1.5vw, 24px);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 700;
@@ -598,11 +598,11 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1rem, 1.8vh, 1.25rem) clamp(2rem, 2.4vw, 2.85rem);
+  padding: clamp(1.35rem, 2.4vh, 1.85rem) clamp(2.85rem, 3.4vw, 4.25rem);
   background-color: rgba(255, 255, 255, 0.03);
   color: #FFFFFF;
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(19px, 1.5vw, 24px);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 700;
@@ -639,11 +639,11 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1rem, 1.8vh, 1.25rem) clamp(2rem, 2.4vw, 2.85rem);
+  padding: clamp(1.35rem, 2.4vh, 1.85rem) clamp(2.85rem, 3.4vw, 4.25rem);
   background-color: rgba(255, 255, 255, 0.03);
   color: #FFFFFF;
   font-family: var(--font-sans);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(19px, 1.5vw, 24px);
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 700;
@@ -659,25 +659,26 @@ button {
 
 @media (max-width: 768px) {
   .hero-editorial-headline {
-    font-size: clamp(2.35rem, 8.5vw, 3.25rem);
-    line-height: 1.1;
+    font-size: clamp(2.85rem, 11vw, 4.25rem);
+    line-height: 1.08;
   }
   .hero-editorial-lead {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.35rem;
+    line-height: 1.55;
   }
   .hero-actions-row {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    gap: 0.85rem;
+    gap: 1rem;
   }
   .btn-editorial-primary,
   .btn-editorial-secondary,
   .btn-editorial-whatsapp {
     width: 100%;
     justify-content: center;
-    padding: 0.95rem 1.5rem;
+    padding: 1.15rem 1.85rem;
+    font-size: 1.15rem;
   }
 }
 
