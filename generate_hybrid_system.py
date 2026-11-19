@@ -94,29 +94,54 @@ def theme_toggle_button():
 def render_professional_footer(home_prefix=""):
     return f"""  <footer class="editorial-footer">
     <div class="editorial-container">
-      <!-- 2-Column Minimal Architectural Studio Footer -->
-      <div class="footer-primary-grid footer-two-col">
-        <!-- Col 1: International Operating Bureaus -->
+      <!-- 4-Column Balanced Architectural Studio Footer -->
+      <div class="footer-primary-grid footer-four-col">
+        <!-- Col 1: Studio Identity & Monograph -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand-lockup">
+            <span class="footer-brand-title">IVY</span>
+            <span class="footer-brand-subtitle">ARCHITECTURE &middot; ENGINEERING &middot; CONSTRUCTION</span>
+          </div>
+          <p class="footer-studio-bio">
+            An integrated multidisciplinary practice delivering landmark commercial towers, multi-family residential communities, and civic infrastructure across East Africa.
+          </p>
+          <a href="{home_prefix}assets/monograph/IVY_Architecture_Monograph_2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-footer-monograph">
+            Studio Monograph (PDF) &rarr;
+          </a>
+        </div>
+
+        <!-- Col 2: Practice Index Navigation -->
+        <div class="footer-col footer-col-index">
+          <h4 class="footer-heading-mono">[01] Practice Index</h4>
+          <ul class="footer-nav-list">
+            <li><a href="{home_prefix}#featured">Featured Spreads</a></li>
+            <li><a href="{home_prefix}#portfolio">Portfolio Grid</a></li>
+            <li><a href="{home_prefix}#services">Integrated Services</a></li>
+            <li><a href="{home_prefix}#credentials">Statutory Credentials</a></li>
+            <li><a href="{home_prefix}#leadership">Executive Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Operating Bureaus (without duplicate phone number) -->
         <div class="footer-col footer-col-bureaus">
-          <h4 class="footer-heading-mono">[01] Operating Bureaus</h4>
+          <h4 class="footer-heading-mono">[02] Operating Bureaus</h4>
           <div class="footer-bureau-item">
-            <strong class="bureau-city">Addis Ababa &mdash; Principal Design Studio [HQ]</strong>
+            <strong class="bureau-city">Addis Ababa &mdash; Principal Studio [HQ]</strong>
             <p class="bureau-addr">Bole Commercial District, Alem Building, Addis Ababa, Ethiopia</p>
-            <p class="bureau-comm">Tel: <a href="tel:+251911234567">+251 91 123 4567</a></p>
           </div>
           <div class="footer-bureau-item">
-            <strong class="bureau-city">Juba &mdash; Regional Operations Bureau</strong>
-            <p class="bureau-addr">Central Commercial Sector, Juba, Republic of South Sudan</p>
+            <strong class="bureau-city">Juba &mdash; Regional Bureau</strong>
+            <p class="bureau-addr">Central Commercial Sector, Juba, South Sudan</p>
           </div>
           <div class="footer-bureau-item">
-            <strong class="bureau-city">Erbil &mdash; Logistics &amp; Prefabrication Partner</strong>
-            <p class="bureau-addr">Specialized Procurement &amp; Freight Forwarding, Erbil, Iraq</p>
+            <strong class="bureau-city">Erbil &mdash; Logistics Partner</strong>
+            <p class="bureau-addr">Specialized Procurement &amp; Freight, Erbil, Iraq</p>
           </div>
         </div>
 
-        <!-- Col 2: Direct Inquiries & Communications -->
+        <!-- Col 4: Communications & Inquiries -->
         <div class="footer-col footer-col-comms">
-          <h4 class="footer-heading-mono">[02] Communications &amp; Inquiries</h4>
+          <h4 class="footer-heading-mono">[03] Communications</h4>
           <ul class="footer-contact-links">
             <li>
               <span class="contact-lbl">Direct Partner Line:</span>
@@ -140,7 +165,7 @@ def render_professional_footer(home_prefix=""):
         </div>
       </div>
 
-      <!-- Bottom Sub-Footer Bar with Hairline Divider -->
+      <!-- Bottom Sub-Footer Bar with 12px / #9CA3AF Legal Contrast -->
       <div class="footer-bottom-bar">
         <div class="footer-legal-copy">
           &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; Statutory License: FDRE-MUDI-GC-001 &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
@@ -551,7 +576,44 @@ for idx, fp in enumerate(featured_projects):
     </article>
     """
 
-# Build Complete 3-Column Architectural Project Cards Grid (all 33 projects)
+# Dedicated 2-to-3-line card summaries for all 33 projects (complete sentences, ~130-165 chars, no CSS truncation)
+CARD_SUMMARIES = {
+    "ivy-01": "Refined urban residential apartments in Addis Ababa featuring sculpted balconies, generous natural light, and climate-responsive natural ventilation.",
+    "ivy-02": "Intimate luxury residential enclave combining secure entry, open-concept living suites, and expansive cantilevered terraces overlooking the city.",
+    "ivy-03": "Landmark twin G+10 commercial towers and luxury residences anchoring central Juba with retail gallerias, rooftop recreation, and subterranean parking.",
+    "ivy-04": "Dynamic multi-tier commercial complex under active construction in Juba, integrating corporate floorplates, retail boulevards, and dual-layer glazing.",
+    "ivy-05": "Iconic corporate headquarters on Bole Road incorporating high-performance curtain walls, deep structural caissons, and Grade-A commercial suites.",
+    "ivy-06": "Civic housing complex for the Hayat Association providing high-density residential apartments, communal green spaces, and integrated retail facilities.",
+    "ivy-07": "Official high-security residential quarter for the Ministry of Defense featuring fortified perimeter architecture and modular family layouts.",
+    "ivy-08": "Private estate for the Hagbes family blending classical proportions with modern construction standards, landscaped courts, and bespoke masonry.",
+    "ivy-09": "High-density commercial skyscraper in Erbil designed with energy-efficient sun shading, earthquake-resistant cores, and premium business suites.",
+    "ivy-10": "Mixed-use architectural landmark in Sarbet featuring dynamic cantilevered floorplates, ground-level retail arcades, and flexible office layouts.",
+    "ivy-11": "Major hospitality and commercial expansion adding luxury hotel suites, a panoramic rooftop lounge, and a multi-level atrium to the Kokeb complex.",
+    "ivy-12": "State-of-the-art commercial showroom with expansive column-free spans, heavy-duty display slabs, and integrated corporate client service offices.",
+    "ivy-13": "Academic and laboratory masterplan for Wachamo University incorporating biophilic courtyards, modular research spaces, and passive cooling shafts.",
+    "ivy-14": "Eco-engineered industrial processing facility with gravity-fed water channels, solar drying pavilions, and advanced parchment milling infrastructure.",
+    "ivy-15": "Emergency municipal services headquarters with rapid-dispatch apparatus bays, a four-story training drill tower, and resilient communications systems.",
+    "ivy-16": "Regional humanitarian operations hub featuring modular workspaces, solar micro-grid integration, and an emergency logistics coordination pavilion.",
+    "ivy-17": "Comprehensive logistics and parts distribution hub featuring heavy machinery showrooms, clear-span warehousing, and regional administrative offices.",
+    "ivy-18": "Rapid-deployment modular residential compound built with insulated sandwich panels, self-sufficient water purification, and executive field lodges.",
+    "ivy-19": "University agricultural research facility complete with specialized testing laboratories, automated irrigation hubs, and sustainable timber halls.",
+    "ivy-20": "Dedicated medical training campus featuring anatomy teaching suites, sterile research rooms, and tiered lecture halls for 800 medical students.",
+    "ivy-21": "Full-spectrum regional healthcare center featuring surgical operating theaters, emergency trauma wards, outpatient clinics, and solar back-up power.",
+    "ivy-22": "Exclusive hillside luxury villas overlooking Torhailoch Golf Club, with floor-to-ceiling panoramic glass, natural stone finishes, and infinity pools.",
+    "ivy-23": "Waterfront culinary and recreational pavilion elevated on volcanic basalt piers above Lake Hora, constructed with local timber and volcanic stone.",
+    "ivy-24": "Biophilic wellness and dining pavilion set within lush hospital grounds, incorporating cascading greenery, shaded pergolas, and healing gardens.",
+    "ivy-26": "Heavy industrial salt extraction and refining facility engineered for harsh Danakil desert conditions with high-grade anti-corrosive structural steel.",
+    "ivy-27": "High-security defense engineering and research complex set across 45 hectares in Bishoftu, featuring fortified labs and secure underground bunkers.",
+    "ivy-28": "Monumental civic landmark featuring an expansive congregational prayer hall, a ceremonial arch tower, and intricately detailed Islamic geometric stonework.",
+    "ivy-29": "Progressive educational campus designed around a bold V-shaped academic building featuring vibrant polychromatic solar louvers and sports grounds.",
+    "ivy-30": "Completed early childhood educational facility utilizing colorful architectural alphabet murals, secure outdoor playgrounds, and sunlit classrooms.",
+    "ivy-31": "Stately neoclassical private villa featuring double-height Corinthian columns, grand stone porticos, symmetrical wings, and refined interior moldings.",
+    "ivy-32": "Strategic transportation hub and highway motel complex featuring automated fuel canopies, traveler suites, and full-service dining facilities.",
+    "ivy-33": "Cliffside hospitality resort perched atop volcanic crags overlooking Lake Bishoftu, with cantilevered viewing decks, luxury chalets, and spa suites.",
+    "ivy-34": "Heritage hospitality development in historic Gondar celebrating traditional stone craft, timber balconies, and panoramic rooftop restaurant vistas."
+}
+
+# Build Complete 4-Column Architectural Project Cards Grid (all 33 projects)
 cards_html = ""
 for p in PROJECTS:
     p_id = p["id"]
@@ -570,6 +632,7 @@ for p in PROJECTS:
     p_images = p.get("images", [])
     p_hero = p.get("heroImage") or (p_images[0] if p_images else "")
     p_is_feat = "true" if p.get("featured", False) else "false"
+    p_card_summary = CARD_SUMMARIES.get(p_id, clean_excerpt(p_desc, 175))
 
     cards_html += f"""
     <article class="project-card" data-category="{p_cat}" data-featured="{p_is_feat}" data-country="{p_country}" data-title="{p_title.lower()}" data-city="{p_city.lower()}" data-client="{p_client.lower()}">
@@ -591,7 +654,7 @@ for p in PROJECTS:
           <a href="projects/{p_id}.html">{p_title}</a>
         </h3>
         <p class="card-location">{p_city}, {p_country}</p>
-        <p class="card-description">{clean_excerpt(p_desc, 175)}</p>
+        <p class="card-description">{p_card_summary}</p>
         <div class="card-footer">
           <span class="card-scale">{p_scale}</span>
           <a href="projects/{p_id}.html" class="card-link-arrow">
@@ -739,7 +802,7 @@ homepage_html = f"""<!DOCTYPE html>
           <a href="#portfolio" class="btn-editorial-secondary">
             Portfolio Grid
           </a>
-          <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
+          <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-secondary">
             WhatsApp Bureau &rarr;
           </a>
         </div>
