@@ -276,7 +276,7 @@ window.IVY_PROJECTS = [
     "structure": "Monolithic Cantilevered Post-Tensioned Concrete Volumes",
     "envelope": "Motorized Minimal-Profile Sliding Glass Pocket Facades",
     "climate": "Waterbody Microclimate Cooling via Negative-Edge Pool",
-    "featured": true,
+    "featured": false,
     "gridSpan": "span-2"
   },
   {
@@ -310,7 +310,7 @@ window.IVY_PROJECTS = [
     "structure": "Reinforced Cast-in-Place Concrete Framework",
     "envelope": "High-Performance Glazing with Architectural Masonry",
     "climate": "Passive Solar Shading & Natural Cross Ventilation",
-    "featured": false,
+    "featured": true,
     "gridSpan": "span-1"
   },
   {
@@ -639,7 +639,7 @@ window.IVY_PROJECTS = [
     "structure": "Elevated Hot-Dip Galvanized Stilt Modular Steel Substructures",
     "envelope": "High-R Insulated Pre-Engineered Architectural Panels",
     "climate": "Elevated Floor Plenums for Ground Heat Isolation & Monsoonal Runoff",
-    "featured": true,
+    "featured": false,
     "gridSpan": "span-2"
   },
   {
@@ -778,7 +778,7 @@ window.IVY_PROJECTS = [
     "structure": "Cantilevered Reinforced Concrete Beams with Steel Columns",
     "envelope": "Floor-to-Ceiling Thermal Break Aluminum Glazing",
     "climate": "Cross-Ventilated Fairway Breezeways & Shaded Terraces",
-    "featured": true,
+    "featured": false,
     "gridSpan": "span-2"
   },
   {
@@ -917,7 +917,7 @@ window.IVY_PROJECTS = [
     "structure": "Reinforced Cast-in-Place Concrete Framework",
     "envelope": "High-Performance Glazing with Architectural Masonry",
     "climate": "Passive Solar Shading & Natural Cross Ventilation",
-    "featured": false,
+    "featured": true,
     "gridSpan": "span-1"
   },
   {
