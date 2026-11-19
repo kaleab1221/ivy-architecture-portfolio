@@ -42,8 +42,7 @@ Featuring **34 landmark commissions** spanning high-rise commercial towers, inst
 4. **Hagbes Heavy Machinery Showroom & Sales Center (`ADD-09`)** — Aerodynamic curved structural glass pavilion in Gelan.
 5. **Hagbes Family Modernist Estate (`ADD-06`)** — Cantilevered private luxury villa with swimming pool in Bisrate Gebriel.
 6. **GPOC Petrol VIP Residences & Modular Base Camp (`SSD-01`)** — Remote energy sector accommodation and pre-engineered compound in South Sudan.
-7. **Evergreen 2,000-Hectare Farm & Avocado Oil Plant (`AFA-01`)** — Mega agro-industrial estate and cold-press refinery in the Afar Region.
-8. **Erbil Mixed-Use Commercial Tower (`ERB-01`)** — 24-Story high-rise with vertical garden balconies in Erbil, Iraq.
+7. **Erbil Mixed-Use Commercial Tower (`ERB-01`)** — 24-Story high-rise with vertical garden balconies in Erbil, Iraq.
 
 ---
 

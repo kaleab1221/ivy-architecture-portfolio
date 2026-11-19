@@ -853,40 +853,6 @@
     "gridSpan": "span-1"
   },
   {
-    "id": "ivy-25",
-    "code": "AFA-01",
-    "title": "Evergreen 2,000-Hectare Farm & Avocado Oil Plant",
-    "subtitle": "Mega Agro-Industrial Estate & Cold-Press Factory",
-    "typology": "Industrial & Infrastructure",
-    "category": "industrial",
-    "location": "Ewa Woreda, Afar Region, Ethiopia",
-    "city": "Afar Region",
-    "country": "Ethiopia",
-    "status": "Design & Supervision",
-    "statusType": "design",
-    "year": "2024",
-    "client": "Ever-Green Construction / Organic Farming PLC",
-    "scale": "2,000 Hectares / 28,000 m² Processing Plant",
-    "scope": "Agricultural Masterplanning, Industrial Architecture",
-    "description": "One of the most expansive private agro-industrial developments in the Horn of Africa. Masterplan spans 2,000 hectares of precision-irrigated avocado orchards, an autonomous 'Minimum Viable City' community for workers, and an industrial cold-press avocado oil processing factory.",
-    "keyFeatures": [
-      "2,000-hectare precision canal irrigation grid",
-      "High-capacity avocado oil processing refinery",
-      "Autonomous worker community housing & clinic",
-      "Logistics highway connection and cold-chain staging"
-    ],
-    "images": [
-      "images/projects/ivy-25/page_65_img1.jpeg",
-      "images/projects/ivy-25/page_65_img11.jpeg"
-    ],
-    "heroImage": "images/projects/ivy-25/page_65_img1.jpeg",
-    "structure": "Engineered Industrial Steel Portal Frames & Heavy Concrete Pads",
-    "envelope": "Insulated Sandwich Panels with Anti-Corrosive Coating",
-    "climate": "Solar Farm Integration & Closed-Loop Zero-Waste Agro-Hydrology",
-    "featured": true,
-    "gridSpan": "span-2"
-  },
-  {
     "id": "ivy-26",
     "code": "AFA-02",
     "title": "Kingdon Salt Processing Factory",
