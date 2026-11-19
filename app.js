@@ -27,21 +27,9 @@
     mobileNavClose: document.getElementById('mobileNavClose'),
     navLinks: document.querySelectorAll('.nav-link, .mobile-nav-link'),
 
-    // Projects Toolbar & Views
+    // Projects Grid & Filters
     typologyFilters: document.getElementById('typologyFilters'),
-    searchInput: document.getElementById('searchInput'),
-    viewGridBtn: document.getElementById('viewGridBtn'),
-    viewListBtn: document.getElementById('viewListBtn'),
-    viewRegionsBtn: document.getElementById('viewRegionsBtn'),
     viewGridContainer: document.getElementById('viewGridContainer'),
-    viewListContainer: document.getElementById('viewListContainer'),
-    viewRegionsContainer: document.getElementById('viewRegionsContainer'),
-
-    // Table Hover Preview
-    hoverPreviewCard: document.getElementById('hoverPreviewCard'),
-    hoverPreviewImg: document.getElementById('hoverPreviewImg'),
-    hoverPreviewTitle: document.getElementById('hoverPreviewTitle'),
-    hoverPreviewMeta: document.getElementById('hoverPreviewMeta'),
 
     // Case Study Modal Drawer
     modalBackdrop: document.getElementById('modalBackdrop'),
@@ -143,19 +131,6 @@
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => el.mobileNavDrawer.classList.remove('open'));
     });
-
-    // View switchers
-    if (el.viewGridBtn) el.viewGridBtn.addEventListener('click', () => setView('grid'));
-    if (el.viewListBtn) el.viewListBtn.addEventListener('click', () => setView('list'));
-    if (el.viewRegionsBtn) el.viewRegionsBtn.addEventListener('click', () => setView('regions'));
-
-    // Search input
-    if (el.searchInput) {
-      el.searchInput.addEventListener('input', (e) => {
-        state.searchQuery = e.target.value.trim().toLowerCase();
-        render();
-      });
-    }
 
     // Modal controls
     if (el.modalCloseBtn) el.modalCloseBtn.addEventListener('click', closeModal);
@@ -262,22 +237,6 @@
       }
     }, { passive: true });
 
-    // Floating preview mouse tracking
-    window.addEventListener('mousemove', (e) => {
-      if (el.hoverPreviewCard && el.hoverPreviewCard.classList.contains('visible')) {
-        const offset = 20;
-        let x = e.clientX + offset;
-        let y = e.clientY + offset;
-
-        // Keep inside viewport bounds
-        if (x + 340 > window.innerWidth) x = e.clientX - 340;
-        if (y + 240 > window.innerHeight) y = e.clientY - 240;
-
-        el.hoverPreviewCard.style.left = `${x}px`;
-        el.hoverPreviewCard.style.top = `${y}px`;
-      }
-    });
-
     // Window Popstate (Deep Link Hash)
     window.addEventListener('popstate', handleHashRouting);
   }
@@ -298,7 +257,6 @@
 
     const categories = [
       { key: 'featured', label: 'Featured Works' },
-      { key: 'all', label: 'All Commissions' },
       { key: 'residential', label: 'Residential' },
       { key: 'mixed-use', label: 'Mixed-Use' },
       { key: 'corporate', label: 'Corporate' },
@@ -308,9 +266,7 @@
     ];
 
     el.typologyFilters.innerHTML = categories.map(cat => {
-      const count = cat.key === 'all'
-        ? state.projects.length
-        : cat.key === 'featured'
+      const count = cat.key === 'featured'
         ? state.projects.filter(p => p.featured).length
         : state.projects.filter(p => {
             if (cat.key === 'education') return p.category === 'education' || p.category === 'healthcare';
@@ -339,64 +295,20 @@
   // Filter Logic
   function getFilteredProjects() {
     return state.projects.filter(p => {
-      // Category filter
-      let matchesCategory = false;
-      if (state.currentTypology === 'all') {
-        matchesCategory = true;
-      } else if (state.currentTypology === 'featured') {
-        matchesCategory = p.featured === true;
+      if (state.currentTypology === 'featured') {
+        return p.featured === true;
       } else if (state.currentTypology === 'education') {
-        matchesCategory = p.category === 'education' || p.category === 'healthcare';
+        return p.category === 'education' || p.category === 'healthcare';
       } else {
-        matchesCategory = p.category === state.currentTypology;
+        return p.category === state.currentTypology;
       }
-
-      // Search filter
-      let matchesSearch = true;
-      if (state.searchQuery) {
-        const query = state.searchQuery;
-        const haystack = [
-          p.title,
-          p.location,
-          p.city,
-          p.country,
-          p.typology,
-          p.client,
-          p.code,
-          p.scope
-        ].join(' ').toLowerCase();
-        matchesSearch = haystack.includes(query);
-      }
-
-      return matchesCategory && matchesSearch;
     });
   }
 
-  // View Switching
-  function setView(viewName) {
-    state.currentView = viewName;
-    if (el.viewGridBtn) el.viewGridBtn.classList.toggle('active', viewName === 'grid');
-    if (el.viewListBtn) el.viewListBtn.classList.toggle('active', viewName === 'list');
-    if (el.viewRegionsBtn) el.viewRegionsBtn.classList.toggle('active', viewName === 'regions');
-    
-    if (el.viewGridContainer) el.viewGridContainer.style.display = viewName === 'grid' ? 'grid' : 'none';
-    if (el.viewListContainer) el.viewListContainer.style.display = viewName === 'list' ? 'block' : 'none';
-    if (el.viewRegionsContainer) el.viewRegionsContainer.style.display = viewName === 'regions' ? 'flex' : 'none';
-    
-    render();
-  }
-
-  // Master Render
+  // Master Render (Always 3-Column Editorial Grid)
   function render() {
     const filtered = getFilteredProjects();
-
-    if (state.currentView === 'grid') {
-      renderGrid(filtered);
-    } else if (state.currentView === 'list') {
-      renderTable(filtered);
-    } else if (state.currentView === 'regions') {
-      renderRegions(filtered);
-    }
+    renderGrid(filtered);
   }
 
   // Render 3-Column Editorial Grid
@@ -447,157 +359,6 @@
 
     // Attach card click handlers
     el.viewGridContainer.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => openModal(card.dataset.id));
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openModal(card.dataset.id);
-        }
-      });
-    });
-  }
-
-  // Render Complete Architectural Table Index
-  function renderTable(projects) {
-    if (!el.viewListContainer) return;
-
-    if (projects.length === 0) {
-      el.viewListContainer.innerHTML = `
-        <div style="padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
-          NO PROJECTS FOUND MATCHING SELECTION CRITERIA.
-        </div>
-      `;
-      return;
-    }
-
-    const tableHtml = `
-      <table class="projects-table">
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Project Title</th>
-            <th>Typology</th>
-            <th>Location</th>
-            <th>Scale / Area</th>
-            <th>Status</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${projects.map(p => `
-            <tr class="table-row" data-id="${p.id}" data-img="${p.heroImage}" data-title="${p.title}" data-loc="${p.location}">
-              <td style="color: var(--accent-bronze); font-weight: 700;">[${p.code}]</td>
-              <td style="color: var(--text-primary); font-weight: 600;">${p.title}</td>
-              <td>${p.typology}</td>
-              <td>${p.location}</td>
-              <td>${p.scale}</td>
-              <td>${p.status}</td>
-              <td>${p.year || '—'}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    `;
-
-    el.viewListContainer.innerHTML = tableHtml;
-
-    // Attach row events
-    el.viewListContainer.querySelectorAll('.table-row').forEach(row => {
-      row.addEventListener('click', () => openModal(row.dataset.id));
-
-      row.addEventListener('mouseenter', () => {
-        if (!el.hoverPreviewCard) return;
-        el.hoverPreviewImg.src = row.dataset.img;
-        el.hoverPreviewTitle.textContent = row.dataset.title;
-        el.hoverPreviewMeta.textContent = row.dataset.loc;
-        el.hoverPreviewCard.classList.add('visible');
-      });
-
-      row.addEventListener('mouseleave', () => {
-        if (!el.hoverPreviewCard) return;
-        el.hoverPreviewCard.classList.remove('visible');
-      });
-    });
-  }
-
-  // Render Regional Territory Matrix View
-  function renderRegions(projects) {
-    if (!el.viewRegionsContainer) return;
-
-    if (projects.length === 0) {
-      el.viewRegionsContainer.innerHTML = `
-        <div style="padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
-          NO PROJECTS FOUND MATCHING SELECTION CRITERIA.
-        </div>
-      `;
-      return;
-    }
-
-    const regions = [
-      {
-        id: 'ethiopia',
-        name: 'Ethiopia Principal Studio',
-        badge: 'HQ Bureau',
-        desc: 'Capital commercial towers, university campuses, regional hospitals, and multi-family residential developments across Addis Ababa, Oromia, Gambella, and Afar.',
-        filter: p => p.country === 'Ethiopia'
-      },
-      {
-        id: 'south-sudan',
-        name: 'South Sudan Regional Operations',
-        badge: 'Regional Bureau',
-        desc: 'Key civic, humanitarian, commercial, and healthcare developments across Juba and regional corridors.',
-        filter: p => p.country === 'South Sudan'
-      },
-      {
-        id: 'international',
-        name: 'International Logistics & Commissions',
-        badge: 'Cross-Border Hub',
-        desc: 'International high-rise architecture and specialized procurement networks in Erbil, Kurdistan Region, Iraq.',
-        filter: p => p.country === 'Iraq' || (p.country !== 'Ethiopia' && p.country !== 'South Sudan')
-      }
-    ];
-
-    el.viewRegionsContainer.innerHTML = regions.map(reg => {
-      const regProjects = projects.filter(reg.filter);
-      if (regProjects.length === 0) return '';
-
-      return `
-        <div class="territory-group">
-          <div class="territory-header">
-            <div class="territory-title-wrap">
-              <span class="territory-badge">${reg.badge}</span>
-              <h3 class="territory-name">${reg.name}</h3>
-            </div>
-            <span class="territory-count">${regProjects.length} Works</span>
-          </div>
-          <p class="territory-desc">${reg.desc}</p>
-          <div class="territory-projects-grid">
-            ${regProjects.map(p => `
-              <article class="project-card" data-id="${p.id}" tabindex="0">
-                <div class="card-media-wrapper">
-                  <span class="card-badge-code">[${p.code}]</span>
-                  <span class="card-badge-status status-${p.statusType || 'design'}">
-                    <span class="status-dot"></span>${p.status}
-                  </span>
-                  <img src="${p.heroImage}" alt="${p.title}" loading="lazy">
-                </div>
-                <div class="card-content">
-                  <span class="card-typology">${p.typology}</span>
-                  <h4 class="card-title">${p.title}</h4>
-                  <div class="card-footer-meta">
-                    <span>${p.city}, ${p.country}</span>
-                    <span class="card-arrow">&rarr;</span>
-                  </div>
-                </div>
-              </article>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    // Attach click events
-    el.viewRegionsContainer.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', () => openModal(card.dataset.id));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
