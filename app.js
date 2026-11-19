@@ -111,7 +111,6 @@
     setupClock();
     setupEventListeners();
     await loadProjectData();
-    initHero();
     renderTypologyFilters();
     render();
     handleHashRouting();
@@ -204,10 +203,10 @@
       render();
     });
 
-    // Hero buttons
-    el.heroPrevBtn.addEventListener('click', () => { prevHero(); resetHeroTimer(); });
-    el.heroNextBtn.addEventListener('click', () => { nextHero(); resetHeroTimer(); });
-    el.heroExploreBtn.addEventListener('click', () => {
+    // Hero buttons (if present)
+    if (el.heroPrevBtn) el.heroPrevBtn.addEventListener('click', () => { prevHero(); resetHeroTimer(); });
+    if (el.heroNextBtn) el.heroNextBtn.addEventListener('click', () => { nextHero(); resetHeroTimer(); });
+    if (el.heroExploreBtn) el.heroExploreBtn.addEventListener('click', () => {
       const heroProjects = getHeroProjects();
       const current = heroProjects[state.heroIndex];
       if (current) openModal(current.id);
@@ -292,8 +291,6 @@
         el.rfpForm.reset();
       });
     }
-
-    resetHeroTimer();
   }
 
   // Toast notification
@@ -315,90 +312,6 @@
     }).catch(() => {
       showToast('Deep-link active: ' + window.location.hash);
     });
-  }
-
-  // Hero section management
-  function getHeroProjects() {
-    return state.projects.filter(p => HERO_PROJECT_IDS.includes(p.id));
-  }
-
-  function initHero() {
-    const heroProjects = getHeroProjects();
-    if (!heroProjects || heroProjects.length === 0) return;
-
-    // Render slides
-    el.heroSliderContainer.innerHTML = heroProjects.map((p, idx) => `
-      <div class="hero-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
-        <img src="${p.heroImage}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}">
-      </div>
-    `).join('');
-
-    // Render segmented progress bars
-    if (el.heroProgressBars) {
-      el.heroProgressBars.innerHTML = heroProjects.map((_, idx) => `
-        <div class="progress-segment ${idx === 0 ? 'active' : ''}" data-index="${idx}">
-          <div class="progress-fill"></div>
-        </div>
-      `).join('');
-
-      el.heroProgressBars.querySelectorAll('.progress-segment').forEach(seg => {
-        seg.addEventListener('click', (e) => {
-          state.heroIndex = parseInt(e.currentTarget.dataset.index, 10);
-          updateHeroDisplay();
-          resetHeroTimer();
-        });
-      });
-    }
-
-    updateHeroDisplay();
-  }
-
-  function updateHeroDisplay() {
-    const heroProjects = getHeroProjects();
-    if (!heroProjects || heroProjects.length === 0) return;
-    const p = heroProjects[state.heroIndex];
-    if (!p) return;
-
-    // Update slides
-    document.querySelectorAll('.hero-slide').forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === state.heroIndex);
-    });
-
-    // Update progress segments
-    if (el.heroProgressBars) {
-      el.heroProgressBars.querySelectorAll('.progress-segment').forEach((seg, idx) => {
-        seg.classList.toggle('active', idx === state.heroIndex);
-        seg.classList.toggle('completed', idx < state.heroIndex);
-      });
-    }
-
-    // Update textual meta
-    el.heroIndexBadge.textContent = `${String(state.heroIndex + 1).padStart(2, '0')} / ${String(heroProjects.length).padStart(2, '0')}`;
-    el.heroCodeSpan.textContent = `[${p.code}]`;
-    el.heroTypologySpan.textContent = p.typology.toUpperCase();
-    el.heroTitle.textContent = p.title;
-    el.heroLocation.textContent = p.location;
-    el.heroTypology.textContent = p.typology;
-    el.heroScale.textContent = p.scale;
-  }
-
-  function nextHero() {
-    const heroProjects = getHeroProjects();
-    if (!heroProjects.length) return;
-    state.heroIndex = (state.heroIndex + 1) % heroProjects.length;
-    updateHeroDisplay();
-  }
-
-  function prevHero() {
-    const heroProjects = getHeroProjects();
-    if (!heroProjects.length) return;
-    state.heroIndex = (state.heroIndex - 1 + heroProjects.length) % heroProjects.length;
-    updateHeroDisplay();
-  }
-
-  function resetHeroTimer() {
-    if (state.heroTimer) clearInterval(state.heroTimer);
-    state.heroTimer = setInterval(nextHero, 6500);
   }
 
   // Typology filters rendering
