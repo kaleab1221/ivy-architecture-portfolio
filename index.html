@@ -531,81 +531,128 @@
       </div>
     </section>
 
+    <!-- ========================================================================
+         09. CONTACT & PROJECT INQUIRY (DISCUSS A PROJECT)
+         ======================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-eyebrow">Project Consultation</div>
+        <h2 class="section-headline">Discuss a Project</h2>
+        <p class="section-lead">
+          Connect directly with our senior partners and engineering directors to review your site, feasibility requirements, or general contracting scope.
+        </p>
+
+        <div class="contact-layout">
+          <!-- Left Column: Direct Executive Channels -->
+          <div class="contact-info-pane">
+            <div class="contact-block">
+              <h3>Principal Design Studio [HQ]</h3>
+              <p>Bole Subcity Commercial District, Addis Ababa, Ethiopia</p>
+              <p style="margin-top: 0.35rem;"><a href="tel:+251911234567">+251 91 123 4567</a></p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Regional Operations Bureau</h3>
+              <p>Central Commercial Sector, Juba, South Sudan</p>
+              <p style="margin-top: 0.35rem;"><a href="mailto:juba@ivyconstruction.com">juba@ivyconstruction.com</a></p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Logistics &amp; Prefabrication Partner</h3>
+              <p>Specialized Procurement &amp; Freight, Erbil, Iraq</p>
+              <p style="margin-top: 0.35rem;"><a href="mailto:erbil@ivyconstruction.com">erbil@ivyconstruction.com</a></p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Official Executive Communication</h3>
+              <p>Direct Partner Line: <a href="tel:+251911234567">+251 91 123 4567</a></p>
+              <p>Project Inquiries: <a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a></p>
+            </div>
+
+            <div style="padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color);">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-bronze); text-transform: uppercase; margin-bottom: 0.5rem;">Document Dossier</div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
+                Download the complete 81-page portfolio monograph with full architectural floor plans, sections, and technical specifications.
+              </p>
+              <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-secondary" style="width: 100%; justify-content: center; text-align: center;">
+                Download Monograph (81 Pages PDF)
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Project Brief Form -->
+          <div class="inquiry-form-card">
+            <h3>Project Consultation Brief</h3>
+            <p>Provide preliminary project details for architectural review, engineering feasibility, or general contracting inquiries.</p>
+
+            <form id="projectInquiryForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientName" class="form-label">Full Name *</label>
+                  <input type="text" id="clientName" name="name" class="form-input" required placeholder="e.g. Elias Gebremariam">
+                </div>
+                <div class="form-group">
+                  <label for="clientOrganization" class="form-label">Organization / Entity *</label>
+                  <input type="text" id="clientOrganization" name="organization" class="form-input" required placeholder="e.g. Hagbes Private Limited Co.">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientEmail" class="form-label">Corporate Email *</label>
+                  <input type="email" id="clientEmail" name="email" class="form-input" required placeholder="contact@organization.com">
+                </div>
+                <div class="form-group">
+                  <label for="clientPhone" class="form-label">Telephone Number *</label>
+                  <input type="tel" id="clientPhone" name="phone" class="form-input" required placeholder="+251 91 123 4567">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="projectTypology" class="form-label">Project Typology *</label>
+                  <select id="projectTypology" name="typology" class="form-select" required>
+                    <option value="" disabled selected>Select Typology...</option>
+                    <option value="Commercial & High-Rise Tower">Commercial &amp; High-Rise Tower</option>
+                    <option value="Multi-Family Residential">Multi-Family Residential</option>
+                    <option value="Institutional & University Campus">Institutional &amp; University Campus</option>
+                    <option value="Healthcare & Clinical Facility">Healthcare &amp; Clinical Facility</option>
+                    <option value="Industrial & Agro-Processing">Industrial &amp; Agro-Processing</option>
+                    <option value="Civic & Infrastructure">Civic &amp; Infrastructure</option>
+                    <option value="Turnkey General Contracting Scope">Turnkey General Contracting Scope</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="projectLocation" class="form-label">Project Location *</label>
+                  <input type="text" id="projectLocation" name="location" class="form-input" required placeholder="e.g. Addis Ababa, Juba, or Regional">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="projectDescription" class="form-label">Project Brief &amp; Scope Requirements *</label>
+                <textarea id="projectDescription" name="description" class="form-textarea" rows="4" required placeholder="Detail approximate site area, floor count, schedule, budget parameters, and required engineering/contracting scope..."></textarea>
+              </div>
+
+              <button type="submit" id="submitInquiryBtn" class="btn-submit">
+                Submit Consultation Request &rarr;
+              </button>
+
+              <div id="formStatusNotice" class="form-status-notice" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ========================================================================
        10. FOOTER & PRACTICE HUBS (ARCHITECTURAL MONOCHROME)
        ======================================================================== -->
-  <footer id="contact" class="site-footer">
+  <footer class="site-footer">
     <div class="container">
       <div class="footer-columns">
         <div class="footer-col footer-col-brand">
-          <h3>IVY<span class="brand-dot"></span></h3>
-          <p>
-            A multidisciplinary practice combining architecture, engineering, project management, and construction to deliver coordinated solutions across residential, commercial, institutional, and industrial developments.
-          </p>
-          <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
-            ISO 9001 Certified &middot; Grade-1 General Contractor
-          </p>
-          <div class="social-links" style="margin-top: 1.25rem;">
-            <a href="https://www.linkedin.com/company/ivy-construction" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/ivy.architecture" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="https://www.archdaily.com" target="_blank" rel="noopener noreferrer" class="social-link" title="ArchDaily Profile" aria-label="ArchDaily">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#hero">Overview</a></li>
-            <li><a href="#projects">Selected Works</a></li>
-            <li><a href="#capabilities">Capabilities</a></li>
-            <li><a href="#about">About the Practice</a></li>
-            <li><a href="#expertise">Market Sectors</a></li>
-            <li><a href="#contact">Contact &amp; Offices</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Practice Hubs</h4>
-          <ul>
-            <li><strong style="color: var(--text-primary);">Addis Ababa [HQ]</strong></li>
-            <li>Bole Commercial District, Ethiopia</li>
-            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Juba [Bureau]</strong></li>
-            <li>Central Commercial Sector, South Sudan</li>
-            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Erbil [Logistics]</strong></li>
-            <li>Cross-Border Procurement, Iraq</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Direct Communication</h4>
-          <ul>
-            <li><strong style="color: var(--text-primary);">Direct Partner Line:</strong></li>
-            <li><a href="tel:+251911234567">+251 91 123 4567</a></li>
-            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Executive Inquiries:</strong></li>
-            <li><a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a></li>
-            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Monograph Dossier:</strong></li>
-            <li><a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download>Download Monograph (81 Pages PDF)</a></li>
-          </ul>
-        </div>
-      </div>
           <h3>IVY<span class="brand-dot"></span></h3>
           <p>
             A multidisciplinary practice combining architecture, engineering, project management, and construction to deliver coordinated solutions across residential, commercial, institutional, and industrial developments.

@@ -1,46 +1,44 @@
 /* ==========================================================================
    IVY ARCHITECTURE & CONSTRUCTION PRACTICE
    Brand Design System & Architectural Editorial Theme
-   Palette: Charcoal #242522 | Warm White #F5F3EE | Stone #B7AA97 
-            Muted Bronze #A77B50 | Neutral Grey #77766F
+   Palette: Charcoal #171918 | Warm White #F4F3EF | Concrete Grey #777B75 
+            Stone #B9B6AD | Muted Bronze #967B5B
    Typography: Headings: Manrope | Body: Inter | Mono: JetBrains Mono
-               Display Accents: Cormorant Garamond
    ========================================================================== */
 
 :root {
   /* Palette Constants */
-  --charcoal: #242522;
-  --charcoal-surface: #2b2c28;
-  --charcoal-elevated: #33342f;
-  --warm-white: #f5f3ee;
-  --warm-surface: #eae7e0;
+  --charcoal: #171918;
+  --charcoal-surface: #1e2120;
+  --charcoal-elevated: #252827;
+  --warm-white: #f4f3ef;
+  --warm-surface: #ecebe6;
   --warm-card: #f9f8f5;
-  --neutral-grey: #77766f;
-  --concrete: #77766f;
-  --stone: #b7aa97;
-  --stone-subtle: #d2c8bc;
-  --bronze: #a77b50;
-  --bronze-soft: rgba(167, 123, 80, 0.15);
+  --concrete: #777b75;
+  --stone: #b9b6ad;
+  --stone-subtle: #d6d4ce;
+  --bronze: #967b5b;
+  --bronze-soft: rgba(150, 123, 91, 0.15);
 
   /* Theme Defaults (Dark / Editorial Studio Mode) */
-  --bg-primary: #242522;
-  --bg-surface: #2b2c28;
-  --bg-card: #282926;
-  --bg-overlay: rgba(36, 37, 34, 0.94);
+  --bg-primary: #171918;
+  --bg-surface: #1f2220;
+  --bg-card: #1c1e1d;
+  --bg-overlay: rgba(23, 25, 24, 0.94);
   
-  --border-color: #383a35;
-  --border-subtle: #2f312c;
-  --border-active: #b7aa97;
-  --border-focus: #f5f3ee;
+  --border-color: #2c2f2d;
+  --border-subtle: #242725;
+  --border-active: #b9b6ad;
+  --border-focus: #f4f3ef;
 
-  --text-primary: #f5f3ee;
-  --text-secondary: #b7aa97;
-  --text-muted: #77766f;
-  --text-inverse: #242522;
+  --text-primary: #f4f3ef;
+  --text-secondary: #b9b6ad;
+  --text-muted: #777b75;
+  --text-inverse: #171918;
 
-  --accent-bronze: #a77b50;
-  --accent-gold: #c99b6d;
-  --accent-green: #3a8a5f;
+  --accent-bronze: #967b5b;
+  --accent-gold: #c2a67e;
+  --accent-green: #2e8b57;
   --accent-blue: #5b8db8;
   --accent-orange: #d9822b;
 
@@ -59,23 +57,23 @@
 }
 
 [data-theme="light"] {
-  --bg-primary: #f5f3ee;
-  --bg-surface: #ebe8e1;
+  --bg-primary: #f4f3ef;
+  --bg-surface: #ecebe6;
   --bg-card: #ffffff;
-  --bg-overlay: rgba(245, 243, 238, 0.96);
+  --bg-overlay: rgba(244, 243, 239, 0.96);
 
-  --border-color: #dcd7ce;
-  --border-subtle: #e6e2d9;
-  --border-active: #242522;
-  --border-focus: #242522;
+  --border-color: #d8d6ce;
+  --border-subtle: #e6e4dc;
+  --border-active: #171918;
+  --border-focus: #171918;
 
-  --text-primary: #242522;
-  --text-secondary: #575650;
-  --text-muted: #77766f;
-  --text-inverse: #f5f3ee;
+  --text-primary: #171918;
+  --text-secondary: #4a4d48;
+  --text-muted: #777b75;
+  --text-inverse: #f4f3ef;
 
-  --accent-bronze: #a77b50;
-  --accent-gold: #8f653a;
+  --accent-bronze: #846849;
+  --accent-gold: #8f6e40;
 }
 
 /* Base Reset */
