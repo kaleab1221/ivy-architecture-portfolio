@@ -330,24 +330,20 @@
     }
 
     el.viewGridContainer.innerHTML = projects.map(p => {
-      const statusClass = p.statusType === 'completed'
-        ? 'status-completed'
-        : p.statusType === 'construction'
-        ? 'status-construction'
-        : 'status-design';
+      const descText = p.subtitle || p.description || '';
 
       return `
         <article class="project-card" data-id="${p.id}" tabindex="0">
           <div class="card-media-wrapper">
-            <span class="card-badge-code">[${p.code}]</span>
-            <span class="card-badge-status ${statusClass}">
-              <span class="status-dot"></span>${p.status}
-            </span>
-            <img src="${p.heroImage}" alt="${p.title} architectural view" loading="lazy">
+            <img src="${p.heroImage}" alt="${p.title}" loading="lazy">
           </div>
           <div class="card-content">
-            <span class="card-typology">${p.typology}</span>
+            <div class="card-header-meta">
+              <span class="card-typology">${p.typology}</span>
+              <span class="card-code">${p.code}</span>
+            </div>
             <h3 class="card-title">${p.title}</h3>
+            <p class="card-desc">${descText}</p>
             <div class="card-footer-meta">
               <span>${p.city}, ${p.country}</span>
               <span class="card-arrow">
