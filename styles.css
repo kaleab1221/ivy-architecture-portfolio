@@ -33,7 +33,7 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout Spacing & Breathing Whitespace */
-  --container-max: 1520px;
+  --container-max: min(92vw, 1680px);
   --container-narrow: 1100px;
   --header-height: 76px;
   --transition-subtle: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -140,9 +140,9 @@ button {
 #portfolio .editorial-container,
 .editorial-footer .editorial-container {
   width: 100%;
-  max-width: 1520px;
+  max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 3vw, 2.5rem);
+  padding-inline: clamp(1.5rem, 3.5vw, 3.25rem);
 }
 
 @media (max-width: 768px) {
@@ -1011,11 +1011,11 @@ button {
   font-weight: 700;
 }
 
-/* 4-Column Desktop Project Grid (Scaling Proportionally Across 1520px Container) */
+/* 4-Column Desktop Project Grid (Scaling Proportionally Across Fluid Container) */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: clamp(1.25rem, 1.6vw, 1.85rem);
 }
 
 .project-card {
