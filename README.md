@@ -3,16 +3,16 @@
 
 An interactive, responsive architectural showcase and practice platform inspired by the clean, minimalist, information-rich digital design language of **[BIG (Bjarke Ingels Group)](https://big.dk/)**.
 
-Featuring **34 landmark commissions** spanning high-rise commercial towers, institutional campuses, defense engineering facilities, luxury estates, and agro-industrial estates across **Ethiopia**, **South Sudan**, and **Iraq**.
+Featuring **33 landmark commissions** spanning high-rise commercial towers, institutional campuses, defense engineering facilities, luxury estates, and agro-industrial estates across **Ethiopia**, **South Sudan**, and **Iraq**.
 
 ---
 
 ## Key Features
 
-- **BIG.dk Digital Aesthetic:** Monochromatic Swiss brutalist layout with high-contrast typography (`Space Grotesk`, `Plus Jakarta Sans`, `JetBrains Mono`), razor-thin architectural borders, and generous spatial composition.
+- **Swiss Architectural Editorial Aesthetic:** High-contrast architectural layout with refined typography (`Manrope`, `Inter`, `JetBrains Mono`), razor-thin borders, and generous spatial composition.
 - **Three Architectural Display Modes:**
-  - **Grid View:** Responsive masonry showcase with project codes (`[ADD-12]`, `[JUB-01]`), status badges (*Design Phase*, *Under Construction*, *Completed*), and smooth hover magnification.
-  - **Index / Table View (BIG LEAP):** A text-driven architectural ledger featuring sortable columns and an **interactive floating image preview** that smoothly follows the cursor.
+  - **Grid View:** 3-column responsive showcase with project codes (`[ADD-12]`, `[JUB-01]`), status badges (*Design Phase*, *Under Construction*, *Completed*), and smooth hover magnification.
+  - **Index / Table View:** A text-driven architectural ledger featuring sortable columns and an **interactive floating image preview** that smoothly follows the cursor.
   - **Regions Matrix View:** Geographic mapping covering regional operating hubs across East Africa and the Middle East.
 - **Deep-Dive Case Study Drawer:**
   - High-resolution gallery with thumbnail slider, slide counter, and keyboard navigation (`←`, `→`, `ESC`).
@@ -20,15 +20,15 @@ Featuring **34 landmark commissions** spanning high-rise commercial towers, inst
   - Architectural concept statement and key engineering innovations.
   - URL hash deep-linking (e.g. `#project/ivy-28`).
 - **Multi-Faceted Real-Time Filtering & Live Search:**
-  - Typologies: *Residential*, *Mixed-Use & Commercial*, *Corporate & Showrooms*, *Education & Campuses*, *Healthcare & Hospitality*, *Industrial & Infrastructure*, *Monumental Civic*.
+  - Typologies: *Residential*, *Mixed-Use*, *Corporate*, *Education & Campuses*, *Industrial*, *Healthcare*, *Hospitality*, *Civic & Monumental*.
   - Status: *Completed*, *Under Construction*, *Design Phase*.
   - Instant live fuzzy search across all titles, locations, and descriptions.
 - **Integrated Capabilities & Manifesto:**
   - Practice profile highlighting IVY's turnkey design-build model.
-  - Key statistics: 34+ commissions, 2,000+ hectares masterplanned, 3 operating nations, 100% turnkey delivery.
+  - Key statistics: 33 verified commissions, 500,000+ m² documented & built, 3 operating nations.
   - Comprehensive service breakdowns from masterplanning to material trading.
-- **Interactive Inquiries & Monograph:**
-  - Built-in Request for Proposal (RFP) consultation form.
+- **Executive Hubs & Monograph:**
+  - Direct practice contact hubs in Addis Ababa, Juba, and Erbil.
   - Direct download of the complete 81-page high-resolution portfolio dossier (`IVY-CONSTRUCTION-PORTFOLIO.pdf`).
 - **Zero-Dependency Architecture:** Pure semantic HTML5, CSS3, and ES6+ JavaScript. Fast, accessible, and runs in any browser without build tooling.
 

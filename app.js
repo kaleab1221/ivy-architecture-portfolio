@@ -48,6 +48,7 @@
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     modalPrevBtn: document.getElementById('modalPrevBtn'),
     modalNextBtn: document.getElementById('modalNextBtn'),
+    modalShareBtn: document.getElementById('modalShareBtn'),
     modalCodeTag: document.getElementById('modalCodeTag'),
     modalProjectTitle: document.getElementById('modalProjectTitle'),
     galleryMainImg: document.getElementById('galleryMainImg'),
@@ -175,13 +176,19 @@
       }
     });
 
-    // Inquiry Form Submission
-    if (el.inquiryForm) {
-      el.inquiryForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const clientName = document.getElementById('clientName').value;
-        showToast(`Consultation brief received for ${clientName}. Reference #IVY-${Math.floor(1000 + Math.random() * 9000)} sent to your email.`);
-        el.inquiryForm.reset();
+    // Modal Share / Copy Link
+    if (el.modalShareBtn) {
+      el.modalShareBtn.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(window.location.href);
+            showToast('Direct project link copied to clipboard.');
+          } else {
+            showToast(`Project link: ${window.location.href}`);
+          }
+        } catch (err) {
+          showToast(`Project link: ${window.location.href}`);
+        }
       });
     }
 
