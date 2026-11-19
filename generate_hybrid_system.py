@@ -116,6 +116,7 @@ def render_professional_footer(home_prefix=""):
         <div class="footer-nav-block">
           <span class="footer-meta-label">Index</span>
           <nav class="footer-minimal-links">
+            <a href="{home_prefix}#hero">Home</a>
             <a href="{home_prefix}#featured">Featured</a>
             <a href="{home_prefix}#portfolio">Portfolio</a>
             <a href="{home_prefix}#services">Services</a>
@@ -146,6 +147,7 @@ def render_mobile_drawer(home_prefix=""):
       <button id="mobileNavClose" class="mobile-nav-close" aria-label="Close navigation">&times;</button>
     </div>
     <nav class="mobile-nav-menu">
+      <a href="{home_prefix}index.html#hero" class="mobile-nav-item">Home</a>
       <a href="{home_prefix}index.html#featured" class="mobile-nav-item">Featured</a>
       <a href="{home_prefix}index.html#portfolio" class="mobile-nav-item">Portfolio</a>
       <a href="{home_prefix}index.html#services" class="mobile-nav-item">Services</a>
@@ -276,6 +278,7 @@ for i, p in enumerate(PROJECTS):
       </a>
 
       <nav class="editorial-nav" aria-label="Main Navigation">
+        <a href="../index.html#hero" class="nav-item">Home</a>
         <a href="../index.html#featured" class="nav-item">Featured</a>
         <a href="../index.html#portfolio" class="nav-item">Portfolio</a>
         <a href="../index.html#services" class="nav-item">Services</a>
@@ -687,6 +690,7 @@ homepage_html = f"""<!DOCTYPE html>
       </a>
 
       <nav class="editorial-nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-item">Home</a>
         <a href="#featured" class="nav-item">Featured</a>
         <a href="#portfolio" class="nav-item">Portfolio</a>
         <a href="#services" class="nav-item">Services</a>
@@ -713,7 +717,7 @@ homepage_html = f"""<!DOCTYPE html>
     <!-- ========================================================================
          HERO SECTION: HIGH CONTRAST ARCHITECTURAL COMPOSITION
          ======================================================================== -->
-    <section class="editorial-hero">
+    <section id="hero" class="editorial-hero">
       <div class="hero-image-wrap">
         {picture_tag("images/projects/ivy-28/page_70_img1.jpeg", "King Nejashi Islamic Center & Monumental Arch Tower by IVY Architecture", "hero-cover-picture", is_lazy=False)}
         <div class="hero-tint-overlay"></div>
