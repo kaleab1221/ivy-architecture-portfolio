@@ -3,54 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IVY ARCHITECTURE &amp; CONSTRUCTION | Official Portfolio &amp; Practice</title>
-  <meta name="description" content="IVY Construction &amp; Trading Co. Ltd. — Visionary architecture, mega-scale masterplanning, structural engineering, and general contracting across East Africa and the Middle East.">
-  
+  <title>IVY Architecture &amp; Construction — Integrated Practice &amp; Portfolio</title>
+  <meta name="description" content="IVY Architecture &amp; Construction is an integrated architectural design, structural engineering, and general contracting practice delivering enduring commercial towers, institutional campuses, and infrastructure across East Africa and the Middle East.">
+  <meta name="keywords" content="IVY Architecture, IVY Construction, general contractor Ethiopia, architecture firm Addis Ababa, structural engineering East Africa, turnkey construction Juba">
+  <meta name="author" content="IVY Construction &amp; Trading Co. Ltd.">
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IVY Architecture &amp; Construction — Integrated Practice">
+  <meta property="og:description" content="Visionary architectural design, structural engineering, and Grade-1 general contracting across East Africa and the Middle East.">
+  <meta property="og:url" content="https://ivy-architecture-portfolio.vercel.app/">
+  <meta property="og:image" content="images/projects/ivy-28/page_70_img1.jpeg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IVY Architecture &amp; Construction">
+  <meta name="twitter:description" content="Building a better environment. Integrated architecture and general contracting.">
+  <meta name="twitter:image" content="images/projects/ivy-28/page_70_img1.jpeg">
+
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a0b'/><text y='70' x='12' font-family='sans-serif' font-weight='900' font-size='65' fill='%23c5a880'>IVY</text></svg>">
-  
-  <!-- Typography (Swiss grotesque & monospace) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23171918'/><text y='70' x='15' font-family='sans-serif' font-weight='900' font-size='60' fill='%23967b5b'>IVY</text></svg>">
+
+  <!-- Google Fonts: Manrope (Headings), Inter (Body), JetBrains Mono (Technical) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-
-
   <!-- ========================================================================
-       SITE HEADER (BIG.DK STYLE)
+       01. NAVIGATION (ELEGANT MINIMALIST ARCHITECTURAL HEADER)
        ======================================================================== -->
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <!-- Brand -->
-        <a href="#projects" class="brand-wrapper">
+        <!-- Brand Identity -->
+        <a href="#hero" class="brand-wrapper" aria-label="IVY Architecture &amp; Construction Home">
           <div class="brand-logo">
-            IVY<span class="logo-dot"></span>
+            IVY<span class="brand-dot"></span>
           </div>
-          <div class="brand-sub">
-            <span>CONSTRUCTION &amp; TRADING</span>
-            <span>ARCHITECTURE // PRACTICE</span>
+          <div class="brand-tagline">
+            <span>Architecture &amp; Construction</span>
+            <span>Design-Build Practice</span>
           </div>
         </a>
 
-        <!-- Main Nav -->
+        <!-- Desktop Navigation -->
         <nav aria-label="Main Navigation">
-          <ul class="nav-links">
-            <li><a href="#projects" class="nav-link active">Projects</a></li>
-            <li><a href="#practice" class="nav-link">Practice</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#contact" class="nav-link">Offices</a></li>
+          <ul class="nav-desktop">
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#expertise" class="nav-link">Expertise</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
         <!-- Header Actions -->
         <div class="header-actions">
-          <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action">
+          <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-header-action" title="Download Complete Practice Monograph (81 Pages PDF)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -59,19 +72,27 @@
             <span>Monograph PDF</span>
           </a>
 
-          <a href="#contact" class="btn-action btn-accent">
-            <span>Request Proposal</span>
+          <a href="#contact" class="btn-header-action btn-header-accent">
+            <span>Inquire</span>
           </a>
 
-          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+          <!-- Theme Toggle -->
+          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
           </button>
 
-          <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile navigation">
+          <!-- Mobile Hamburger -->
+          <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Mobile Menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -83,234 +104,321 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
+  <!-- Mobile Drawer -->
   <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true">
     <div class="mobile-nav-header">
-      <div class="brand-logo">IVY<span class="logo-dot"></span></div>
-      <button id="mobileNavClose" class="modal-close-btn" aria-label="Close menu">✕</button>
+      <div class="brand-logo">IVY<span class="brand-dot"></span></div>
+      <button id="mobileNavClose" class="modal-control-btn" aria-label="Close Mobile Navigation">✕</button>
     </div>
     <ul class="mobile-nav-links">
       <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-      <li><a href="#practice" class="mobile-nav-link">Practice</a></li>
-      <li><a href="#services" class="mobile-nav-link">Services</a></li>
-      <li><a href="#contact" class="mobile-nav-link">Offices &amp; Contact</a></li>
+      <li><a href="#capabilities" class="mobile-nav-link">Capabilities</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#expertise" class="mobile-nav-link">Expertise</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
     </ul>
     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 1rem;">
-      <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action" style="text-align: center; justify-content: center; padding: 1.15rem;">
+      <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-primary" style="justify-content: center; text-align: center;">
         Download Monograph PDF (7.3 MB)
       </a>
-      <a href="#contact" class="btn-action btn-accent" style="text-align: center; justify-content: center; padding: 1.15rem;">
-        Request Proposal
+      <a href="#contact" class="btn-secondary" style="justify-content: center; text-align: center;">
+        Discuss a Project
       </a>
     </div>
   </div>
 
   <main>
     <!-- ========================================================================
-         EXECUTIVE PRACTICE DOSSIER (MINISTERIAL & HIGH OFFICIAL DOSSIER)
+         02. HERO SECTION (EDITORIAL ARCHITECTURAL PHOTOGRAPHY)
          ======================================================================== -->
-    <section class="executive-hero">
-      <div class="container">
-        <div class="hero-authority-badge">
-          <span class="badge-tag">OFFICIAL PRACTICE DOSSIER</span>
-          <span class="badge-divider">/</span>
-          <span>GRADE-1 GENERAL CONTRACTOR &amp; ENGINEERING PRACTICE</span>
-          <span class="badge-divider">/</span>
-          <span>ADDIS ABABA &bull; JUBA</span>
+    <section id="hero" class="hero-section">
+      <div class="hero-backdrop">
+        <img src="images/projects/ivy-28/page_70_img1.jpeg" alt="King Nejashi Islamic Center &amp; Monumental Arch Tower by IVY Architecture" loading="eager">
+      </div>
+      <div class="hero-overlay"></div>
+      
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span class="status-indicator"></span>
+          <span>Integrated Practice &middot; Grade-1 General Contractor &middot; ISO 9001</span>
         </div>
 
-        <h1 class="executive-title">
-          IVY CONSTRUCTION &amp; TRADING
+        <h1 class="hero-title">
+          Building a better environment.
         </h1>
 
-        <p class="executive-lead">
-          Pioneering monumental civic towers, university medical complexes, national infrastructure, and multi-hectare industrial developments across East Africa and the Middle East. Delivering turnkey architectural excellence, certified structural engineering, and heavy general contracting for sovereign institutions, federal ministries, and premier enterprises.
+        <p class="hero-description">
+          IVY Architecture &amp; Construction is an integrated design, structural engineering, and general contracting practice delivering enduring commercial towers, institutional masterplans, and infrastructure across East Africa and the Middle East.
         </p>
 
-        <div class="executive-cta-group">
-          <a href="#projects" class="btn-primary-bold">
-            <span>Explore 34 Landmark Projects ↓</span>
-          </a>
-          <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-secondary-bold">
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <span>Explore Projects</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
             </svg>
-            <span>Download Official Monograph (81 Pages PDF)</span>
+          </a>
+
+          <a href="#contact" class="btn-secondary">
+            <span>Discuss a Project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         STATISTICS BANNER (PRACTICE REACH)
+         03. COMPANY INTRODUCTION (INTEGRATED DISCIPLINE)
          ======================================================================== -->
-    <section class="stats-banner">
+    <section id="introduction" class="section">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span id="statProjects" class="stat-number">34+</span>
-            <span class="stat-label">Architectural Commissions</span>
+        <div class="section-eyebrow">Practice Introduction</div>
+        
+        <div class="intro-grid">
+          <div>
+            <h2 class="intro-lead">
+              A multidisciplinary practice bridging visionary architectural conception with structural precision and turnkey site execution.
+            </h2>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">2,000+</span>
-            <span class="stat-label">Hectares Masterplanned</span>
+
+          <div class="intro-body-text">
+            <p>
+              Founded on the belief that enduring architecture requires seamless integration between design and construction, IVY brings together architects, civil engineers, project managers, and international supply specialists under a unified practice.
+            </p>
+            <p>
+              By eliminating friction between abstract blueprints and ground-level logistics, we ensure that complex geometry, high-performance structural systems, and refined interior details are realized on schedule, within budget, and to international quality standards.
+            </p>
+            <p>
+              From 45-story civic arch towers in Addis Ababa to high-security defense headquarters and remote modular industrial installations in South Sudan, our work responds directly to the climate, geography, and urban realities of the territories we shape.
+            </p>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Turnkey Delivery (ET, SS, IQ)</span>
+        </div>
+
+        <!-- Verified Practice Metrics -->
+        <div class="intro-stat-pills">
+          <div class="intro-stat-item">
+            <span class="intro-stat-num">34+</span>
+            <span class="intro-stat-label">Architectural Commissions</span>
+          </div>
+          <div class="intro-stat-item">
+            <span class="intro-stat-num">2,000+</span>
+            <span class="intro-stat-label">Hectares Masterplanned</span>
+          </div>
+          <div class="intro-stat-item">
+            <span class="intro-stat-num">100%</span>
+            <span class="intro-stat-label">Turnkey Delivery (ET, SS, IQ)</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         PROJECTS SECTION (BIG MATRIX TOOLBAR + MULTI-VIEW)
+         04. SELECTED PROJECTS (PREMIUM EDITORIAL GRID & INDEX)
          ======================================================================== -->
-    <section id="projects">
-      <!-- Sticky Toolbar -->
-      <div class="portfolio-toolbar">
-        <div class="container">
-          <div class="toolbar-inner">
-            <!-- Typology Tabs -->
-            <div id="typologyFilters" class="typology-filters"></div>
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-eyebrow">Selected Works</div>
+        <h2 class="section-headline">Architectural Portfolio</h2>
+        <p class="section-lead">
+          Explore 34 verified architectural, structural, and general contracting commissions across commercial, residential, healthcare, civic, and educational sectors.
+        </p>
 
-            <!-- Toolbar Right (Search + View Switchers) -->
-            <div class="toolbar-right">
-              <!-- Search -->
-              <div class="search-box">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <!-- Toolbar & Filters -->
+        <div class="projects-toolbar">
+          <div id="typologyFilters" class="typology-filters"></div>
+
+          <div class="toolbar-controls">
+            <!-- Search -->
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" placeholder="Filter by title, city, client...">
+            </div>
+
+            <!-- View Switcher -->
+            <div class="view-mode-toggle">
+              <button id="viewGridBtn" class="view-mode-btn active" title="Grid Presentation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
                 </svg>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search works, city, client... (Press /)">
-              </div>
-
-              <!-- View Switchers -->
-              <div class="view-switcher">
-                <button id="viewGridBtn" class="view-btn active" title="Grid View (G)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="14" width="7" height="7"></rect>
-                    <rect x="3" y="14" width="7" height="7"></rect>
-                  </svg>
-                  <span>Grid</span>
-                </button>
-                <button id="viewListBtn" class="view-btn" title="Table / Index View (I)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="8" y1="6" x2="21" y2="6"></line>
-                    <line x1="8" y1="12" x2="21" y2="12"></line>
-                    <line x1="8" y1="18" x2="21" y2="18"></line>
-                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                  </svg>
-                  <span>Index</span>
-                </button>
-                <button id="viewMapBtn" class="view-btn" title="Regional Matrix View (M)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                    <line x1="8" y1="2" x2="8" y2="18"></line>
-                    <line x1="16" y1="6" x2="16" y2="22"></line>
-                  </svg>
-                  <span>Regions</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Secondary Sub-filter bar -->
-          <div class="sub-filters-bar">
-            <div id="statusPills" class="status-pills">
-              <span class="status-pill active" data-status="all">All Statuses</span>
-              <span class="status-pill" data-status="completed">Completed</span>
-              <span class="status-pill" data-status="construction">Under Construction</span>
-              <span class="status-pill" data-status="design">Design Phase</span>
-            </div>
-            <div id="resultsCount" class="results-count">
-              Showing 34 of 34 Works
+                <span>Grid</span>
+              </button>
+              <button id="viewListBtn" class="view-mode-btn" title="Complete Table Index">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                <span>Index</span>
+              </button>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Main Project Views Container -->
-      <div class="container projects-container">
-        <!-- View 1: Grid View -->
+        <!-- View 1: 3-Column Editorial Grid -->
         <div id="viewGridContainer" class="projects-grid"></div>
 
-        <!-- View 2: List / Index View (Table) -->
-        <div id="viewListContainer" style="display: none;"></div>
-
-        <!-- View 3: Map / Territory Matrix View -->
-        <div id="viewMapContainer" class="territory-view" style="display: none;"></div>
+        <!-- View 2: Complete Architectural Table Index -->
+        <div id="viewListContainer" class="table-index-container" style="display: none;"></div>
       </div>
     </section>
 
-    <!-- Floating Hover Preview Card (BIG Table Feature) -->
-    <div id="hoverPreviewCard" class="hover-preview-card">
+    <!-- Floating Table Hover Preview Card -->
+    <div id="hoverPreviewCard" class="floating-preview-card">
       <img id="hoverPreviewImg" src="" alt="Project Preview">
-      <div class="preview-info">
-        <div id="hoverPreviewTitle" class="preview-title"></div>
-        <div id="hoverPreviewMeta" class="preview-meta"></div>
+      <div class="floating-preview-meta">
+        <div id="hoverPreviewTitle" style="font-weight: 700; margin-bottom: 0.25rem;"></div>
+        <div id="hoverPreviewMeta" style="color: var(--text-muted);"></div>
       </div>
     </div>
 
     <!-- ========================================================================
-         PRACTICE / ABOUT SECTION (BIG MANIFESTO)
+         05. COMPANY CAPABILITIES (6 PILLARS)
          ======================================================================== -->
-    <section id="practice" class="practice-section">
+    <section id="capabilities" class="section">
       <div class="container">
-        <div class="section-eyebrow">// PRACTICE PROFILE &amp; ETHOS</div>
-        <h2 class="section-headline">
-          Pragmatic Architecture &amp; Precision Engineering for a Rapidly Urbanizing World
-        </h2>
+        <div class="section-eyebrow">Disciplines &amp; Scope</div>
+        <h2 class="section-headline">Integrated Capabilities</h2>
+        <p class="section-lead">
+          Our in-house capabilities span the full lifecycle of development—from site feasibility and masterplanning through structural analysis, turnkey contracting, and interior fit-out.
+        </p>
 
-        <div class="practice-grid">
-          <div>
-            <p class="practice-lead-text">
-              IVY Construction &amp; Trading Co. Ltd. operates at the confluence of visionary architectural design, rigorous structural engineering, and heavy-duty general construction.
+        <div class="capabilities-grid">
+          <div class="capability-card">
+            <span class="capability-index">[01]</span>
+            <h3 class="capability-title">Architectural Design &amp; Masterplanning</h3>
+            <p class="capability-desc">
+              Context-responsive architectural design for high-rise commercial towers, multi-family residential complexes, university campuses, and civic institutions. Combining spatial efficiency with bold geometric presence.
             </p>
-            <p class="practice-body-text">
-              With landmark projects spanning Ethiopia, South Sudan, and Iraq, our multidisciplinary practice resolves complex programmatic, climatic, and logistical challenges. From 45-story commercial arch skyscrapers and university medical campuses to remote modular energy camps and agricultural processing hubs, we turn ambitious concepts into enduring physical realities.
-            </p>
-            <p class="practice-body-text">
-              Our unique integration of architectural design with direct contracting and international material trading ensures zero friction between conceptual geometry and precision on-site execution.
-            </p>
+          </div>
 
-            <div style="margin-top: 2.75rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-action btn-accent" style="padding: 0.95rem 1.65rem;">
-                Download Complete Portfolio (81 Pages PDF)
-              </a>
-              <a href="#contact" class="btn-action" style="padding: 0.95rem 1.65rem;">
-                Schedule Practice Consultation
-              </a>
+          <div class="capability-card">
+            <span class="capability-index">[02]</span>
+            <h3 class="capability-title">Civil &amp; Structural Engineering</h3>
+            <p class="capability-desc">
+              Advanced computational structural engineering: seismic-resistant framing, deep foundations in complex soils, post-tensioned slabs, long-span structural steel spaceframes, and reinforced concrete superstructures.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <span class="capability-index">[03]</span>
+            <h3 class="capability-title">Mechanical, Electrical &amp; Plumbing (MEP)</h3>
+            <p class="capability-desc">
+              Intelligent building engineering including equatorial passive solar cooling, energy-efficient HVAC, heavy power distribution, solar microgrid integration, and dedicated hospital-grade water purification networks.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <span class="capability-index">[04]</span>
+            <h3 class="capability-title">General Contracting &amp; Turnkey Construction</h3>
+            <p class="capability-desc">
+              As a certified Grade-1 General Contractor, we oversee on-site concrete batching, modular prefabrication deployment, quality inspection, occupational safety, and rigorous construction schedule compliance.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <span class="capability-index">[05]</span>
+            <h3 class="capability-title">Interior Architecture &amp; Spatial Fit-Out</h3>
+            <p class="capability-desc">
+              Custom interior space planning, executive boardroom architecture, acoustic ceiling engineering, healthcare sanitary finishes, and bespoke furniture, fixtures &amp; equipment (FF&amp;E) procurement.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <span class="capability-index">[06]</span>
+            <h3 class="capability-title">Construction Trading &amp; Material Procurement</h3>
+            <p class="capability-desc">
+              Direct international trading networks supplying certified structural steel, curtain wall glazing systems, specialized finishes, and heavy machinery across East Africa, the Middle East, and beyond.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         06. ABOUT THE COMPANY (BACKGROUND & CREDENTIALS)
+         ======================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-eyebrow">Company Profile</div>
+        <h2 class="section-headline">Architecture Backed by Engineering Discipline</h2>
+
+        <div class="about-grid">
+          <div class="about-text-content">
+            <p>
+              IVY Construction &amp; Trading Co. Ltd. was established to address a critical market need across East Africa and the Middle East: the gap between ambitious architectural aspirations and the engineering discipline required to execute them reliably.
+            </p>
+            <p>
+              Headquartered in Addis Ababa, Ethiopia, with active regional operations in Juba, South Sudan, and cross-border logistics in Erbil, Iraq, IVY has successfully delivered over thirty-four landmark commissions across diverse climatic, topographical, and regulatory environments.
+            </p>
+            <p>
+              Our leadership comprises seasoned architects, structural engineers, cost surveyors, and certified construction superintendents whose collective portfolio encompasses commercial high-rises, national defense headquarters, regional hospitals, and university masterplans.
+            </p>
+          </div>
+
+          <div class="about-values-grid">
+            <div class="value-item">
+              <h3 class="value-title">Architectural Integrity</h3>
+              <p class="value-desc">Every structure responds meaningfully to its climate, culture, and urban fabric rather than superficial trends.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Structural Precision</h3>
+              <p class="value-desc">Rigorous engineering calculation, certified materials, and seismic compliance underpin every blueprint.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Turnkey Accountability</h3>
+              <p class="value-desc">One unified team managing design, engineering, procurement, and site construction from concept to handover.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Regional Stewardship</h3>
+              <p class="value-desc">Building resilient infrastructure that supports sustainable urban density and long-term socio-economic growth.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Institutional Credentials -->
+        <div class="credentials-strip">
+          <div class="credential-block">
+            <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            <div class="credential-info">
+              <h4>Grade-1 General Contractor</h4>
+              <p>Certified for mega-scale commercial, civic, and infrastructure construction.</p>
             </div>
           </div>
 
-          <!-- Disciplines -->
-          <div class="disciplines-grid">
-            <div class="discipline-card">
-              <h3 class="discipline-name">01. Architectural Design &amp; Masterplanning</h3>
-              <p class="discipline-desc">Curating landmark forms, high-rise urban towers, cultural monuments, and large-scale university and industrial masterplans.</p>
+          <div class="credential-block">
+            <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <div class="credential-info">
+              <h4>ISO 9001 Certified Quality</h4>
+              <p>Standardized quality assurance, site safety protocols, and materials testing.</p>
             </div>
-            <div class="discipline-card">
-              <h3 class="discipline-name">02. Civil, Structural &amp; MEP Engineering</h3>
-              <p class="discipline-desc">Advanced seismic analysis, long-span steel spaceframes, post-tensioned concrete, and equatorial passive cooling systems.</p>
-            </div>
-            <div class="discipline-card">
-              <h3 class="discipline-name">03. General Contracting &amp; Turnkey Construction</h3>
-              <p class="discipline-desc">End-to-end site management, concrete batching, modular prefab deployment, and on-time industrial delivery.</p>
-            </div>
-            <div class="discipline-card">
-              <h3 class="discipline-name">04. Interior Architecture &amp; Bespoke FF&amp;E</h3>
-              <p class="discipline-desc">Parametric timber surfaces, luxury hospitality interiors, executive suites, and acoustic engineering.</p>
-            </div>
-            <div class="discipline-card">
-              <h3 class="discipline-name">05. Supply Chain &amp; Construction Trading</h3>
-              <p class="discipline-desc">Direct procurement of specialized construction materials, heavy machinery logistics, and regional distribution.</p>
+          </div>
+
+          <div class="credential-block">
+            <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <div class="credential-info">
+              <h4>Direct International Trading</h4>
+              <p>Proprietary global supply chain for certified steel, curtain wall glass, and MEP plant.</p>
             </div>
           </div>
         </div>
@@ -318,109 +426,267 @@
     </section>
 
     <!-- ========================================================================
-         SERVICES SECTION
+         07. EXPERTISE AND SECTORS (6 SECTORS)
          ======================================================================== -->
-    <section id="services" class="services-section">
+    <section id="expertise" class="section">
       <div class="container">
-        <div class="section-eyebrow">// INTEGRATED CAPABILITIES</div>
-        <h2 class="section-headline">
-          End-to-End Capabilities from Concept to Ribbon Cutting
-        </h2>
+        <div class="section-eyebrow">Market Sectors</div>
+        <h2 class="section-headline">Sectors of Practice</h2>
+        <p class="section-lead">
+          Our completed and active commissions span six core typologies, tailored to the unique economic and functional demands of each sector.
+        </p>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <span class="service-num">[01]</span>
-            <h3 class="service-title">High-Rise &amp; Mixed-Use Development</h3>
-            <p class="service-desc">Complete architectural and engineering design for mixed-use towers, combining shopping gallerias, Grade-A commercial office space, and luxury residential suites.</p>
+        <div class="sectors-grid">
+          <div class="sector-card">
+            <span class="sector-num">[01]</span>
+            <h3 class="sector-title">Commercial &amp; High-Rise</h3>
+            <p class="sector-desc">
+              Prime commercial office headquarters, banking towers, and mixed-use retail destinations designed for institutional prestige and high tenant density.
+            </p>
           </div>
 
-          <div class="service-card">
-            <span class="service-num">[02]</span>
-            <h3 class="service-title">Campus &amp; Institutional Masterplanning</h3>
-            <p class="service-desc">Multi-hectare university compounds, medical teaching hospitals, specialized research laboratories, and Olympic-grade sports stadiums.</p>
+          <div class="sector-card">
+            <span class="sector-num">[02]</span>
+            <h3 class="sector-title">Residential &amp; Multi-Family</h3>
+            <p class="sector-desc">
+              Contemporary multi-story apartment complexes, luxury family residences, and sustainable residential communities prioritizing natural light and privacy.
+            </p>
           </div>
 
-          <div class="service-card">
-            <span class="service-num">[03]</span>
-            <h3 class="service-title">Luxury Residential &amp; Estates</h3>
-            <p class="service-desc">Custom modernist cantilevered villas, fairway golf residences, and multi-family residential developments with bespoke interior fitouts.</p>
+          <div class="sector-card">
+            <span class="sector-num">[03]</span>
+            <h3 class="sector-title">Institutional &amp; University</h3>
+            <p class="sector-desc">
+              Higher education masterplans, specialized laboratories, lecture theaters, and administrative centers built to facilitate advanced learning.
+            </p>
           </div>
 
-          <div class="service-card">
-            <span class="service-num">[04]</span>
-            <h3 class="service-title">Industrial, Energy &amp; Agro-Processing</h3>
-            <p class="service-desc">Heavy industrial processing plants, salt refineries, coffee wet-mills, oilfield base camps, and 2,000-hectare agricultural estates.</p>
+          <div class="sector-card">
+            <span class="sector-num">[04]</span>
+            <h3 class="sector-title">Healthcare &amp; Clinical</h3>
+            <p class="sector-desc">
+              Modern medical centers and hospital additions engineered with sterile airflow control, emergency surgical wings, and accessible patient layouts.
+            </p>
           </div>
 
-          <div class="service-card">
-            <span class="service-num">[05]</span>
-            <h3 class="service-title">Civic, Defense &amp; Emergency Hubs</h3>
-            <p class="service-desc">Long-span fire rescue stations, high-security defense engineering complexes with helipads, and cultural places of worship.</p>
+          <div class="sector-card">
+            <span class="sector-num">[05]</span>
+            <h3 class="sector-title">Industrial &amp; Agro-Processing</h3>
+            <p class="sector-desc">
+              Large-span manufacturing facilities, cold-chain distribution hubs, agricultural processing plants, and heavy equipment workshops.
+            </p>
           </div>
 
-          <div class="service-card">
-            <span class="service-num">[06]</span>
-            <h3 class="service-title">Turnkey Construction &amp; Trading</h3>
-            <p class="service-desc">Seamless procurement, international freight forwarding, heavy equipment mobilization, and turnkey construction management.</p>
+          <div class="sector-card">
+            <span class="sector-num">[06]</span>
+            <h3 class="sector-title">Civic, Defense &amp; Infrastructure</h3>
+            <p class="sector-desc">
+              High-security governmental complexes, fire rescue stations, community emergency facilities, and remote self-sustaining operational camps.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-  </main>
+    <!-- ========================================================================
+         08. COMPANY CREDIBILITY & GEOGRAPHICAL PRESENCE
+         ======================================================================== -->
+    <section id="credibility" class="section">
+      <div class="container">
+        <div class="section-eyebrow">Operating Hubs</div>
+        <h2 class="section-headline">Geographical Reach &amp; Project Track Record</h2>
 
-  <!-- ========================================================================
-       FOOTER & CORPORATE HUBS (AUTHORITATIVE MONOCHROME)
-       ======================================================================== -->
-  <footer id="contact" class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-cols">
-          <div class="footer-col">
-            <h4>Addis Ababa [HQ]</h4>
-            <ul>
-              <li>Bole Subcity, Commercial District</li>
-              <li>Addis Ababa, Ethiopia</li>
-              <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">info@ivyconstruction.com</strong></li>
-              <li><strong style="color: var(--text-primary);">+251 91 123 4567</strong></li>
+        <div class="credibility-grid">
+          <div class="credibility-card">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Permanent Studios &amp; Regional Bureaus</h3>
+            <ul class="hub-list">
+              <li class="hub-item">
+                <div>
+                  <div class="hub-name">Addis Ababa, Ethiopia [HQ]</div>
+                  <div class="hub-desc">Bole Subcity, Commercial District &middot; Principal Design Studio &amp; Engineering Center</div>
+                </div>
+                <span class="hub-badge">Headquarters</span>
+              </li>
+
+              <li class="hub-item">
+                <div>
+                  <div class="hub-name">Juba, South Sudan [Regional Bureau]</div>
+                  <div class="hub-desc">Central Commercial Sector &middot; General Contracting &amp; Regional Project Supervision</div>
+                </div>
+                <span class="hub-badge">Active Operations</span>
+              </li>
+
+              <li class="hub-item">
+                <div>
+                  <div class="hub-name">Erbil, Iraq [Logistics Partner]</div>
+                  <div class="hub-desc">Specialized Procurement, Prefabrication &amp; International Freight Forwarding</div>
+                </div>
+                <span class="hub-badge">Logistics Hub</span>
+              </li>
             </ul>
           </div>
 
-          <div class="footer-col">
-            <h4>Juba [Bureau]</h4>
-            <ul>
-              <li>Central Commercial Sector</li>
-              <li>Juba, South Sudan</li>
-              <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">juba@ivyconstruction.com</strong></li>
-              <li><strong style="color: var(--text-primary);">+211 92 000 1234</strong></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Typologies</h4>
-            <ul>
-              <li><a href="#projects">Residential Towers</a></li>
-              <li><a href="#projects">Mixed-Use Commercial</a></li>
-              <li><a href="#projects">Corporate Headquarters</a></li>
-              <li><a href="#projects">University Campuses</a></li>
-              <li><a href="#projects">Industrial &amp; Energy</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Practice &amp; Dossier</h4>
-            <ul>
-              <li><a href="#practice">Design Philosophy</a></li>
-              <li><a href="#services">Integrated Services</a></li>
-              <li><a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download>Monograph PDF (7.3 MB)</a></li>
-            </ul>
+          <div class="credibility-card">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Documented Performance Standards</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);">
+                Every project executed by IVY is governed by strict ISO 9001 certified project management frameworks. From preliminary geotechnical bore testing through concrete slump verification, ultrasonic weld inspection, and structural deflection monitoring, our field procedures ensure zero structural compromise.
+              </p>
+              <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);">
+                Our portfolio of thirty-four major projects demonstrates our sustained ability to navigate regional logistical complexities, currency fluctuations, and remote site supply chains while maintaining strict architectural intent and budget parameters.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
+    <!-- ========================================================================
+         09. CONTACT AND PROJECT INQUIRY
+         ======================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-eyebrow">Initiate Contact</div>
+        <h2 class="section-headline">Discuss a Project</h2>
+        <p class="section-lead">
+          Connect with our architectural and engineering practice to review your project brief, feasibility requirements, or general contracting inquiry.
+        </p>
+
+        <div class="contact-layout">
+          <!-- Contact Info Pane -->
+          <div class="contact-info-pane">
+            <div class="contact-block">
+              <h3>Headquarters — Addis Ababa</h3>
+              <p>Bole Subcity, Commercial District</p>
+              <p>Addis Ababa, Ethiopia</p>
+              <p style="margin-top: 0.5rem;"><a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a></p>
+              <p><a href="tel:+251911234567">+251 91 123 4567</a> / <a href="tel:+251116543210">+251 11 654 3210</a></p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Regional Bureau — Juba</h3>
+              <p>Central Commercial Sector, Juba</p>
+              <p>South Sudan</p>
+              <p style="margin-top: 0.5rem;"><a href="mailto:juba@ivyconstruction.com">juba@ivyconstruction.com</a></p>
+              <p><a href="tel:+211920001234">+211 92 000 1234</a></p>
+            </div>
+
+            <div class="contact-block">
+              <h3>Practice Monograph</h3>
+              <p>Download our complete 81-page high-resolution architectural dossier containing all renders, floor plans, and technical specifications.</p>
+              <div style="margin-top: 1rem;">
+                <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.78rem;">
+                  Download Monograph (7.3 MB)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Inquiry Form -->
+          <div class="inquiry-form-card">
+            <h3>Project Consultation Request</h3>
+            <p>Please provide preliminary project details. Our leadership team will respond within 48 business hours.</p>
+
+            <form id="inquiryForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="clientName">Full Name / Organization *</label>
+                  <input type="text" id="clientName" class="form-input" placeholder="e.g. Hagbes Private Limited Co." required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="clientEmail">Corporate Email *</label>
+                  <input type="email" id="clientEmail" class="form-input" placeholder="contact@organization.com" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="projectTypology">Project Typology *</label>
+                  <select id="projectTypology" class="form-select" required>
+                    <option value="" disabled selected>Select Typology</option>
+                    <option value="commercial">Commercial &amp; High-Rise</option>
+                    <option value="residential">Residential &amp; Multi-Family</option>
+                    <option value="institutional">Institutional &amp; University</option>
+                    <option value="healthcare">Healthcare &amp; Clinical</option>
+                    <option value="industrial">Industrial &amp; Agro-Processing</option>
+                    <option value="turnkey">Turnkey General Construction</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="projectLocation">Project Location</label>
+                  <input type="text" id="projectLocation" class="form-input" placeholder="e.g. Addis Ababa, Juba, or Regional">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="projectBrief">Project Brief &amp; Scope Requirements *</label>
+                <textarea id="projectBrief" class="form-textarea" placeholder="Detail approximate site area, floor count, schedule, and scope of services required..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                Submit Project Brief &rarr;
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       10. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col footer-col-brand">
+          <h3>IVY<span class="brand-dot"></span></h3>
+          <p>
+            An integrated architecture, structural engineering, and Grade-1 general contracting practice shaping enduring skylines and masterplans across East Africa and the Middle East.
+          </p>
+          <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+            ISO 9001 Certified &middot; Grade-1 General Contractor
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#projects">Selected Works</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#about">About the Practice</a></li>
+            <li><a href="#expertise">Market Sectors</a></li>
+            <li><a href="#contact">Contact &amp; Offices</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Practice Hubs</h4>
+          <ul>
+            <li><strong style="color: var(--text-primary);">Addis Ababa [HQ]</strong></li>
+            <li>Bole Commercial District, Ethiopia</li>
+            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Juba [Bureau]</strong></li>
+            <li>Central Commercial Sector, South Sudan</li>
+            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">Erbil [Logistics]</strong></li>
+            <li>Cross-Border Procurement, Iraq</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <ul>
+            <li><a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download>Monograph PDF (7.3 MB)</a></li>
+            <li><a href="#contact">Request Project Brief</a></li>
+            <li><a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a></li>
+            <li><a href="tel:+251911234567">+251 91 123 4567</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-bar">
         <div>
-          &copy; 2026 IVY CONSTRUCTION &amp; TRADING CO. LTD. ALL RIGHTS RESERVED.
+          &copy; 2026 IVY Construction &amp; Trading Co. Ltd. All rights reserved.
         </div>
         <div class="mono">
           ETHIOPIA // SOUTH SUDAN // IRAQ // INTERNATIONAL
@@ -430,7 +696,7 @@
   </footer>
 
   <!-- ========================================================================
-       PROJECT CASE STUDY DRAWER / MODAL (THE BIG DEEP-DIVE)
+       PROJECT CASE STUDY DRAWER / MODAL
        ======================================================================== -->
   <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
     <div class="modal-drawer">
@@ -438,27 +704,21 @@
       <div class="modal-header">
         <div class="modal-title-group">
           <span id="modalCodeTag" class="modal-code-tag">IVY-00</span>
-          <h2 id="modalProjectTitle" class="modal-project-title">PROJECT TITLE</h2>
+          <h2 id="modalProjectTitle" class="modal-title">Project Name</h2>
         </div>
 
-        <div class="modal-actions">
-          <button id="modalShareBtn" class="modal-nav-btn" title="Copy Deep-Link to Clipboard">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-            </svg>
-          </button>
-          <button id="modalPrevBtn" class="modal-nav-btn" title="Previous Project (Arrow Left)">
+        <div class="modal-controls">
+          <button id="modalPrevBtn" class="modal-control-btn" title="Previous Project (&larr;)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          <button id="modalNextBtn" class="modal-nav-btn" title="Next Project (Arrow Right)">
+          <button id="modalNextBtn" class="modal-control-btn" title="Next Project (&rarr;)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
-          <button id="modalCloseBtn" class="modal-close-btn" title="Close (ESC)">
+          <button id="modalCloseBtn" class="modal-control-btn" title="Close (ESC)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -469,98 +729,71 @@
 
       <!-- Modal Body -->
       <div class="modal-body">
-        <!-- Gallery Viewer -->
-        <div>
-          <div id="galleryViewer" class="gallery-viewer" title="Click to open Fullscreen Lightbox">
-            <div id="galleryStage" class="gallery-stage"></div>
-            <button id="galleryPrevBtn" class="gallery-btn btn-prev" aria-label="Previous image">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button id="galleryNextBtn" class="gallery-btn btn-next" aria-label="Next image">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-            <div id="galleryCounter" class="gallery-counter">1 / 1</div>
-          </div>
-
-          <!-- Thumbnails -->
-          <div id="galleryThumbs" class="gallery-thumbs"></div>
+        <!-- Interactive Gallery -->
+        <div class="gallery-stage">
+          <img id="galleryMainImg" src="" alt="Project View">
+          <div id="galleryCounter" class="gallery-counter">01 / 04</div>
         </div>
 
-        <!-- Specifications & Concept Narrative -->
+        <!-- Thumbnail Strip -->
+        <div id="galleryThumbs" class="gallery-thumbs"></div>
+
+        <!-- Technical Specification Sheet -->
         <div class="modal-specs-grid">
-          <div>
-            <h3 class="project-narrative-title">Architectural Statement</h3>
-            <p id="projectDescription" class="project-description"></p>
-
-            <h4 class="font-display" style="font-size: 1.15rem; text-transform: uppercase; margin-bottom: 1.25rem;">
-              Key Architectural Innovations
-            </h4>
-            <ul id="projectFeaturesList" class="features-list"></ul>
+          <div class="spec-cell">
+            <span class="spec-key">Typology</span>
+            <span id="specTypology" class="spec-value">—</span>
           </div>
+          <div class="spec-cell">
+            <span class="spec-key">Location</span>
+            <span id="specLocation" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Status</span>
+            <span id="specStatus" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Scale / Area</span>
+            <span id="specScale" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Client</span>
+            <span id="specClient" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Delivery Scope</span>
+            <span id="specScope" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Structure</span>
+            <span id="specStructure" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Envelope</span>
+            <span id="specEnvelope" class="spec-value">—</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-key">Climate Strategy</span>
+            <span id="specClimate" class="spec-value">—</span>
+          </div>
+        </div>
 
-          <!-- Sidebar Specs -->
-          <aside class="specs-sidebar">
-            <div class="spec-entry">
-              <span class="spec-label">Client / Commissioner</span>
-              <span id="specClient" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Location</span>
-              <span id="specLocation" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Typology &amp; Sector</span>
-              <span id="specTypology" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Status &amp; Phase</span>
-              <span id="specStatus" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Scale / Gross Area</span>
-              <span id="specScale" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Structural System</span>
-              <span id="specStructure" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Facade &amp; Envelope</span>
-              <span id="specEnvelope" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Climatic Strategy</span>
-              <span id="specClimate" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Scope of Services</span>
-              <span id="specScope" class="spec-value"></span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">Year of Commission</span>
-              <span id="specYear" class="spec-value"></span>
-            </div>
-          </aside>
+        <!-- Description & Key Features -->
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 1rem;">Architectural &amp; Engineering Scope</h3>
+          <p id="projectDescription" style="font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 1.75rem;"></p>
+          
+          <h4 style="font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; color: var(--accent-bronze); margin-bottom: 0.75rem;">Key Engineering Features</h4>
+          <ul id="projectFeaturesList" style="list-style: square; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-secondary);"></ul>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Back to Top Button -->
-  <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top" aria-label="Back to Top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
+  <!-- Toast Feedback -->
+  <div id="toastBanner" class="toast-banner">Inquiry received. Reference sent to your email.</div>
 
-  <!-- Toast notification -->
-  <div id="toastNotice" class="toast-notice"></div>
-
-  <!-- Embedded fallback data & Main App Logic -->
+  <!-- Fallback Embedded Data & Application JS -->
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

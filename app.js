@@ -1,6 +1,6 @@
 /**
- * IVY ARCHITECTURE & CONSTRUCTION PRACTICE
- * Modern Architectural Monograph Platform (BIG.DK Reference)
+ * IVY ARCHITECTURE & CONSTRUCTION
+ * Premium Architectural Practice & Portfolio Platform
  */
 
 (function () {
@@ -9,106 +9,69 @@
   // State Management
   const state = {
     projects: window.IVY_PROJECTS || [],
-    currentView: 'grid', // 'grid' | 'list' | 'map'
+    currentView: 'grid', // 'grid' | 'list'
     currentTypology: 'all',
-    currentStatus: 'all',
     searchQuery: '',
     currentModalProjectId: null,
     currentGalleryIndex: 0,
-    heroIndex: 0,
-    heroTimer: null,
     theme: localStorage.getItem('ivy-theme') || 'dark',
-    activeRegion: 'all',
     sortColumn: 'code',
     sortAsc: true
   };
 
-  // Flagship Hero Showcase IDs
-  const HERO_PROJECT_IDS = ['ivy-28', 'ivy-03', 'ivy-05', 'ivy-12', 'ivy-08', 'ivy-11'];
-
   // DOM Elements Cache
   const el = {
-    // Header
+    // Header & Navigation
     themeToggleBtn: document.getElementById('themeToggleBtn'),
     mobileMenuBtn: document.getElementById('mobileMenuBtn'),
     mobileNavDrawer: document.getElementById('mobileNavDrawer'),
     mobileNavClose: document.getElementById('mobileNavClose'),
-    liveStudioClock: document.getElementById('liveStudioClock'),
-    
-    // Hero
-    heroSliderContainer: document.getElementById('heroSliderContainer'),
-    heroProgressBars: document.getElementById('heroProgressBars'),
-    heroIndexBadge: document.getElementById('heroIndexBadge'),
-    heroCodeSpan: document.getElementById('heroCodeSpan'),
-    heroTypologySpan: document.getElementById('heroTypologySpan'),
-    heroTitle: document.getElementById('heroTitle'),
-    heroLocation: document.getElementById('heroLocation'),
-    heroTypology: document.getElementById('heroTypology'),
-    heroScale: document.getElementById('heroScale'),
-    heroPrevBtn: document.getElementById('heroPrevBtn'),
-    heroNextBtn: document.getElementById('heroNextBtn'),
-    heroExploreBtn: document.getElementById('heroExploreBtn'),
-    
-    // Stats
-    statProjects: document.getElementById('statProjects'),
-    
-    // Toolbar & Filters
+    navLinks: document.querySelectorAll('.nav-link, .mobile-nav-link'),
+
+    // Projects Toolbar & Views
     typologyFilters: document.getElementById('typologyFilters'),
-    statusPills: document.getElementById('statusPills'),
     searchInput: document.getElementById('searchInput'),
     viewGridBtn: document.getElementById('viewGridBtn'),
     viewListBtn: document.getElementById('viewListBtn'),
-    viewMapBtn: document.getElementById('viewMapBtn'),
-    resultsCount: document.getElementById('resultsCount'),
-    
-    // Views Containers
     viewGridContainer: document.getElementById('viewGridContainer'),
     viewListContainer: document.getElementById('viewListContainer'),
-    viewMapContainer: document.getElementById('viewMapContainer'),
-    
-    // Floating List Hover Preview
+
+    // Table Hover Preview
     hoverPreviewCard: document.getElementById('hoverPreviewCard'),
     hoverPreviewImg: document.getElementById('hoverPreviewImg'),
     hoverPreviewTitle: document.getElementById('hoverPreviewTitle'),
     hoverPreviewMeta: document.getElementById('hoverPreviewMeta'),
-    
-    // Modal / Drawer
+
+    // Case Study Modal Drawer
     modalBackdrop: document.getElementById('modalBackdrop'),
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     modalPrevBtn: document.getElementById('modalPrevBtn'),
     modalNextBtn: document.getElementById('modalNextBtn'),
-    modalShareBtn: document.getElementById('modalShareBtn'),
     modalCodeTag: document.getElementById('modalCodeTag'),
     modalProjectTitle: document.getElementById('modalProjectTitle'),
-    galleryViewer: document.getElementById('galleryViewer'),
-    galleryStage: document.getElementById('galleryStage'),
-    galleryPrevBtn: document.getElementById('galleryPrevBtn'),
-    galleryNextBtn: document.getElementById('galleryNextBtn'),
+    galleryMainImg: document.getElementById('galleryMainImg'),
     galleryCounter: document.getElementById('galleryCounter'),
     galleryThumbs: document.getElementById('galleryThumbs'),
-    projectDescription: document.getElementById('projectDescription'),
-    projectFeaturesList: document.getElementById('projectFeaturesList'),
-    specClient: document.getElementById('specClient'),
-    specLocation: document.getElementById('specLocation'),
     specTypology: document.getElementById('specTypology'),
+    specLocation: document.getElementById('specLocation'),
     specStatus: document.getElementById('specStatus'),
     specScale: document.getElementById('specScale'),
+    specClient: document.getElementById('specClient'),
+    specScope: document.getElementById('specScope'),
     specStructure: document.getElementById('specStructure'),
     specEnvelope: document.getElementById('specEnvelope'),
     specClimate: document.getElementById('specClimate'),
-    specScope: document.getElementById('specScope'),
-    specYear: document.getElementById('specYear'),
-    
-    // Back to Top & Toast
-    backToTopBtn: document.getElementById('backToTopBtn'),
-    rfpForm: document.getElementById('rfpForm'),
-    toastNotice: document.getElementById('toastNotice')
+    projectDescription: document.getElementById('projectDescription'),
+    projectFeaturesList: document.getElementById('projectFeaturesList'),
+
+    // Inquiry Form & Toast
+    inquiryForm: document.getElementById('inquiryForm'),
+    toastBanner: document.getElementById('toastBanner')
   };
 
-  // Initialize
+  // App Initialization
   async function init() {
     setupTheme();
-    setupClock();
     setupEventListeners();
     await loadProjectData();
     renderTypologyFilters();
@@ -116,7 +79,7 @@
     handleHashRouting();
   }
 
-  // Load project data
+  // Load project data (Fetch JSON with fallback to data.js)
   async function loadProjectData() {
     if (!state.projects || state.projects.length === 0) {
       try {
@@ -125,29 +88,9 @@
           state.projects = await response.json();
         }
       } catch (err) {
-        console.warn('Using embedded fallback data', err);
+        console.warn('Using embedded architectural data fallback', err);
       }
     }
-    if (el.statProjects) {
-      el.statProjects.textContent = `${state.projects.length}+`;
-    }
-  }
-
-  // Live Studio Clock
-  function setupClock() {
-    function updateClock() {
-      if (!el.liveStudioClock) return;
-      const now = new Date();
-      // EAT is UTC+3
-      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-      const eat = new Date(utc + (3600000 * 3));
-      const hours = String(eat.getHours()).padStart(2, '0');
-      const mins = String(eat.getMinutes()).padStart(2, '0');
-      const secs = String(eat.getSeconds()).padStart(2, '0');
-      el.liveStudioClock.textContent = `ADDIS ABABA ${hours}:${mins}:${secs} EAT`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
   }
 
   // Theme setup
@@ -165,184 +108,144 @@
 
   function updateThemeIcon() {
     if (!el.themeToggleBtn) return;
-    el.themeToggleBtn.innerHTML = state.theme === 'dark' 
-      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    el.themeToggleBtn.innerHTML = state.theme === 'dark'
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>`;
   }
 
-  // Setup Event Listeners
+  // Event Listeners
   function setupEventListeners() {
-    // Theme
-    el.themeToggleBtn.addEventListener('click', toggleTheme);
+    // Theme toggle
+    if (el.themeToggleBtn) el.themeToggleBtn.addEventListener('click', toggleTheme);
 
-    // Mobile nav
-    el.mobileMenuBtn.addEventListener('click', () => el.mobileNavDrawer.classList.add('open'));
-    el.mobileNavClose.addEventListener('click', () => el.mobileNavDrawer.classList.remove('open'));
+    // Mobile nav toggle
+    if (el.mobileMenuBtn && el.mobileNavDrawer) {
+      el.mobileMenuBtn.addEventListener('click', () => el.mobileNavDrawer.classList.add('open'));
+    }
+    if (el.mobileNavClose && el.mobileNavDrawer) {
+      el.mobileNavClose.addEventListener('click', () => el.mobileNavDrawer.classList.remove('open'));
+    }
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => el.mobileNavDrawer.classList.remove('open'));
     });
 
-    // View switcher
-    el.viewGridBtn.addEventListener('click', () => setView('grid'));
-    el.viewListBtn.addEventListener('click', () => setView('list'));
-    el.viewMapBtn.addEventListener('click', () => setView('map'));
-
-    // Status pills
-    document.querySelectorAll('.status-pill').forEach(pill => {
-      pill.addEventListener('click', (e) => {
-        document.querySelectorAll('.status-pill').forEach(p => p.classList.remove('active'));
-        e.target.classList.add('active');
-        state.currentStatus = e.target.dataset.status;
-        render();
-      });
-    });
+    // View switchers
+    if (el.viewGridBtn) el.viewGridBtn.addEventListener('click', () => setView('grid'));
+    if (el.viewListBtn) el.viewListBtn.addEventListener('click', () => setView('list'));
 
     // Search input
-    el.searchInput.addEventListener('input', (e) => {
-      state.searchQuery = e.target.value.trim().toLowerCase();
-      render();
-    });
-
-    // Hero buttons (if present)
-    if (el.heroPrevBtn) el.heroPrevBtn.addEventListener('click', () => { prevHero(); resetHeroTimer(); });
-    if (el.heroNextBtn) el.heroNextBtn.addEventListener('click', () => { nextHero(); resetHeroTimer(); });
-    if (el.heroExploreBtn) el.heroExploreBtn.addEventListener('click', () => {
-      const heroProjects = getHeroProjects();
-      const current = heroProjects[state.heroIndex];
-      if (current) openModal(current.id);
-    });
+    if (el.searchInput) {
+      el.searchInput.addEventListener('input', (e) => {
+        state.searchQuery = e.target.value.trim().toLowerCase();
+        render();
+      });
+    }
 
     // Modal controls
-    el.modalCloseBtn.addEventListener('click', closeModal);
-    el.modalBackdrop.addEventListener('click', (e) => {
-      if (e.target === el.modalBackdrop) closeModal();
-    });
-    el.modalPrevBtn.addEventListener('click', prevModalProject);
-    el.modalNextBtn.addEventListener('click', nextModalProject);
-    
-    // Modal share button
-    if (el.modalShareBtn) {
-      el.modalShareBtn.addEventListener('click', copyProjectLink);
-    }
-
-    // Gallery controls
-    el.galleryPrevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevGalleryImage(); });
-    el.galleryNextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextGalleryImage(); });
-
-    // Click gallery to view fullscreen
-    if (el.galleryViewer) {
-      el.galleryViewer.addEventListener('click', () => {
-        const project = state.projects.find(p => p.id === state.currentModalProjectId);
-        if (project && project.images) {
-          const imgUrl = project.images[state.currentGalleryIndex] || project.heroImage;
-          window.open(imgUrl, '_blank');
-        }
+    if (el.modalCloseBtn) el.modalCloseBtn.addEventListener('click', closeModal);
+    if (el.modalBackdrop) {
+      el.modalBackdrop.addEventListener('click', (e) => {
+        if (e.target === el.modalBackdrop) closeModal();
       });
     }
+    if (el.modalPrevBtn) el.modalPrevBtn.addEventListener('click', prevModalProject);
+    if (el.modalNextBtn) el.modalNextBtn.addEventListener('click', nextModalProject);
 
-    // Back to top
-    if (el.backToTopBtn) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          el.backToTopBtn.classList.add('visible');
-        } else {
-          el.backToTopBtn.classList.remove('visible');
-        }
-      });
-      el.backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // Global Keyboard Shortcuts
+    // Keyboard navigation
     window.addEventListener('keydown', (e) => {
-      const isInput = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA';
-      
-      // Modal open shortcuts
-      if (el.modalBackdrop.classList.contains('open')) {
-        if (e.key === 'Escape') closeModal();
-        else if (e.key === 'ArrowLeft') prevGalleryImage();
-        else if (e.key === 'ArrowRight') nextGalleryImage();
-        return;
-      }
-
-      if (isInput) return;
-
-      if (e.key === '/') {
-        e.preventDefault();
-        el.searchInput.focus();
-      } else if (e.key === 'g' || e.key === 'G') {
-        setView('grid');
-      } else if (e.key === 'i' || e.key === 'I') {
-        setView('list');
-      } else if (e.key === 'm' || e.key === 'M') {
-        setView('map');
+      if (e.key === 'Escape') closeModal();
+      if (el.modalBackdrop && el.modalBackdrop.classList.contains('open')) {
+        if (e.key === 'ArrowLeft') prevModalProject();
+        if (e.key === 'ArrowRight') nextModalProject();
       }
     });
 
-    // Hash change
-    window.addEventListener('hashchange', handleHashRouting);
-
-    // RFP Form
-    if (el.rfpForm) {
-      el.rfpForm.addEventListener('submit', (e) => {
+    // Inquiry Form Submission
+    if (el.inquiryForm) {
+      el.inquiryForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        showToast('Inquiry received. Reference #IVY-' + Math.floor(1000 + Math.random() * 9000) + ' sent to your email.');
-        el.rfpForm.reset();
+        const clientName = document.getElementById('clientName').value;
+        showToast(`Consultation brief received for ${clientName}. Reference #IVY-${Math.floor(1000 + Math.random() * 9000)} sent to your email.`);
+        el.inquiryForm.reset();
       });
     }
-  }
 
-  // Toast notification
-  function showToast(msg) {
-    if (!el.toastNotice) return;
-    el.toastNotice.textContent = msg;
-    el.toastNotice.classList.add('show');
-    setTimeout(() => {
-      el.toastNotice.classList.remove('show');
-    }, 4000);
-  }
+    // Floating preview mouse tracking
+    window.addEventListener('mousemove', (e) => {
+      if (el.hoverPreviewCard && el.hoverPreviewCard.classList.contains('visible')) {
+        const offset = 20;
+        let x = e.clientX + offset;
+        let y = e.clientY + offset;
 
-  // Copy Project Link
-  function copyProjectLink() {
-    if (!state.currentModalProjectId) return;
-    const url = window.location.origin + window.location.pathname + '#project/' + state.currentModalProjectId;
-    navigator.clipboard.writeText(url).then(() => {
-      showToast('Project link copied to clipboard: ' + url);
-    }).catch(() => {
-      showToast('Deep-link active: ' + window.location.hash);
+        // Keep inside viewport bounds
+        if (x + 340 > window.innerWidth) x = e.clientX - 340;
+        if (y + 240 > window.innerHeight) y = e.clientY - 240;
+
+        el.hoverPreviewCard.style.left = `${x}px`;
+        el.hoverPreviewCard.style.top = `${y}px`;
+      }
     });
+
+    // Window Popstate (Deep Link Hash)
+    window.addEventListener('popstate', handleHashRouting);
   }
 
-  // Typology filters rendering
+  // Toast Notification
+  function showToast(msg) {
+    if (!el.toastBanner) return;
+    el.toastBanner.textContent = msg;
+    el.toastBanner.classList.add('show');
+    setTimeout(() => {
+      el.toastBanner.classList.remove('show');
+    }, 4500);
+  }
+
+  // Typology Filters Rendering
   function renderTypologyFilters() {
-    const typologies = [
+    if (!el.typologyFilters) return;
+
+    const categories = [
       { key: 'all', label: 'All Works' },
       { key: 'residential', label: 'Residential' },
       { key: 'mixed-use', label: 'Mixed-Use' },
       { key: 'corporate', label: 'Corporate' },
-      { key: 'education', label: 'Education' },
-      { key: 'hospitality', label: 'Hospitality' },
+      { key: 'education', label: 'Education & Health' },
       { key: 'industrial', label: 'Industrial' },
-      { key: 'monumental', label: 'Monumental' }
+      { key: 'hospitality', label: 'Hospitality' }
     ];
 
-    el.typologyFilters.innerHTML = typologies.map(t => {
-      const count = t.key === 'all' 
-        ? state.projects.length 
-        : state.projects.filter(p => p.category === t.key).length;
+    el.typologyFilters.innerHTML = categories.map(cat => {
+      const count = cat.key === 'all'
+        ? state.projects.length
+        : state.projects.filter(p => {
+            if (cat.key === 'education') return p.category === 'education' || p.category === 'healthcare';
+            return p.category === cat.key;
+          }).length;
 
       return `
-        <button class="filter-btn ${state.currentTypology === t.key ? 'active' : ''}" data-typology="${t.key}">
-          ${t.label} <span class="filter-count">(${count})</span>
+        <button class="filter-btn ${state.currentTypology === cat.key ? 'active' : ''}" data-typology="${cat.key}">
+          <span>${cat.label}</span>
+          <span style="opacity: 0.65; margin-left: 0.35rem; font-size: 0.7rem;">(${count})</span>
         </button>
       `;
     }).join('');
 
     el.typologyFilters.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        el.typologyFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         const target = e.currentTarget;
+        el.typologyFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         target.classList.add('active');
         state.currentTypology = target.dataset.typology;
         render();
@@ -350,122 +253,99 @@
     });
   }
 
-  // Filter projects helper
+  // Filter Logic
   function getFilteredProjects() {
-    let list = state.projects.filter(p => {
-      const matchTypology = state.currentTypology === 'all' || p.category === state.currentTypology;
-
-      let matchStatus = true;
-      if (state.currentStatus !== 'all') {
-        if (state.currentStatus === 'completed') matchStatus = p.statusType === 'completed';
-        else if (state.currentStatus === 'construction') matchStatus = p.statusType === 'construction';
-        else if (state.currentStatus === 'design') matchStatus = p.statusType === 'design';
+    return state.projects.filter(p => {
+      // Category filter
+      let matchesCategory = false;
+      if (state.currentTypology === 'all') {
+        matchesCategory = true;
+      } else if (state.currentTypology === 'education') {
+        matchesCategory = p.category === 'education' || p.category === 'healthcare';
+      } else {
+        matchesCategory = p.category === state.currentTypology;
       }
 
-      let matchSearch = true;
+      // Search filter
+      let matchesSearch = true;
       if (state.searchQuery) {
-        const q = state.searchQuery;
+        const query = state.searchQuery;
         const haystack = [
           p.title,
-          p.subtitle,
           p.location,
           p.city,
           p.country,
+          p.typology,
           p.client,
           p.code,
-          p.typology,
-          p.description
+          p.scope
         ].join(' ').toLowerCase();
-        matchSearch = haystack.includes(q);
+        matchesSearch = haystack.includes(query);
       }
 
-      return matchTypology && matchStatus && matchSearch;
+      return matchesCategory && matchesSearch;
     });
-
-    // Sorting
-    list.sort((a, b) => {
-      let valA = a[state.sortColumn] || '';
-      let valB = b[state.sortColumn] || '';
-      if (typeof valA === 'string') valA = valA.toLowerCase();
-      if (typeof valB === 'string') valB = valB.toLowerCase();
-
-      if (valA < valB) return state.sortAsc ? -1 : 1;
-      if (valA > valB) return state.sortAsc ? 1 : -1;
-      return 0;
-    });
-
-    return list;
   }
 
-  // Set View mode ('grid' | 'list' | 'map')
-  function setView(viewMode) {
-    state.currentView = viewMode;
-    el.viewGridBtn.classList.toggle('active', viewMode === 'grid');
-    el.viewListBtn.classList.toggle('active', viewMode === 'list');
-    el.viewMapBtn.classList.toggle('active', viewMode === 'map');
-
-    el.viewGridContainer.style.display = viewMode === 'grid' ? 'grid' : 'none';
-    el.viewListContainer.style.display = viewMode === 'list' ? 'block' : 'none';
-    el.viewMapContainer.style.display = viewMode === 'map' ? 'grid' : 'none';
-
+  // View Switching
+  function setView(viewName) {
+    state.currentView = viewName;
+    if (el.viewGridBtn) el.viewGridBtn.classList.toggle('active', viewName === 'grid');
+    if (el.viewListBtn) el.viewListBtn.classList.toggle('active', viewName === 'list');
+    
+    if (el.viewGridContainer) el.viewGridContainer.style.display = viewName === 'grid' ? 'grid' : 'none';
+    if (el.viewListContainer) el.viewListContainer.style.display = viewName === 'list' ? 'block' : 'none';
+    
     render();
   }
 
-  // Main Render Router
+  // Master Render
   function render() {
     const filtered = getFilteredProjects();
 
-    if (el.resultsCount) {
-      el.resultsCount.textContent = `Showing ${filtered.length} of ${state.projects.length} Works`;
-    }
-
     if (state.currentView === 'grid') {
-      renderGridView(filtered);
-    } else if (state.currentView === 'list') {
-      renderListView(filtered);
-    } else if (state.currentView === 'map') {
-      renderMapView(filtered);
+      renderGrid(filtered);
+    } else {
+      renderTable(filtered);
     }
   }
 
-  // Render Grid View (Editorial Masonry)
-  function renderGridView(projects) {
+  // Render 3-Column Editorial Grid
+  function renderGrid(projects) {
+    if (!el.viewGridContainer) return;
+
     if (projects.length === 0) {
       el.viewGridContainer.innerHTML = `
         <div style="grid-column: 1 / -1; padding: 5rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
-          NO PROJECTS FOUND MATCHING CRITERIA.
+          NO PROJECTS FOUND MATCHING SELECTION CRITERIA.
         </div>
       `;
       return;
     }
 
     el.viewGridContainer.innerHTML = projects.map(p => {
-      const statusClass = p.statusType === 'completed' 
-        ? 'status-completed' 
-        : p.statusType === 'construction' 
-        ? 'status-construction' 
+      const statusClass = p.statusType === 'completed'
+        ? 'status-completed'
+        : p.statusType === 'construction'
+        ? 'status-construction'
         : 'status-design';
 
-      const isFeatured = p.featured ? 'featured' : '';
-
       return `
-        <article class="project-card ${isFeatured}" data-id="${p.id}">
-          <div class="card-media">
-            <span class="corner-crosshair corner-tl">+</span>
-            <span class="corner-crosshair corner-br">+</span>
-            <span class="card-badge-code">${p.code}</span>
+        <article class="project-card" data-id="${p.id}" tabindex="0">
+          <div class="card-media-wrapper">
+            <span class="card-badge-code">[${p.code}]</span>
             <span class="card-badge-status ${statusClass}">
               <span class="status-dot"></span>${p.status}
             </span>
-            <img src="${p.heroImage}" alt="${p.title}" loading="lazy">
+            <img src="${p.heroImage}" alt="${p.title} architectural view" loading="lazy">
           </div>
-          <div class="card-body">
+          <div class="card-content">
             <span class="card-typology">${p.typology}</span>
             <h3 class="card-title">${p.title}</h3>
-            <div class="card-meta">
+            <div class="card-footer-meta">
               <span>${p.city}, ${p.country}</span>
-              <span class="card-action-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <span class="card-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -476,189 +356,82 @@
       `;
     }).join('');
 
+    // Attach card click handlers
     el.viewGridContainer.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        openModal(card.dataset.id);
+      card.addEventListener('click', () => openModal(card.dataset.id));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card.dataset.id);
+        }
       });
     });
   }
 
-  // Render List / Index View (The BIG Table with column sorting)
-  function renderListView(projects) {
+  // Render Complete Architectural Table Index
+  function renderTable(projects) {
+    if (!el.viewListContainer) return;
+
     if (projects.length === 0) {
       el.viewListContainer.innerHTML = `
-        <div style="padding: 5rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
-          NO PROJECTS FOUND.
+        <div style="padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
+          NO PROJECTS FOUND MATCHING SELECTION CRITERIA.
         </div>
       `;
       return;
     }
 
-    const sortIndicator = (col) => {
-      if (state.sortColumn !== col) return '';
-      return state.sortAsc ? '<span class="sort-icon">▲</span>' : '<span class="sort-icon">▼</span>';
-    };
-
-    el.viewListContainer.innerHTML = `
-      <div class="index-table-wrapper">
-        <table class="index-table">
-          <thead>
-            <tr>
-              <th style="width: 50px;">NO.</th>
-              <th class="sortable" data-sort="code" style="width: 100px;">CODE ${sortIndicator('code')}</th>
-              <th class="sortable" data-sort="title">PROJECT NAME ${sortIndicator('title')}</th>
-              <th class="sortable" data-sort="typology">TYPOLOGY ${sortIndicator('typology')}</th>
-              <th class="sortable" data-sort="location">LOCATION ${sortIndicator('location')}</th>
-              <th class="sortable" data-sort="status">STATUS ${sortIndicator('status')}</th>
-              <th class="sortable" data-sort="scale">SCALE / AREA ${sortIndicator('scale')}</th>
-              <th class="sortable" data-sort="client">CLIENT ${sortIndicator('client')}</th>
+    const tableHtml = `
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Project Title</th>
+            <th>Typology</th>
+            <th>Location</th>
+            <th>Scale / Area</th>
+            <th>Status</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${projects.map(p => `
+            <tr class="table-row" data-id="${p.id}" data-img="${p.heroImage}" data-title="${p.title}" data-loc="${p.location}">
+              <td style="color: var(--accent-bronze); font-weight: 700;">[${p.code}]</td>
+              <td style="color: var(--text-primary); font-weight: 600;">${p.title}</td>
+              <td>${p.typology}</td>
+              <td>${p.location}</td>
+              <td>${p.scale}</td>
+              <td>${p.status}</td>
+              <td>${p.year || '—'}</td>
             </tr>
-          </thead>
-          <tbody>
-            ${projects.map((p, idx) => `
-              <tr class="table-row" data-id="${p.id}" data-img="${p.heroImage}" data-title="${p.title}" data-loc="${p.location}">
-                <td>${String(idx + 1).padStart(2, '0')}</td>
-                <td class="col-code">${p.code}</td>
-                <td class="col-title">${p.title}</td>
-                <td>${p.typology}</td>
-                <td>${p.location}</td>
-                <td>
-                  <span class="status-dot" style="background-color: ${
-                    p.statusType === 'completed' ? 'var(--accent-green)' :
-                    p.statusType === 'construction' ? 'var(--accent-orange)' : 'var(--accent-blue)'
-                  };"></span>
-                  ${p.status}
-                </td>
-                <td>${p.scale}</td>
-                <td>${p.client}</td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-      </div>
+          `).join('')}
+        </tbody>
+      </table>
     `;
 
-    // Sort column clicks
-    el.viewListContainer.querySelectorAll('th.sortable').forEach(th => {
-      th.addEventListener('click', (e) => {
-        const col = e.currentTarget.dataset.sort;
-        if (state.sortColumn === col) {
-          state.sortAsc = !state.sortAsc;
-        } else {
-          state.sortColumn = col;
-          state.sortAsc = true;
-        }
-        render();
-      });
-    });
+    el.viewListContainer.innerHTML = tableHtml;
 
-    // Row clicks & Floating preview card
-    const rows = el.viewListContainer.querySelectorAll('.table-row');
-    rows.forEach(row => {
-      row.addEventListener('click', () => {
-        openModal(row.dataset.id);
-      });
+    // Attach row events
+    el.viewListContainer.querySelectorAll('.table-row').forEach(row => {
+      row.addEventListener('click', () => openModal(row.dataset.id));
 
       row.addEventListener('mouseenter', () => {
+        if (!el.hoverPreviewCard) return;
         el.hoverPreviewImg.src = row.dataset.img;
         el.hoverPreviewTitle.textContent = row.dataset.title;
         el.hoverPreviewMeta.textContent = row.dataset.loc;
         el.hoverPreviewCard.classList.add('visible');
       });
 
-      row.addEventListener('mousemove', (e) => {
-        const x = e.clientX + 20;
-        const y = e.clientY + 20;
-        const cardWidth = 320;
-        const cardHeight = 240;
-        const maxX = window.innerWidth - cardWidth - 20;
-        const maxY = window.innerHeight - cardHeight - 20;
-
-        el.hoverPreviewCard.style.left = `${Math.min(x, maxX)}px`;
-        el.hoverPreviewCard.style.top = `${Math.min(y, maxY)}px`;
-      });
-
       row.addEventListener('mouseleave', () => {
+        if (!el.hoverPreviewCard) return;
         el.hoverPreviewCard.classList.remove('visible');
       });
     });
   }
 
-  // Render Map / Territory Matrix View
-  function renderMapView(projects) {
-    const territories = [
-      { id: 'all', name: 'All Territories', count: projects.length },
-      { id: 'addis', name: 'Addis Ababa Capital Metro', count: projects.filter(p => p.city === 'Addis Ababa').length },
-      { id: 'oromia', name: 'Bishoftu & Oromia Corridor', count: projects.filter(p => p.city === 'Bishoftu' || p.city === 'Assela').length },
-      { id: 'south-sudan', name: 'South Sudan (Juba & Unity)', count: projects.filter(p => p.country === 'South Sudan').length },
-      { id: 'regional-et', name: 'Regional Ethiopia (Afar, Gondar, Hosanna)', count: projects.filter(p => ['Afar Region', 'Afedera', 'Gondar', 'Hosanna', 'Gambella', 'Bensa'].includes(p.city)).length },
-      { id: 'international', name: 'Middle East International (Erbil, Iraq)', count: projects.filter(p => p.country === 'Iraq').length }
-    ];
-
-    let displayedProjects = projects;
-    if (state.activeRegion === 'addis') {
-      displayedProjects = projects.filter(p => p.city === 'Addis Ababa');
-    } else if (state.activeRegion === 'oromia') {
-      displayedProjects = projects.filter(p => p.city === 'Bishoftu' || p.city === 'Assela');
-    } else if (state.activeRegion === 'south-sudan') {
-      displayedProjects = projects.filter(p => p.country === 'South Sudan');
-    } else if (state.activeRegion === 'regional-et') {
-      displayedProjects = projects.filter(p => ['Afar Region', 'Afedera', 'Gondar', 'Hosanna', 'Gambella', 'Bensa'].includes(p.city));
-    } else if (state.activeRegion === 'international') {
-      displayedProjects = projects.filter(p => p.country === 'Iraq');
-    }
-
-    el.viewMapContainer.innerHTML = `
-      <div class="territory-sidebar">
-        <h3 class="font-display" style="font-size: 1.35rem; text-transform: uppercase;">Regional Hubs</h3>
-        <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">
-          Select an operational territory to inspect localized project nodes, civic infrastructure, and construction sites across East Africa and the Middle East.
-        </p>
-        <div class="territory-hub-list">
-          ${territories.map(t => `
-            <button class="territory-hub-btn ${state.activeRegion === t.id ? 'active' : ''}" data-region="${t.id}">
-              <span>${t.name}</span>
-              <span class="territory-hub-badge">${t.count}</span>
-            </button>
-          `).join('')}
-        </div>
-      </div>
-      <div class="territory-map-canvas">
-        <div style="margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-color); padding-bottom: 0.85rem;">
-          <span class="mono" style="font-size: 0.78rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 700;">
-            TERRITORY // ${state.activeRegion.toUpperCase()}
-          </span>
-          <span class="mono" style="font-size: 0.75rem; color: var(--text-muted);">
-            ${displayedProjects.length} ACTIVE COMMISSIONS
-          </span>
-        </div>
-        <div class="matrix-nodes-grid">
-          ${displayedProjects.map(p => `
-            <div class="matrix-node-card" data-id="${p.id}">
-              <div class="node-code">[${p.code}]</div>
-              <div class="node-title">${p.title}</div>
-              <div class="node-location">${p.location}</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    el.viewMapContainer.querySelectorAll('.territory-hub-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        state.activeRegion = e.currentTarget.dataset.region;
-        render();
-      });
-    });
-
-    el.viewMapContainer.querySelectorAll('.matrix-node-card').forEach(card => {
-      card.addEventListener('click', () => {
-        openModal(card.dataset.id);
-      });
-    });
-  }
-
-  // Open Project Modal / Case Study Drawer
+  // Project Case Study Modal
   function openModal(projectId) {
     const project = state.projects.find(p => p.id === projectId);
     if (!project) return;
@@ -666,114 +439,93 @@
     state.currentModalProjectId = projectId;
     state.currentGalleryIndex = 0;
 
-    // Header info
-    el.modalCodeTag.textContent = project.code;
-    el.modalProjectTitle.textContent = project.title;
+    // Set textual details
+    if (el.modalCodeTag) el.modalCodeTag.textContent = `[${project.code}]`;
+    if (el.modalProjectTitle) el.modalProjectTitle.textContent = project.title;
+    if (el.specTypology) el.specTypology.textContent = project.typology;
+    if (el.specLocation) el.specLocation.textContent = project.location;
+    if (el.specStatus) el.specStatus.textContent = project.status;
+    if (el.specScale) el.specScale.textContent = project.scale;
+    if (el.specClient) el.specClient.textContent = project.client;
+    if (el.specScope) el.specScope.textContent = project.scope;
+    if (el.specStructure) el.specStructure.textContent = project.structure || 'Reinforced Concrete Superstructure';
+    if (el.specEnvelope) el.specEnvelope.textContent = project.envelope || 'High-Performance Insulated Glazing';
+    if (el.specClimate) el.specClimate.textContent = project.climate || 'Passive Solar Shading & Cross-Ventilation';
+    if (el.projectDescription) el.projectDescription.textContent = project.description;
 
-    // Gallery render
-    updateGallery();
-
-    // Narratives & specs
-    el.projectDescription.textContent = project.description;
-    
-    // Key features list
-    if (project.keyFeatures && project.keyFeatures.length > 0) {
-      el.projectFeaturesList.innerHTML = project.keyFeatures.map(f => `
-        <li class="feature-item">
-          <span class="feature-bullet">■</span>
-          <span>${f}</span>
-        </li>
-      `).join('');
-    } else {
-      el.projectFeaturesList.innerHTML = '';
+    // Features list
+    if (el.projectFeaturesList) {
+      if (project.keyFeatures && project.keyFeatures.length > 0) {
+        el.projectFeaturesList.innerHTML = project.keyFeatures.map(f => `<li>${f}</li>`).join('');
+      } else {
+        el.projectFeaturesList.innerHTML = '<li>Full architectural construction documentation</li><li>Seismic analysis & structural foundation engineering</li>';
+      }
     }
 
-    // Specifications
-    el.specClient.textContent = project.client || 'Confidential';
-    el.specLocation.textContent = project.location;
-    el.specTypology.textContent = project.typology;
-    el.specStatus.textContent = project.status;
-    el.specScale.textContent = project.scale || 'N/A';
-    el.specStructure.textContent = project.structure || 'Cast-in-Place Concrete Framework';
-    el.specEnvelope.textContent = project.envelope || 'High-Performance Glazing';
-    el.specClimate.textContent = project.climate || 'Passive Climatic Shading';
-    el.specScope.textContent = project.scope || 'Turnkey Architecture & Engineering';
-    el.specYear.textContent = project.year || '2024';
+    // Gallery Render
+    renderGallery(project);
 
-    // Open drawer
-    el.modalBackdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    // Open Drawer
+    if (el.modalBackdrop) {
+      el.modalBackdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
 
-    // Set URL hash
-    window.location.hash = `project/${project.id}`;
+    // Set URL Hash
+    history.pushState(null, '', `#project/${project.id}`);
+  }
+
+  function renderGallery(project) {
+    const images = project.images && project.images.length > 0 ? project.images : [project.heroImage];
+
+    if (el.galleryMainImg) {
+      el.galleryMainImg.src = images[state.currentGalleryIndex] || project.heroImage;
+    }
+
+    if (el.galleryCounter) {
+      el.galleryCounter.textContent = `${String(state.currentGalleryIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
+    }
+
+    if (el.galleryThumbs) {
+      el.galleryThumbs.innerHTML = images.map((img, idx) => `
+        <img src="${img}" class="gallery-thumb ${idx === state.currentGalleryIndex ? 'active' : ''}" data-idx="${idx}" alt="Thumb ${idx + 1}">
+      `).join('');
+
+      el.galleryThumbs.querySelectorAll('.gallery-thumb').forEach(thumb => {
+        thumb.addEventListener('click', (e) => {
+          state.currentGalleryIndex = parseInt(e.currentTarget.dataset.idx, 10);
+          renderGallery(project);
+        });
+      });
+    }
   }
 
   function closeModal() {
-    el.modalBackdrop.classList.remove('open');
-    document.body.style.overflow = '';
-    state.currentModalProjectId = null;
-    history.replaceState(null, null, ' ');
-  }
-
-  function updateGallery() {
-    const project = state.projects.find(p => p.id === state.currentModalProjectId);
-    if (!project || !project.images || project.images.length === 0) return;
-
-    const currentImg = project.images[state.currentGalleryIndex] || project.heroImage;
-    el.galleryStage.innerHTML = `<img src="${currentImg}" alt="${project.title}">`;
-    el.galleryCounter.textContent = `${state.currentGalleryIndex + 1} / ${project.images.length}`;
-
-    // Thumbs
-    if (project.images.length > 1) {
-      el.galleryThumbs.style.display = 'flex';
-      el.galleryThumbs.innerHTML = project.images.map((img, idx) => `
-        <div class="gallery-thumb ${idx === state.currentGalleryIndex ? 'active' : ''}" data-index="${idx}">
-          <img src="${img}" alt="Thumbnail">
-        </div>
-      `).join('');
-
-      el.galleryThumbs.querySelectorAll('.gallery-thumb').forEach(th => {
-        th.addEventListener('click', (e) => {
-          state.currentGalleryIndex = parseInt(e.currentTarget.dataset.index, 10);
-          updateGallery();
-        });
-      });
-    } else {
-      el.galleryThumbs.style.display = 'none';
+    if (el.modalBackdrop) {
+      el.modalBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
     }
-  }
-
-  function nextGalleryImage() {
-    const project = state.projects.find(p => p.id === state.currentModalProjectId);
-    if (!project || !project.images) return;
-    state.currentGalleryIndex = (state.currentGalleryIndex + 1) % project.images.length;
-    updateGallery();
-  }
-
-  function prevGalleryImage() {
-    const project = state.projects.find(p => p.id === state.currentModalProjectId);
-    if (!project || !project.images) return;
-    state.currentGalleryIndex = (state.currentGalleryIndex - 1 + project.images.length) % project.images.length;
-    updateGallery();
-  }
-
-  function nextModalProject() {
-    const filtered = getFilteredProjects();
-    const curIdx = filtered.findIndex(p => p.id === state.currentModalProjectId);
-    if (curIdx === -1) return;
-    const nextIdx = (curIdx + 1) % filtered.length;
-    openModal(filtered[nextIdx].id);
+    state.currentModalProjectId = null;
+    history.pushState(null, '', window.location.pathname);
   }
 
   function prevModalProject() {
     const filtered = getFilteredProjects();
-    const curIdx = filtered.findIndex(p => p.id === state.currentModalProjectId);
-    if (curIdx === -1) return;
-    const prevIdx = (curIdx - 1 + filtered.length) % filtered.length;
-    openModal(filtered[prevIdx].id);
+    if (filtered.length <= 1) return;
+    const currentIndex = filtered.findIndex(p => p.id === state.currentModalProjectId);
+    const prevIndex = (currentIndex - 1 + filtered.length) % filtered.length;
+    openModal(filtered[prevIndex].id);
   }
 
-  // Handle Hash Deep Linking
+  function nextModalProject() {
+    const filtered = getFilteredProjects();
+    if (filtered.length <= 1) return;
+    const currentIndex = filtered.findIndex(p => p.id === state.currentModalProjectId);
+    const nextIndex = (currentIndex + 1) % filtered.length;
+    openModal(filtered[nextIndex].id);
+  }
+
+  // Handle Hash Routing
   function handleHashRouting() {
     const hash = window.location.hash;
     if (hash.startsWith('#project/')) {
@@ -782,7 +534,7 @@
     }
   }
 
-  // Run on DOM ready
+  // Execute on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
