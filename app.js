@@ -1,6 +1,7 @@
 /**
  * IVY ARCHITECTURE & CONSTRUCTION
  * Premium Architectural Practice & Portfolio Platform
+ * Second-Stage Professional Refinement
  */
 
 (function () {
@@ -9,14 +10,12 @@
   // State Management
   const state = {
     projects: window.IVY_PROJECTS || [],
-    currentView: 'grid', // 'grid' | 'list'
+    currentView: 'grid', // 'grid' | 'list' | 'regions'
     currentTypology: 'all',
     searchQuery: '',
     currentModalProjectId: null,
     currentGalleryIndex: 0,
-    theme: localStorage.getItem('ivy-theme') || 'dark',
-    sortColumn: 'code',
-    sortAsc: true
+    theme: localStorage.getItem('ivy-theme') || 'dark'
   };
 
   // DOM Elements Cache
@@ -33,8 +32,10 @@
     searchInput: document.getElementById('searchInput'),
     viewGridBtn: document.getElementById('viewGridBtn'),
     viewListBtn: document.getElementById('viewListBtn'),
+    viewRegionsBtn: document.getElementById('viewRegionsBtn'),
     viewGridContainer: document.getElementById('viewGridContainer'),
     viewListContainer: document.getElementById('viewListContainer'),
+    viewRegionsContainer: document.getElementById('viewRegionsContainer'),
 
     // Table Hover Preview
     hoverPreviewCard: document.getElementById('hoverPreviewCard'),
@@ -64,9 +65,10 @@
     projectDescription: document.getElementById('projectDescription'),
     projectFeaturesList: document.getElementById('projectFeaturesList'),
 
-    // Inquiry Form & Toast
+    // Inquiry Form, Toast & Back to Top
     inquiryForm: document.getElementById('inquiryForm'),
-    toastBanner: document.getElementById('toastBanner')
+    toastBanner: document.getElementById('toastBanner'),
+    backToTopBtn: document.getElementById('backToTopBtn')
   };
 
   // App Initialization
@@ -144,6 +146,7 @@
     // View switchers
     if (el.viewGridBtn) el.viewGridBtn.addEventListener('click', () => setView('grid'));
     if (el.viewListBtn) el.viewListBtn.addEventListener('click', () => setView('list'));
+    if (el.viewRegionsBtn) el.viewRegionsBtn.addEventListener('click', () => setView('regions'));
 
     // Search input
     if (el.searchInput) {
@@ -181,6 +184,24 @@
         el.inquiryForm.reset();
       });
     }
+
+    // Back to Top button
+    if (el.backToTopBtn) {
+      el.backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Scroll listener for Back to Top
+    window.addEventListener('scroll', () => {
+      if (el.backToTopBtn) {
+        if (window.scrollY > 400) {
+          el.backToTopBtn.classList.add('visible');
+        } else {
+          el.backToTopBtn.classList.remove('visible');
+        }
+      }
+    }, { passive: true });
 
     // Floating preview mouse tracking
     window.addEventListener('mousemove', (e) => {
@@ -292,9 +313,11 @@
     state.currentView = viewName;
     if (el.viewGridBtn) el.viewGridBtn.classList.toggle('active', viewName === 'grid');
     if (el.viewListBtn) el.viewListBtn.classList.toggle('active', viewName === 'list');
+    if (el.viewRegionsBtn) el.viewRegionsBtn.classList.toggle('active', viewName === 'regions');
     
     if (el.viewGridContainer) el.viewGridContainer.style.display = viewName === 'grid' ? 'grid' : 'none';
     if (el.viewListContainer) el.viewListContainer.style.display = viewName === 'list' ? 'block' : 'none';
+    if (el.viewRegionsContainer) el.viewRegionsContainer.style.display = viewName === 'regions' ? 'flex' : 'none';
     
     render();
   }
@@ -305,8 +328,10 @@
 
     if (state.currentView === 'grid') {
       renderGrid(filtered);
-    } else {
+    } else if (state.currentView === 'list') {
       renderTable(filtered);
+    } else if (state.currentView === 'regions') {
+      renderRegions(filtered);
     }
   }
 
@@ -427,6 +452,94 @@
       row.addEventListener('mouseleave', () => {
         if (!el.hoverPreviewCard) return;
         el.hoverPreviewCard.classList.remove('visible');
+      });
+    });
+  }
+
+  // Render Regional Territory Matrix View
+  function renderRegions(projects) {
+    if (!el.viewRegionsContainer) return;
+
+    if (projects.length === 0) {
+      el.viewRegionsContainer.innerHTML = `
+        <div style="padding: 4rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
+          NO PROJECTS FOUND MATCHING SELECTION CRITERIA.
+        </div>
+      `;
+      return;
+    }
+
+    const regions = [
+      {
+        id: 'ethiopia',
+        name: 'Ethiopia Principal Studio',
+        badge: 'HQ Bureau',
+        desc: 'Capital commercial towers, university campuses, regional hospitals, and multi-family residential developments across Addis Ababa, Oromia, Gambella, and Afar.',
+        filter: p => p.country === 'Ethiopia'
+      },
+      {
+        id: 'south-sudan',
+        name: 'South Sudan Regional Operations',
+        badge: 'Regional Bureau',
+        desc: 'Key civic, humanitarian, commercial, and healthcare developments across Juba and regional corridors.',
+        filter: p => p.country === 'South Sudan'
+      },
+      {
+        id: 'international',
+        name: 'International Logistics & Commissions',
+        badge: 'Cross-Border Hub',
+        desc: 'International high-rise architecture and specialized procurement networks in Erbil, Kurdistan Region, Iraq.',
+        filter: p => p.country === 'Iraq' || (p.country !== 'Ethiopia' && p.country !== 'South Sudan')
+      }
+    ];
+
+    el.viewRegionsContainer.innerHTML = regions.map(reg => {
+      const regProjects = projects.filter(reg.filter);
+      if (regProjects.length === 0) return '';
+
+      return `
+        <div class="territory-group">
+          <div class="territory-header">
+            <div class="territory-title-wrap">
+              <span class="territory-badge">${reg.badge}</span>
+              <h3 class="territory-name">${reg.name}</h3>
+            </div>
+            <span class="territory-count">${regProjects.length} Works</span>
+          </div>
+          <p class="territory-desc">${reg.desc}</p>
+          <div class="territory-projects-grid">
+            ${regProjects.map(p => `
+              <article class="project-card" data-id="${p.id}" tabindex="0">
+                <div class="card-media-wrapper">
+                  <span class="card-badge-code">[${p.code}]</span>
+                  <span class="card-badge-status status-${p.statusType || 'design'}">
+                    <span class="status-dot"></span>${p.status}
+                  </span>
+                  <img src="${p.heroImage}" alt="${p.title}" loading="lazy">
+                </div>
+                <div class="card-content">
+                  <span class="card-typology">${p.typology}</span>
+                  <h4 class="card-title">${p.title}</h4>
+                  <div class="card-footer-meta">
+                    <span>${p.city}, ${p.country}</span>
+                    <span class="card-arrow">&rarr;</span>
+                  </div>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click events
+    el.viewRegionsContainer.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.id));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card.dataset.id);
+        }
       });
     });
   }
