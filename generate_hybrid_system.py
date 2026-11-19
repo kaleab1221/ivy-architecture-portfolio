@@ -170,7 +170,6 @@ def render_mobile_drawer(home_prefix=""):
       <a href="{home_prefix}index.html#services" class="mobile-nav-item">Services</a>
       <a href="{home_prefix}index.html#credentials" class="mobile-nav-item">Credentials</a>
       <a href="{home_prefix}index.html#leadership" class="mobile-nav-item">Leadership</a>
-      <a href="{home_prefix}index.html#clients" class="mobile-nav-item">Clients</a>
     </nav>
     <div class="mobile-nav-contact-footer">
       <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
@@ -301,7 +300,6 @@ for i, p in enumerate(PROJECTS):
         <a href="../index.html#services" class="nav-item">Services</a>
         <a href="../index.html#credentials" class="nav-item">Credentials</a>
         <a href="../index.html#leadership" class="nav-item">Leadership</a>
-        <a href="../index.html#clients" class="nav-item">Clients</a>
       </nav>
 
       <div class="header-tools">
@@ -690,7 +688,6 @@ homepage_html = f"""<!DOCTYPE html>
         <a href="#services" class="nav-item">Services</a>
         <a href="#credentials" class="nav-item">Credentials</a>
         <a href="#leadership" class="nav-item">Leadership</a>
-        <a href="#clients" class="nav-item">Clients</a>
       </nav>
 
       <div class="header-tools">
@@ -1033,25 +1030,6 @@ homepage_html = f"""<!DOCTYPE html>
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         CLIENTS: DOCUMENTED INSTITUTIONAL & CORPORATE CLIENTS
-         ======================================================================== -->
-    <section id="clients" class="editorial-section clients-section">
-      <div class="editorial-container">
-        <div class="section-heading-bar">
-          <div>
-            <span class="section-label">Client Record</span>
-            <h2 class="section-title-serif">Commissioning Clients &amp; Organizations</h2>
-            <p class="section-subtext">Government ministries, educational institutions, commercial developers, and non-governmental organizations.</p>
-          </div>
-        </div>
-
-        <ul class="clients-directory-list">
-          {client_list_html}
-        </ul>
       </div>
     </section>
   </main>
