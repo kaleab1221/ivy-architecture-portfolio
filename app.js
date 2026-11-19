@@ -11,7 +11,7 @@
   const state = {
     projects: window.IVY_PROJECTS || [],
     currentView: 'grid', // 'grid' | 'list' | 'regions'
-    currentTypology: 'featured',
+    currentTypology: 'all',
     searchQuery: '',
     currentModalProjectId: null,
     currentGalleryIndex: 0,
@@ -256,6 +256,7 @@
     if (!el.typologyFilters) return;
 
     const categories = [
+      { key: 'all', label: 'All Projects' },
       { key: 'featured', label: 'Featured Works' },
       { key: 'residential', label: 'Residential' },
       { key: 'mixed-use', label: 'Mixed-Use' },
@@ -266,7 +267,9 @@
     ];
 
     el.typologyFilters.innerHTML = categories.map(cat => {
-      const count = cat.key === 'featured'
+      const count = cat.key === 'all'
+        ? state.projects.length
+        : cat.key === 'featured'
         ? state.projects.filter(p => p.featured).length
         : state.projects.filter(p => {
             if (cat.key === 'education') return p.category === 'education' || p.category === 'healthcare';
@@ -295,7 +298,9 @@
   // Filter Logic
   function getFilteredProjects() {
     return state.projects.filter(p => {
-      if (state.currentTypology === 'featured') {
+      if (state.currentTypology === 'all') {
+        return true;
+      } else if (state.currentTypology === 'featured') {
         return p.featured === true;
       } else if (state.currentTypology === 'education') {
         return p.category === 'education' || p.category === 'healthcare';
