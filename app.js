@@ -280,9 +280,19 @@ Transmitted via IVY Integrated Architecture Portfolio Monograph`
   }
 
   // ============================================================================
-  // 5. SMOOTH SCROLLING WITH OFFSET FOR STICKY HEADER
+  // 5. SMOOTH SCROLLING WITH OFFSET FOR STICKY HEADER & BACK TO TOP
   // ============================================================================
   function initSmoothScroll() {
+    const backToTop = document.getElementById('footerBackToTop');
+    if (backToTop) {
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');

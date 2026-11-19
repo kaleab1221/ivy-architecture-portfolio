@@ -5,18 +5,18 @@ Builds the complete hybrid editorial architecture website for IVY Architecture &
 - Hero: "Building a better environment." + Refined multidisciplinary lead
 - 6 Featured Projects: Large full-bleed editorial spreads with Newsreader serif
 - Section #portfolio (Card Grid):
-  - Category Filter Tabs matching exact counts:
+  - Category Filter Tabs:
     ALL PROJECTS (33), FEATURED WORKS (8), RESIDENTIAL (7), MIXED-USE (7),
     CORPORATE (3), EDUCATION & HEALTH (6), INDUSTRIAL (5), HOSPITALITY (4)
   - Live instant search input
   - 3-Column Project Card Grid with image on top, clean metadata underneath,
     and dramatic architectural elevation shadow on hover
-- Section #index: Complete 33-project filterable table ledger (Sector, Country, Status)
 - Services (6 core disciplines text list)
 - Credentials (Grade-1 GC, ISO 9001, Cross-border trading)
 - Leadership (Multidisciplinary directors)
 - Verified Clients (30 real corporate & institutional entities)
 - Contact: Simplified 4-field Consultation Brief + direct WhatsApp
+- Elevated Professional Architectural Footer with Studios, Communications & Legal
 - 33 Static Project Pages with fact sheets, drawings, and galleries
 - Synchronizes all files to root and public/
 """
@@ -57,6 +57,116 @@ def picture_tag(img_src, alt_text, css_class="", is_lazy=True, prefix=""):
   <source srcset="{p_webp}" type="image/webp">
   <img src="{p_img}" alt="{alt_text}" {lazy_attr}>
 </picture>'''
+
+def render_professional_footer(home_prefix=""):
+    return f"""  <footer class="editorial-footer">
+    <div class="editorial-container">
+      <!-- Top Footer Main Grid: 4 Architectural Columns -->
+      <div class="footer-primary-grid">
+        <!-- Col 1: Practice Profile & Certifications -->
+        <div class="footer-col footer-col-brand">
+          <a href="{home_prefix}index.html" class="footer-brand-title" aria-label="IVY Architecture & Construction Home">
+            <span class="brand-serif">IVY</span>
+            <span class="brand-sub">Architecture &middot; Engineering &middot; Construction</span>
+          </a>
+          <p class="footer-mission-statement">
+            An integrated multidisciplinary practice delivering landmark commercial towers, multi-family residential communities, civic masterplans, and heavy infrastructure across East Africa and the Middle East.
+          </p>
+          <div class="footer-badges-list">
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>Grade-1 General Contractor (MUDI Registered)</span>
+            </div>
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>ISO 9001:2015 Quality Management Certified</span>
+            </div>
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>Cross-Border Logistics &amp; Material Procurement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: International Operating Bureaus -->
+        <div class="footer-col footer-col-bureaus">
+          <h4 class="footer-heading-mono">[01] Operating Bureaus</h4>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Addis Ababa &mdash; Principal Design Studio [HQ]</strong>
+            <p class="bureau-addr">Bole Commercial District, Alem Building, Addis Ababa, Ethiopia</p>
+            <p class="bureau-comm">Tel: <a href="tel:+251911234567">+251 91 123 4567</a></p>
+          </div>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Juba &mdash; Regional Operations Bureau</strong>
+            <p class="bureau-addr">Central Commercial Sector, Juba, Republic of South Sudan</p>
+          </div>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Erbil &mdash; Logistics &amp; Prefabrication Partner</strong>
+            <p class="bureau-addr">Specialized Procurement &amp; Freight Forwarding, Erbil, Iraq</p>
+          </div>
+        </div>
+
+        <!-- Col 3: Direct Inquiries & Communications -->
+        <div class="footer-col footer-col-comms">
+          <h4 class="footer-heading-mono">[02] Communications</h4>
+          <ul class="footer-contact-links">
+            <li>
+              <span class="contact-lbl">Direct Partner Line:</span>
+              <a href="tel:+251911234567" class="footer-link-active">+251 91 123 4567</a>
+            </li>
+            <li>
+              <span class="contact-lbl">Instant Messaging:</span>
+              <a href="https://wa.me/251911234567?text=Hello%20IVY%20Architecture,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="whatsapp-footer-link">
+                WhatsApp Business Bureau &rarr;
+              </a>
+            </li>
+            <li>
+              <span class="contact-lbl">Executive Inquiries:</span>
+              <a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a>
+            </li>
+            <li>
+              <span class="contact-lbl">Tenders &amp; Procurement:</span>
+              <a href="mailto:tenders@ivyconstruction.com">tenders@ivyconstruction.com</a>
+            </li>
+          </ul>
+          <div class="footer-monograph-box">
+            <span class="mono-meta">Monograph Documentation</span>
+            <p class="mono-text">81-page high-resolution architectural monograph with plans, sections, and specifications.</p>
+            <a href="{home_prefix}IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="footer-monograph-action">
+              Download PDF (7.3 MB) &darr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Practice Index & Navigation -->
+        <div class="footer-col footer-col-nav">
+          <h4 class="footer-heading-mono">[03] Practice Index</h4>
+          <ul class="footer-nav-list">
+            <li><a href="{home_prefix}index.html#featured">Featured Spreads</a></li>
+            <li><a href="{home_prefix}index.html#portfolio">Architectural Portfolio (33)</a></li>
+            <li><a href="{home_prefix}index.html#services">Integrated Disciplines</a></li>
+            <li><a href="{home_prefix}index.html#credentials">Institutional Credentials</a></li>
+            <li><a href="{home_prefix}index.html#leadership">Practice Leadership</a></li>
+            <li><a href="{home_prefix}index.html#clients">Commissioning Clients</a></li>
+            <li><a href="{home_prefix}index.html#contact">Consultation Brief</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Sub-Footer Bar with Hairline Divider -->
+      <div class="footer-bottom-bar">
+        <div class="footer-legal-copy">
+          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
+        </div>
+        <div class="footer-bottom-tools">
+          <span class="footer-reg-no">Statutory License: FDRE-MUDI-GC-001</span>
+          <button id="footerBackToTop" class="footer-back-to-top" type="button" aria-label="Return to top of page">
+            Back to Top &uarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>"""
 
 print(f"Loaded {len(PROJECTS)} projects. Building static project pages...")
 
@@ -176,9 +286,10 @@ for i, p in enumerate(PROJECTS):
       <nav class="editorial-nav" aria-label="Main Navigation">
         <a href="../index.html#featured" class="nav-item">Featured</a>
         <a href="../index.html#portfolio" class="nav-item">Portfolio</a>
-        <a href="../index.html#index" class="nav-item">Ledger</a>
         <a href="../index.html#services" class="nav-item">Services</a>
         <a href="../index.html#credentials" class="nav-item">Credentials</a>
+        <a href="../index.html#leadership" class="nav-item">Leadership</a>
+        <a href="../index.html#clients" class="nav-item">Clients</a>
         <a href="../index.html#contact" class="nav-item">Contact</a>
       </nav>
 
@@ -199,8 +310,6 @@ for i, p in enumerate(PROJECTS):
         <a href="../index.html">Practice</a>
         <span class="crumb-sep">/</span>
         <a href="../index.html#portfolio">Portfolio</a>
-        <span class="crumb-sep">/</span>
-        <a href="../index.html#index">Ledger</a>
         <span class="crumb-sep">/</span>
         <span class="crumb-current">{code} &mdash; {title}</span>
       </div>
@@ -344,9 +453,6 @@ for i, p in enumerate(PROJECTS):
         <a href="../index.html#portfolio" class="pagination-center" title="Return to portfolio grid">
           Portfolio Grid
         </a>
-        <a href="../index.html#index" class="pagination-center" title="Return to complete project index">
-          Table Ledger
-        </a>
         <a href="{next_p['id']}.html" class="pagination-link next" rel="next">
           <span class="pagination-label">Next Commission &rarr;</span>
           <span class="pagination-title">{next_p['code']} &mdash; {next_p['title']}</span>
@@ -355,27 +461,7 @@ for i, p in enumerate(PROJECTS):
     </nav>
   </main>
 
-  <footer class="editorial-footer">
-    <div class="editorial-container footer-inner">
-      <div class="footer-brand-col">
-        <span class="footer-serif">IVY</span>
-        <p class="footer-legal">IVY Architecture &amp; Construction Co. Ltd.<br>Grade-1 General Contractor &middot; ISO 9001 Certified</p>
-      </div>
-      <div class="footer-bureau-col">
-        <h4 class="footer-heading">Permanent Bureaus</h4>
-        <p>Bole Commercial District, Addis Ababa, Ethiopia</p>
-        <p>Central Commercial Sector, Juba, South Sudan</p>
-        <p>Logistics &amp; Prefabrication Partner, Erbil, Iraq</p>
-      </div>
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Practice Index</h4>
-        <p><a href="../index.html#featured">Featured Spreads</a></p>
-        <p><a href="../index.html#portfolio">Architectural Portfolio</a></p>
-        <p><a href="../index.html#index">Catalogue Ledger (33 Commissions)</a></p>
-        <p><a href="../index.html#contact">Consultation Request</a></p>
-      </div>
-    </div>
-  </footer>
+  {render_professional_footer("../")}
 
   <script src="../app.js"></script>
 </body>
@@ -387,7 +473,7 @@ for i, p in enumerate(PROJECTS):
 print("Generated all 33 static project pages successfully.")
 
 # ==============================================================================
-# 2. BUILD EDITORIAL HOMEPAGE (index.html) WITH HYBRID PORTFOLIO
+# 2. BUILD EDITORIAL HOMEPAGE (index.html)
 # ==============================================================================
 
 # Featured 6 Landmark Spreads
@@ -501,33 +587,6 @@ for p in PROJECTS:
     </article>
     """
 
-# Build Complete Index Table Rows for all 33 projects
-index_rows_html = ""
-for p in PROJECTS:
-    p_id = p["id"]
-    p_code = p["code"]
-    p_title = p["title"]
-    p_cat = p.get("category", "")
-    p_typology = p.get("typology", "")
-    p_city = p.get("city", "")
-    p_country = p.get("country", "")
-    p_status = p.get("status", "")
-    p_status_type = p.get("statusType", "design")
-    p_year = p.get("year", "")
-    p_scale = p.get("scale", "")
-
-    index_rows_html += f"""
-    <tr class="index-row" data-sector="{p_cat}" data-country="{p_country}" data-status="{p_status_type}">
-      <td class="col-code"><a href="projects/{p_id}.html" class="row-link">{p_code}</a></td>
-      <td class="col-title"><a href="projects/{p_id}.html" class="row-link row-title-serif">{p_title}</a></td>
-      <td class="col-sector">{p_typology}</td>
-      <td class="col-location">{p_city}, {p_country}</td>
-      <td class="col-scale">{p_scale}</td>
-      <td class="col-status"><span class="status-pill status-{p_status_type}">{p_status}</span></td>
-      <td class="col-year">{p_year}</td>
-      <td class="col-action"><a href="projects/{p_id}.html" class="row-action-btn" aria-label="Open {p_title} documentation">&rarr;</a></td>
-    </tr>"""
-
 documented_clients = sorted(list(set(
     p.get("client") for p in PROJECTS if p.get("client") and "Private" not in p.get("client") and "Confidential" not in p.get("client")
 )))
@@ -561,7 +620,7 @@ homepage_html = f"""<!DOCTYPE html>
   <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (Clean Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -611,7 +670,6 @@ homepage_html = f"""<!DOCTYPE html>
       <nav class="editorial-nav" aria-label="Main Navigation">
         <a href="#featured" class="nav-item">Featured</a>
         <a href="#portfolio" class="nav-item">Portfolio</a>
-        <a href="#index" class="nav-item">Ledger</a>
         <a href="#services" class="nav-item">Services</a>
         <a href="#credentials" class="nav-item">Credentials</a>
         <a href="#leadership" class="nav-item">Leadership</a>
@@ -747,7 +805,7 @@ homepage_html = f"""<!DOCTYPE html>
             <h2 class="section-title-serif">Selected Works &amp; Typologies</h2>
             <p class="section-subtext">Explore thirty-three verified commissions across residential, commercial high-rise, institutional, and industrial sectors.</p>
           </div>
-          <a href="#index" class="section-action-link">View Table Ledger &rarr;</a>
+          <span class="portfolio-verified-count">33 Verified Commissions</span>
         </div>
 
         <!-- Category Filter Tabs Bar (Exact User Counts) -->
@@ -790,84 +848,6 @@ homepage_html = f"""<!DOCTYPE html>
         <!-- 3-Column Architectural Project Grid -->
         <div id="projectsGrid" class="projects-grid">
           {cards_html}
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         FILTERABLE PROJECT INDEX: TABLE LEDGER (SECTOR, COUNTRY, STATUS)
-         ======================================================================== -->
-    <section id="index" class="editorial-section index-section">
-      <div class="editorial-container">
-        <div class="section-heading-bar">
-          <div>
-            <span class="section-label">Project Index</span>
-            <h2 class="section-title-serif">Complete Architectural Ledger</h2>
-            <p class="section-subtext">Thirty-three documented commissions across civic, commercial, residential, healthcare, and industrial typologies.</p>
-          </div>
-          <div id="indexCountIndicator" class="index-count-indicator">Showing 33 of 33 commissions</div>
-        </div>
-
-        <!-- Index Filter Controls (Minimal Dropdowns & Hairline Rule) -->
-        <div class="index-filter-bar" role="search" aria-label="Filter commissions">
-          <div class="filter-group">
-            <label for="filterSector" class="filter-label">Sector</label>
-            <select id="filterSector" class="editorial-select">
-              <option value="all">All Sectors</option>
-              <option value="commercial">Commercial</option>
-              <option value="residential">Residential</option>
-              <option value="mixed-use">Mixed-Use</option>
-              <option value="corporate">Corporate</option>
-              <option value="education">Education</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="industrial">Industrial</option>
-              <option value="hospitality">Hospitality</option>
-              <option value="monumental">Monumental &amp; Civic</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="filterCountry" class="filter-label">Country</label>
-            <select id="filterCountry" class="editorial-select">
-              <option value="all">All Countries</option>
-              <option value="Ethiopia">Ethiopia</option>
-              <option value="South Sudan">South Sudan</option>
-              <option value="Iraq">Iraq</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="filterStatus" class="filter-label">Status</label>
-            <select id="filterStatus" class="editorial-select">
-              <option value="all">All Statuses</option>
-              <option value="completed">Completed</option>
-              <option value="construction">In Construction</option>
-              <option value="design">Design Phase</option>
-            </select>
-          </div>
-
-          <button id="resetFiltersBtn" class="filter-reset-btn" type="button">Reset Filters</button>
-        </div>
-
-        <!-- Editorial Table Ledger -->
-        <div class="table-responsive-wrapper">
-          <table class="editorial-ledger-table" aria-label="IVY Architectural Commissions Index">
-            <thead>
-              <tr>
-                <th scope="col">Code</th>
-                <th scope="col">Project Title</th>
-                <th scope="col">Typology</th>
-                <th scope="col">Location</th>
-                <th scope="col">Scale</th>
-                <th scope="col">Status</th>
-                <th scope="col">Year</th>
-                <th scope="col" aria-label="Link"></th>
-              </tr>
-            </thead>
-            <tbody id="indexTableBody">
-              {index_rows_html}
-            </tbody>
-          </table>
         </div>
       </div>
     </section>
@@ -1170,37 +1150,7 @@ homepage_html = f"""<!DOCTYPE html>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="editorial-footer">
-    <div class="editorial-container footer-inner">
-      <div class="footer-brand-col">
-        <span class="footer-serif">IVY</span>
-        <p class="footer-legal">
-          IVY Architecture &amp; Construction Co. Ltd.<br>
-          Federal Ministry of Urban Development Registered Grade-1 Contractor<br>
-          ISO 9001:2015 Audited Quality Management System &middot; All Rights Reserved.
-        </p>
-      </div>
-
-      <div class="footer-bureau-col">
-        <h4 class="footer-heading">Operating Bureaus</h4>
-        <p>Bole Commercial District, Addis Ababa, Ethiopia</p>
-        <p>Central Commercial Sector, Juba, South Sudan</p>
-        <p>Logistics &amp; Prefabrication Partner, Erbil, Iraq</p>
-      </div>
-
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Navigation</h4>
-        <p><a href="#featured">Featured Spreads</a></p>
-        <p><a href="#portfolio">Architectural Portfolio</a></p>
-        <p><a href="#index">Catalogue Ledger (33 Commissions)</a></p>
-        <p><a href="#services">Integrated Disciplines</a></p>
-        <p><a href="#credentials">Institutional Credentials</a></p>
-        <p><a href="#leadership">Practice Leadership</a></p>
-        <p><a href="#contact">Direct Consultation</a></p>
-      </div>
-    </div>
-  </footer>
+  {render_professional_footer("")}
 
   <script src="app.js"></script>
 </body>
@@ -1209,7 +1159,7 @@ homepage_html = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as hf:
     hf.write(homepage_html)
 
-print("Generated editorial index.html with hybrid portfolio successfully.")
+print("Generated editorial index.html without table ledger successfully.")
 
 # ==============================================================================
 # 3. BUILD SITEMAP (sitemap.xml)

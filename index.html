@@ -25,7 +25,7 @@
   <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (Clean Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -75,7 +75,6 @@
       <nav class="editorial-nav" aria-label="Main Navigation">
         <a href="#featured" class="nav-item">Featured</a>
         <a href="#portfolio" class="nav-item">Portfolio</a>
-        <a href="#index" class="nav-item">Ledger</a>
         <a href="#services" class="nav-item">Services</a>
         <a href="#credentials" class="nav-item">Credentials</a>
         <a href="#leadership" class="nav-item">Leadership</a>
@@ -484,7 +483,7 @@
             <h2 class="section-title-serif">Selected Works &amp; Typologies</h2>
             <p class="section-subtext">Explore thirty-three verified commissions across residential, commercial high-rise, institutional, and industrial sectors.</p>
           </div>
-          <a href="#index" class="section-action-link">View Table Ledger &rarr;</a>
+          <span class="portfolio-verified-count">33 Verified Commissions</span>
         </div>
 
         <!-- Category Filter Tabs Bar (Exact User Counts) -->
@@ -1588,414 +1587,6 @@
     </section>
 
     <!-- ========================================================================
-         FILTERABLE PROJECT INDEX: TABLE LEDGER (SECTOR, COUNTRY, STATUS)
-         ======================================================================== -->
-    <section id="index" class="editorial-section index-section">
-      <div class="editorial-container">
-        <div class="section-heading-bar">
-          <div>
-            <span class="section-label">Project Index</span>
-            <h2 class="section-title-serif">Complete Architectural Ledger</h2>
-            <p class="section-subtext">Thirty-three documented commissions across civic, commercial, residential, healthcare, and industrial typologies.</p>
-          </div>
-          <div id="indexCountIndicator" class="index-count-indicator">Showing 33 of 33 commissions</div>
-        </div>
-
-        <!-- Index Filter Controls (Minimal Dropdowns & Hairline Rule) -->
-        <div class="index-filter-bar" role="search" aria-label="Filter commissions">
-          <div class="filter-group">
-            <label for="filterSector" class="filter-label">Sector</label>
-            <select id="filterSector" class="editorial-select">
-              <option value="all">All Sectors</option>
-              <option value="commercial">Commercial</option>
-              <option value="residential">Residential</option>
-              <option value="mixed-use">Mixed-Use</option>
-              <option value="corporate">Corporate</option>
-              <option value="education">Education</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="industrial">Industrial</option>
-              <option value="hospitality">Hospitality</option>
-              <option value="monumental">Monumental &amp; Civic</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="filterCountry" class="filter-label">Country</label>
-            <select id="filterCountry" class="editorial-select">
-              <option value="all">All Countries</option>
-              <option value="Ethiopia">Ethiopia</option>
-              <option value="South Sudan">South Sudan</option>
-              <option value="Iraq">Iraq</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="filterStatus" class="filter-label">Status</label>
-            <select id="filterStatus" class="editorial-select">
-              <option value="all">All Statuses</option>
-              <option value="completed">Completed</option>
-              <option value="construction">In Construction</option>
-              <option value="design">Design Phase</option>
-            </select>
-          </div>
-
-          <button id="resetFiltersBtn" class="filter-reset-btn" type="button">Reset Filters</button>
-        </div>
-
-        <!-- Editorial Table Ledger -->
-        <div class="table-responsive-wrapper">
-          <table class="editorial-ledger-table" aria-label="IVY Architectural Commissions Index">
-            <thead>
-              <tr>
-                <th scope="col">Code</th>
-                <th scope="col">Project Title</th>
-                <th scope="col">Typology</th>
-                <th scope="col">Location</th>
-                <th scope="col">Scale</th>
-                <th scope="col">Status</th>
-                <th scope="col">Year</th>
-                <th scope="col" aria-label="Link"></th>
-              </tr>
-            </thead>
-            <tbody id="indexTableBody">
-              
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-01.html" class="row-link">ADD-01</a></td>
-      <td class="col-title"><a href="projects/ivy-01.html" class="row-link row-title-serif">Apartment Building Addis</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">G+6 Floors / 4,200 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-01.html" class="row-action-btn" aria-label="Open Apartment Building Addis documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-02.html" class="row-link">ADD-02</a></td>
-      <td class="col-title"><a href="projects/ivy-02.html" class="row-link row-title-serif">Asnakech Luxury Residence & Apartments</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">G+3 Luxury Suites / 1,850 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-02.html" class="row-action-btn" aria-label="Open Asnakech Luxury Residence & Apartments documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="South Sudan" data-status="design">
-      <td class="col-code"><a href="projects/ivy-03.html" class="row-link">JUB-01</a></td>
-      <td class="col-title"><a href="projects/ivy-03.html" class="row-link row-title-serif">Juba Mall & Luxury Apartments</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Juba, South Sudan</td>
-      <td class="col-scale">Twin G+10 Towers / 48,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-03.html" class="row-action-btn" aria-label="Open Juba Mall & Luxury Apartments documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="South Sudan" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-04.html" class="row-link">JUB-02</a></td>
-      <td class="col-title"><a href="projects/ivy-04.html" class="row-link row-title-serif">Juba Mixed-Use Commercial Complex</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Juba, South Sudan</td>
-      <td class="col-scale">G+6 Floors / 9,600 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-04.html" class="row-action-btn" aria-label="Open Juba Mixed-Use Commercial Complex documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-05.html" class="row-link">ADD-03</a></td>
-      <td class="col-title"><a href="projects/ivy-05.html" class="row-link row-title-serif">Sevita Real Estate Tower</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">22 Stories / 32,500 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-05.html" class="row-action-btn" aria-label="Open Sevita Real Estate Tower documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-06.html" class="row-link">ADD-04</a></td>
-      <td class="col-title"><a href="projects/ivy-06.html" class="row-link row-title-serif">Hayat Association Apartment Project</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">G+5 Floors / 3,800 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-06.html" class="row-action-btn" aria-label="Open Hayat Association Apartment Project documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-07.html" class="row-link">ADD-05</a></td>
-      <td class="col-title"><a href="projects/ivy-07.html" class="row-link row-title-serif">Ministry of Defense Apartment Complex</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">G+8 Twin Connected Towers / 14,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-07.html" class="row-action-btn" aria-label="Open Ministry of Defense Apartment Complex documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-08.html" class="row-link">ADD-06</a></td>
-      <td class="col-title"><a href="projects/ivy-08.html" class="row-link row-title-serif">Luxury Residence for Hagbes Family</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">Private Estate / 950 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Starting Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-08.html" class="row-action-btn" aria-label="Open Luxury Residence for Hagbes Family documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="Iraq" data-status="design">
-      <td class="col-code"><a href="projects/ivy-09.html" class="row-link">ERB-01</a></td>
-      <td class="col-title"><a href="projects/ivy-09.html" class="row-link row-title-serif">Erbil Mixed-Use Commercial Tower</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Erbil, Iraq</td>
-      <td class="col-scale">24 Stories / 28,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-09.html" class="row-action-btn" aria-label="Open Erbil Mixed-Use Commercial Tower documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-10.html" class="row-link">ADD-07</a></td>
-      <td class="col-title"><a href="projects/ivy-10.html" class="row-link row-title-serif">Sarbet Mixed-Use Landmark Tower</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">16 Stories / 22,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-10.html" class="row-action-btn" aria-label="Open Sarbet Mixed-Use Landmark Tower documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-11.html" class="row-link">ADD-08</a></td>
-      <td class="col-title"><a href="projects/ivy-11.html" class="row-link row-title-serif">Kokeb Tower & Hospitality Expansion</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">26 Stories / 36,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-11.html" class="row-action-btn" aria-label="Open Kokeb Tower & Hospitality Expansion documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="corporate" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-12.html" class="row-link">ADD-09</a></td>
-      <td class="col-title"><a href="projects/ivy-12.html" class="row-link row-title-serif">Hagbes Showroom & Machinery Sales Center</a></td>
-      <td class="col-sector">Corporate & Showrooms</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">Pavilion & Concourse / 12,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-12.html" class="row-action-btn" aria-label="Open Hagbes Showroom & Machinery Sales Center documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="education" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-13.html" class="row-link">HOS-01</a></td>
-      <td class="col-title"><a href="projects/ivy-13.html" class="row-link row-title-serif">Wachamo University Research Campus</a></td>
-      <td class="col-sector">Education & Campus</td>
-      <td class="col-location">Hosanna, Ethiopia</td>
-      <td class="col-scale">3 Buildings / 18,500 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2023</td>
-      <td class="col-action"><a href="projects/ivy-13.html" class="row-action-btn" aria-label="Open Wachamo University Research Campus documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="industrial" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-14.html" class="row-link">SID-01</a></td>
-      <td class="col-title"><a href="projects/ivy-14.html" class="row-link row-title-serif">Bensa Coffee Pulping & Processing Plant</a></td>
-      <td class="col-sector">Industrial & Infrastructure</td>
-      <td class="col-location">Bensa, Ethiopia</td>
-      <td class="col-scale">Industrial Site / 45,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-14.html" class="row-action-btn" aria-label="Open Bensa Coffee Pulping & Processing Plant documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="industrial" data-country="South Sudan" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-15.html" class="row-link">JUB-03</a></td>
-      <td class="col-title"><a href="projects/ivy-15.html" class="row-link row-title-serif">Juba Central Fire Brigade Station</a></td>
-      <td class="col-sector">Industrial & Infrastructure</td>
-      <td class="col-location">Juba, South Sudan</td>
-      <td class="col-scale">Civic Station & Grounds / 15,000 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-15.html" class="row-action-btn" aria-label="Open Juba Central Fire Brigade Station documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="corporate" data-country="South Sudan" data-status="design">
-      <td class="col-code"><a href="projects/ivy-16.html" class="row-link">JUB-04</a></td>
-      <td class="col-title"><a href="projects/ivy-16.html" class="row-link row-title-serif">ADRA NGO Regional Headquarters</a></td>
-      <td class="col-sector">Corporate & Showrooms</td>
-      <td class="col-location">Juba, South Sudan</td>
-      <td class="col-scale">G+3 Headquarters / 3,400 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-16.html" class="row-action-btn" aria-label="Open ADRA NGO Regional Headquarters documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="corporate" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-17.html" class="row-link">ADD-10</a></td>
-      <td class="col-title"><a href="projects/ivy-17.html" class="row-link row-title-serif">Hagbes Regional Headquarters & Kality Hub</a></td>
-      <td class="col-sector">Corporate & Showrooms</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">G+5 Office Tower / 14,200 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-17.html" class="row-action-btn" aria-label="Open Hagbes Regional Headquarters & Kality Hub documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="industrial" data-country="South Sudan" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-18.html" class="row-link">SSD-01</a></td>
-      <td class="col-title"><a href="projects/ivy-18.html" class="row-link row-title-serif">GPOC Petrol VIP Residences & Modular Camp</a></td>
-      <td class="col-sector">Industrial & Infrastructure</td>
-      <td class="col-location">Wizeen Camp, South Sudan</td>
-      <td class="col-scale">Multi-Unit Base Camp / 500+ Residents</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-18.html" class="row-action-btn" aria-label="Open GPOC Petrol VIP Residences & Modular Camp documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="education" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-19.html" class="row-link">ARS-01</a></td>
-      <td class="col-title"><a href="projects/ivy-19.html" class="row-link row-title-serif">Arsi University College of Agriculture Campus</a></td>
-      <td class="col-sector">Education & Campus</td>
-      <td class="col-location">Assela, Ethiopia</td>
-      <td class="col-scale">80 Hectares / 65,000 m² Built</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2023</td>
-      <td class="col-action"><a href="projects/ivy-19.html" class="row-action-btn" aria-label="Open Arsi University College of Agriculture Campus documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="education" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-20.html" class="row-link">GAM-01</a></td>
-      <td class="col-title"><a href="projects/ivy-20.html" class="row-link row-title-serif">Gambella University College of Health Compound</a></td>
-      <td class="col-sector">Education & Campus</td>
-      <td class="col-location">Gambella, Ethiopia</td>
-      <td class="col-scale">100 Hectares / Olympic Arena & Campus</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-20.html" class="row-action-btn" aria-label="Open Gambella University College of Health Compound documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="healthcare" data-country="South Sudan" data-status="design">
-      <td class="col-code"><a href="projects/ivy-21.html" class="row-link">JUB-05</a></td>
-      <td class="col-title"><a href="projects/ivy-21.html" class="row-link row-title-serif">PHCC General Hospital Complex</a></td>
-      <td class="col-sector">Healthcare & Hospitality</td>
-      <td class="col-location">Juba, South Sudan</td>
-      <td class="col-scale">Hospital Campus / 120 Beds</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-21.html" class="row-action-btn" aria-label="Open PHCC General Hospital Complex documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-22.html" class="row-link">ADD-11</a></td>
-      <td class="col-title"><a href="projects/ivy-22.html" class="row-link row-title-serif">Torhailoch Golf Club Luxury Estate</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">Private Villa / 1,100 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-22.html" class="row-action-btn" aria-label="Open Torhailoch Golf Club Luxury Estate documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="hospitality" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-23.html" class="row-link">BIS-01</a></td>
-      <td class="col-title"><a href="projects/ivy-23.html" class="row-link row-title-serif">Bishoftu Hora Lake Dining & Leisure Pavilion</a></td>
-      <td class="col-sector">Healthcare & Hospitality</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">Restaurant & Grounds / 4,500 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-23.html" class="row-action-btn" aria-label="Open Bishoftu Hora Lake Dining & Leisure Pavilion documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="hospitality" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-24.html" class="row-link">ARS-02</a></td>
-      <td class="col-title"><a href="projects/ivy-24.html" class="row-link row-title-serif">Assela Referral Hospital Biophilic Cafe</a></td>
-      <td class="col-sector">Healthcare & Hospitality</td>
-      <td class="col-location">Assela, Ethiopia</td>
-      <td class="col-scale">Pavilion / 480 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Design & Construction</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-24.html" class="row-action-btn" aria-label="Open Assela Referral Hospital Biophilic Cafe documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="industrial" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-26.html" class="row-link">AFA-02</a></td>
-      <td class="col-title"><a href="projects/ivy-26.html" class="row-link row-title-serif">Kingdon Salt Processing Factory</a></td>
-      <td class="col-sector">Industrial & Infrastructure</td>
-      <td class="col-location">Afedera, Ethiopia</td>
-      <td class="col-scale">Refinery Facility / 18,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Under Design</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-26.html" class="row-action-btn" aria-label="Open Kingdon Salt Processing Factory documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="industrial" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-27.html" class="row-link">BIS-02</a></td>
-      <td class="col-title"><a href="projects/ivy-27.html" class="row-link row-title-serif">Gafat Armament Engineering Defense Complex</a></td>
-      <td class="col-sector">Industrial & Infrastructure</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">45 Hectares / High-Security Complex</td>
-      <td class="col-status"><span class="status-pill status-construction">Under Construction</span></td>
-      <td class="col-year">2023</td>
-      <td class="col-action"><a href="projects/ivy-27.html" class="row-action-btn" aria-label="Open Gafat Armament Engineering Defense Complex documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="monumental" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-28.html" class="row-link">ADD-12</a></td>
-      <td class="col-title"><a href="projects/ivy-28.html" class="row-link row-title-serif">King Nejashi Islamic Center & Monumental Arch Tower</a></td>
-      <td class="col-sector">Monumental Civic & Cultural</td>
-      <td class="col-location">Addis Ababa, Ethiopia</td>
-      <td class="col-scale">45 Stories + Grand Mosque / 85,000 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-28.html" class="row-action-btn" aria-label="Open King Nejashi Islamic Center & Monumental Arch Tower documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="education" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-29.html" class="row-link">BIS-03</a></td>
-      <td class="col-title"><a href="projects/ivy-29.html" class="row-link row-title-serif">Bethelem Academy Comprehensive Campus</a></td>
-      <td class="col-sector">Education & Campus</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">KG to Preparatory Campus / 22,000 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Partially Started</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-29.html" class="row-action-btn" aria-label="Open Bethelem Academy Comprehensive Campus documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="education" data-country="Ethiopia" data-status="completed">
-      <td class="col-code"><a href="projects/ivy-30.html" class="row-link">BIS-04</a></td>
-      <td class="col-title"><a href="projects/ivy-30.html" class="row-link row-title-serif">Anne Academy & Daycare Facility</a></td>
-      <td class="col-sector">Education & Campus</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">Multi-Story School / 2,400 m²</td>
-      <td class="col-status"><span class="status-pill status-completed">Completed</span></td>
-      <td class="col-year">2023</td>
-      <td class="col-action"><a href="projects/ivy-30.html" class="row-action-btn" aria-label="Open Anne Academy & Daycare Facility documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="residential" data-country="Ethiopia" data-status="completed">
-      <td class="col-code"><a href="projects/ivy-31.html" class="row-link">BIS-05</a></td>
-      <td class="col-title"><a href="projects/ivy-31.html" class="row-link row-title-serif">Villa Neoclassique Bishoftu</a></td>
-      <td class="col-sector">Residential</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">G+3 Luxury Villa / 680 m²</td>
-      <td class="col-status"><span class="status-pill status-completed">Completed</span></td>
-      <td class="col-year">2023</td>
-      <td class="col-action"><a href="projects/ivy-31.html" class="row-action-btn" aria-label="Open Villa Neoclassique Bishoftu documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="mixed-use" data-country="Ethiopia" data-status="construction">
-      <td class="col-code"><a href="projects/ivy-32.html" class="row-link">ARB-01</a></td>
-      <td class="col-title"><a href="projects/ivy-32.html" class="row-link row-title-serif">Arbaminch Highway Motel & Fueling Station</a></td>
-      <td class="col-sector">Mixed-Use & Commercial</td>
-      <td class="col-location">Arbaminch, Ethiopia</td>
-      <td class="col-scale">Commercial Complex / 8,500 m²</td>
-      <td class="col-status"><span class="status-pill status-construction">Partially Started</span></td>
-      <td class="col-year">2024</td>
-      <td class="col-action"><a href="projects/ivy-32.html" class="row-action-btn" aria-label="Open Arbaminch Highway Motel & Fueling Station documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="hospitality" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-33.html" class="row-link">BIS-06</a></td>
-      <td class="col-title"><a href="projects/ivy-33.html" class="row-link row-title-serif">Noora Cliffside Lake Resort</a></td>
-      <td class="col-sector">Healthcare & Hospitality</td>
-      <td class="col-location">Bishoftu, Ethiopia</td>
-      <td class="col-scale">Cliffside Resort / 6,200 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-33.html" class="row-action-btn" aria-label="Open Noora Cliffside Lake Resort documentation">&rarr;</a></td>
-    </tr>
-    <tr class="index-row" data-sector="hospitality" data-country="Ethiopia" data-status="design">
-      <td class="col-code"><a href="projects/ivy-34.html" class="row-link">GON-01</a></td>
-      <td class="col-title"><a href="projects/ivy-34.html" class="row-link row-title-serif">Gondar Heritage G+10 Hotel</a></td>
-      <td class="col-sector">Healthcare & Hospitality</td>
-      <td class="col-location">Gondar, Ethiopia</td>
-      <td class="col-scale">G+10 Floors / 11,500 m²</td>
-      <td class="col-status"><span class="status-pill status-design">Design Phase</span></td>
-      <td class="col-year">2025</td>
-      <td class="col-action"><a href="projects/ivy-34.html" class="row-action-btn" aria-label="Open Gondar Heritage G+10 Hotel documentation">&rarr;</a></td>
-    </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
          SERVICES: 6 PILLARS TEXT LIST WITH EXPANDED SCOPE
          ======================================================================== -->
     <section id="services" class="editorial-section services-section">
@@ -2293,34 +1884,111 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="editorial-footer">
-    <div class="editorial-container footer-inner">
-      <div class="footer-brand-col">
-        <span class="footer-serif">IVY</span>
-        <p class="footer-legal">
-          IVY Architecture &amp; Construction Co. Ltd.<br>
-          Federal Ministry of Urban Development Registered Grade-1 Contractor<br>
-          ISO 9001:2015 Audited Quality Management System &middot; All Rights Reserved.
-        </p>
+    <footer class="editorial-footer">
+    <div class="editorial-container">
+      <!-- Top Footer Main Grid: 4 Architectural Columns -->
+      <div class="footer-primary-grid">
+        <!-- Col 1: Practice Profile & Certifications -->
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-brand-title" aria-label="IVY Architecture & Construction Home">
+            <span class="brand-serif">IVY</span>
+            <span class="brand-sub">Architecture &middot; Engineering &middot; Construction</span>
+          </a>
+          <p class="footer-mission-statement">
+            An integrated multidisciplinary practice delivering landmark commercial towers, multi-family residential communities, civic masterplans, and heavy infrastructure across East Africa and the Middle East.
+          </p>
+          <div class="footer-badges-list">
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>Grade-1 General Contractor (MUDI Registered)</span>
+            </div>
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>ISO 9001:2015 Quality Management Certified</span>
+            </div>
+            <div class="footer-badge-item">
+              <span class="badge-dot"></span>
+              <span>Cross-Border Logistics &amp; Material Procurement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: International Operating Bureaus -->
+        <div class="footer-col footer-col-bureaus">
+          <h4 class="footer-heading-mono">[01] Operating Bureaus</h4>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Addis Ababa &mdash; Principal Design Studio [HQ]</strong>
+            <p class="bureau-addr">Bole Commercial District, Alem Building, Addis Ababa, Ethiopia</p>
+            <p class="bureau-comm">Tel: <a href="tel:+251911234567">+251 91 123 4567</a></p>
+          </div>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Juba &mdash; Regional Operations Bureau</strong>
+            <p class="bureau-addr">Central Commercial Sector, Juba, Republic of South Sudan</p>
+          </div>
+          <div class="footer-bureau-item">
+            <strong class="bureau-city">Erbil &mdash; Logistics &amp; Prefabrication Partner</strong>
+            <p class="bureau-addr">Specialized Procurement &amp; Freight Forwarding, Erbil, Iraq</p>
+          </div>
+        </div>
+
+        <!-- Col 3: Direct Inquiries & Communications -->
+        <div class="footer-col footer-col-comms">
+          <h4 class="footer-heading-mono">[02] Communications</h4>
+          <ul class="footer-contact-links">
+            <li>
+              <span class="contact-lbl">Direct Partner Line:</span>
+              <a href="tel:+251911234567" class="footer-link-active">+251 91 123 4567</a>
+            </li>
+            <li>
+              <span class="contact-lbl">Instant Messaging:</span>
+              <a href="https://wa.me/251911234567?text=Hello%20IVY%20Architecture,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="whatsapp-footer-link">
+                WhatsApp Business Bureau &rarr;
+              </a>
+            </li>
+            <li>
+              <span class="contact-lbl">Executive Inquiries:</span>
+              <a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a>
+            </li>
+            <li>
+              <span class="contact-lbl">Tenders &amp; Procurement:</span>
+              <a href="mailto:tenders@ivyconstruction.com">tenders@ivyconstruction.com</a>
+            </li>
+          </ul>
+          <div class="footer-monograph-box">
+            <span class="mono-meta">Monograph Documentation</span>
+            <p class="mono-text">81-page high-resolution architectural monograph with plans, sections, and specifications.</p>
+            <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="footer-monograph-action">
+              Download PDF (7.3 MB) &darr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 4: Practice Index & Navigation -->
+        <div class="footer-col footer-col-nav">
+          <h4 class="footer-heading-mono">[03] Practice Index</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#featured">Featured Spreads</a></li>
+            <li><a href="index.html#portfolio">Architectural Portfolio (33)</a></li>
+            <li><a href="index.html#services">Integrated Disciplines</a></li>
+            <li><a href="index.html#credentials">Institutional Credentials</a></li>
+            <li><a href="index.html#leadership">Practice Leadership</a></li>
+            <li><a href="index.html#clients">Commissioning Clients</a></li>
+            <li><a href="index.html#contact">Consultation Brief</a></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer-bureau-col">
-        <h4 class="footer-heading">Operating Bureaus</h4>
-        <p>Bole Commercial District, Addis Ababa, Ethiopia</p>
-        <p>Central Commercial Sector, Juba, South Sudan</p>
-        <p>Logistics &amp; Prefabrication Partner, Erbil, Iraq</p>
-      </div>
-
-      <div class="footer-links-col">
-        <h4 class="footer-heading">Navigation</h4>
-        <p><a href="#featured">Featured Spreads</a></p>
-        <p><a href="#portfolio">Architectural Portfolio</a></p>
-        <p><a href="#index">Catalogue Ledger (33 Commissions)</a></p>
-        <p><a href="#services">Integrated Disciplines</a></p>
-        <p><a href="#credentials">Institutional Credentials</a></p>
-        <p><a href="#leadership">Practice Leadership</a></p>
-        <p><a href="#contact">Direct Consultation</a></p>
+      <!-- Bottom Sub-Footer Bar with Hairline Divider -->
+      <div class="footer-bottom-bar">
+        <div class="footer-legal-copy">
+          &copy; 2026 IVY Architecture &amp; Construction Co. Ltd. &middot; Grade-1 General Contractor &middot; ISO 9001:2015 Certified Practice &middot; All Rights Reserved.
+        </div>
+        <div class="footer-bottom-tools">
+          <span class="footer-reg-no">Statutory License: FDRE-MUDI-GC-001</span>
+          <button id="footerBackToTop" class="footer-back-to-top" type="button" aria-label="Return to top of page">
+            Back to Top &uarr;
+          </button>
+        </div>
       </div>
     </div>
   </footer>
