@@ -62,6 +62,17 @@ def picture_tag(img_src, alt_text, css_class="", is_lazy=True, prefix=""):
   <img src="{p_img}" alt="{alt_text}" {lazy_attr}>
 </picture>'''
 
+def clean_excerpt(text, max_len=180):
+    if not text:
+        return ""
+    if len(text) <= max_len:
+        return text
+    truncated = text[:max_len]
+    last_space = truncated.rfind(' ')
+    if last_space > 0:
+        truncated = truncated[:last_space]
+    return truncated.rstrip('.,;:') + "..."
+
 def theme_toggle_button():
     return """<button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle visual theme" title="Toggle theme">
   <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -582,7 +593,7 @@ for p in PROJECTS:
           <a href="projects/{p_id}.html">{p_title}</a>
         </h3>
         <p class="card-location">{p_city}, {p_country}</p>
-        <p class="card-description">{p_desc[:130]}...</p>
+        <p class="card-description">{clean_excerpt(p_desc, 175)}</p>
         <div class="card-footer">
           <span class="card-scale">{p_scale}</span>
           <a href="projects/{p_id}.html" class="card-link-arrow">
