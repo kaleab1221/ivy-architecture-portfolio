@@ -7,25 +7,25 @@
    ========================================================================== */
 
 :root {
-  /* Editorial Palette: Dark Mode (Default) */
-  --bg-primary: #121211;
-  --bg-surface: #181817;
-  --bg-elevated: #1f1f1d;
-  --text-primary: #f6f4ee;
-  --text-secondary: #b5b3aa;
-  --text-muted: #7a7870;
-  --text-inverse: #121211;
-  --rule-color: #262624;
+  /* High-Contrast Editorial Architectural Palette: Dark Mode (Default) */
+  --bg-primary: #0a0a09;
+  --bg-surface: #121211;
+  --bg-elevated: #1a1a18;
+  --text-primary: #ffffff;
+  --text-secondary: #d4d2c8;
+  --text-muted: #95938a;
+  --text-inverse: #0a0a09;
+  --rule-color: #262522;
   --rule-subtle: #1c1c1a;
-  --accent-muted: #9c7a4a;
-  --accent-hover: #b8915b;
+  --accent-muted: #d49b55;
+  --accent-hover: #e8b372;
   --status-completed: #38a169;
   --status-construction: #d97706;
   --status-design: #3182ce;
 
-  /* Card Elevation Shadows (High Contrast Deep Architectural Diffusion) */
-  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
-  --card-shadow-hover: 0 24px 55px -10px rgba(0, 0, 0, 0.95), 0 14px 32px -4px rgba(156, 122, 74, 0.38), 0 0 35px rgba(156, 122, 74, 0.28), 0 0 0 1px rgba(156, 122, 74, 0.75);
+  /* Card Elevation & Ambient Bronze Glow Shadows */
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --card-shadow-hover: 0 20px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px 4px rgba(212, 155, 85, 0.45), 0 0 0 1px rgba(212, 155, 85, 0.85);
 
   /* Typography */
   --font-serif: 'Newsreader', Georgia, serif;
@@ -40,22 +40,23 @@
 }
 
 [data-theme="light"] {
-  --bg-primary: #f6f4ee;
-  --bg-surface: #edeae1;
-  --bg-elevated: #e4e0d4;
-  --text-primary: #121211;
-  --text-secondary: #57554d;
-  --text-muted: #828075;
-  --text-inverse: #f6f4ee;
-  --rule-color: #ddd9ce;
-  --rule-subtle: #e8e4da;
-  --accent-muted: #8c653c;
-  --accent-hover: #6d4e2c;
+  /* High-Contrast Editorial Architectural Palette: Light Mode */
+  --bg-primary: #faf9f6;
+  --bg-surface: #f1ede4;
+  --bg-elevated: #e6e1d5;
+  --text-primary: #0a0a09;
+  --text-secondary: #32312d;
+  --text-muted: #6b6960;
+  --text-inverse: #faf9f6;
+  --rule-color: #d6d1c4;
+  --rule-subtle: #e4dfd2;
+  --accent-muted: #b87a32;
+  --accent-hover: #965f21;
   --status-completed: #2f855a;
   --status-construction: #b45309;
   --status-design: #2b6cb0;
-  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: 0 24px 55px -10px rgba(0, 0, 0, 0.22), 0 12px 28px -4px rgba(140, 101, 60, 0.25), 0 0 25px rgba(140, 101, 60, 0.15), 0 0 0 1px rgba(140, 101, 60, 0.6);
+  --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 20px 48px -10px rgba(0, 0, 0, 0.22), 0 0 32px 3px rgba(184, 122, 50, 0.42), 0 0 0 1px rgba(184, 122, 50, 0.8);
 }
 
 /* ==========================================================================
@@ -160,8 +161,8 @@ button {
 
 .section-label {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 500;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-muted);
@@ -172,7 +173,7 @@ button {
 .section-title-serif {
   font-family: var(--font-serif);
   font-size: clamp(2.25rem, 4.2vw, 3.5rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--text-primary);
@@ -310,18 +311,45 @@ button {
 }
 
 .theme-toggle {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+  background: transparent;
   border: 1px solid var(--rule-color);
-  padding: 0.4rem 0.85rem;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
   transition: all var(--transition-subtle);
+  position: relative;
 }
 .theme-toggle:hover {
-  color: var(--text-primary);
-  border-color: var(--text-primary);
+  color: var(--accent-muted);
+  border-color: var(--accent-muted);
+  box-shadow: 0 0 16px rgba(212, 155, 85, 0.35);
+  transform: translateY(-1px);
+}
+
+.theme-toggle .theme-icon {
+  display: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.25s ease;
+}
+
+/* In dark mode (default), show Sun icon to switch to light */
+:root:not([data-theme="light"]) .theme-toggle .sun-icon,
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+/* In light mode, show Moon icon to switch to dark */
+[data-theme="light"] .theme-toggle .moon-icon {
+  display: block;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(20deg) scale(1.12);
 }
 
 .monograph-btn {
@@ -423,7 +451,7 @@ button {
 .hero-editorial-headline {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 7.5vw, 6.25rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.035em;
   color: var(--text-primary);
@@ -573,7 +601,7 @@ button {
 .stat-figure {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 400;
+  font-weight: 800;
   line-height: 1;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
@@ -675,7 +703,7 @@ button {
 .featured-title-serif {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.2vw, 2.75rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: var(--text-primary);
@@ -979,11 +1007,11 @@ button {
 
 .card-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 0.4rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.015em;
 }
 
 .card-title a {

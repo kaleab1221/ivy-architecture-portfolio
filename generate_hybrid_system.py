@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*-
 """
 generate_hybrid_system.py
-Builds the complete hybrid editorial architecture website for IVY Architecture & Construction:
-- Hero: "Building a better environment." + Refined multidisciplinary lead
+Builds the complete modern minimalist architecture website for IVY Architecture & Construction:
+- Hero: "Building a better environment." + Direct, high-contrast, non-AI copy
 - 6 Featured Projects: Large full-bleed editorial spreads with Newsreader serif
 - Section #portfolio (Card Grid):
-  - Category Filter Tabs with horizontal swipe on mobile & tablet:
-    ALL PROJECTS (33), FEATURED WORKS (8), RESIDENTIAL (7), MIXED-USE (7),
-    CORPORATE (3), EDUCATION & HEALTH (6), INDUSTRIAL (5), HOSPITALITY (4)
+  - Category Filter Tabs with horizontal swipe on mobile & tablet
   - Live instant search input
   - 3-Column Project Card Grid with image on top, clean metadata underneath,
-    and dramatic architectural elevation shadow on hover
+    and luminous ambient bronze GLOW SHADOW on hover
 - Services (6 core disciplines text list)
 - Credentials (Grade-1 GC, ISO 9001, Cross-border trading)
 - Leadership (Multidisciplinary directors)
 - Verified Clients (30 real corporate & institutional entities)
-- Contact: Simplified 4-field Consultation Brief + direct WhatsApp
+- REMOVED: "Discuss a Project" section (#contact) per user instruction
+- High-contrast color palette: pure blacks, crisp whites, vivid bronze accent
+- Bold font style & authoritative typographic hierarchy
+- Light & dark mode toggle replaced by modern SVG Sun/Moon icons
 - Streamlined 2-Column Minimal Architectural Studio Footer:
   - [01] Operating Bureaus (Addis Ababa [HQ], Juba, Erbil)
   - [02] Communications & Inquiries (Partner phone, WhatsApp, Emails)
   - Sub-footer copyright, statutory license, and Back to Top button
-  - REMOVED: Column 1 brand lockup, Monograph Documentation box, and [03] Practice Index
-- Responsive Mobile Navigation Drawer & Hamburger Menu
+- Fully responsive across desktop, tablet, and mobile
 - 33 Static Project Pages with fact sheets, drawings, and galleries
-- Synchronizes all files to root and public/
 """
 
 import os
@@ -62,6 +61,24 @@ def picture_tag(img_src, alt_text, css_class="", is_lazy=True, prefix=""):
   <source srcset="{p_webp}" type="image/webp">
   <img src="{p_img}" alt="{alt_text}" {lazy_attr}>
 </picture>'''
+
+def theme_toggle_button():
+    return """<button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle visual theme" title="Toggle theme">
+  <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+  <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>"""
 
 def render_professional_footer(home_prefix=""):
     return f"""  <footer class="editorial-footer">
@@ -143,7 +160,6 @@ def render_mobile_drawer(home_prefix=""):
       <a href="{home_prefix}index.html#credentials" class="mobile-nav-item">Credentials</a>
       <a href="{home_prefix}index.html#leadership" class="mobile-nav-item">Leadership</a>
       <a href="{home_prefix}index.html#clients" class="mobile-nav-item">Clients</a>
-      <a href="{home_prefix}index.html#contact" class="mobile-nav-item">Contact</a>
     </nav>
     <div class="mobile-nav-contact-footer">
       <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
@@ -210,7 +226,7 @@ for i, p in enumerate(PROJECTS):
   <title>{title} [{code}] &mdash; IVY Architecture &amp; Construction</title>
   <meta name="description" content="{description[:155]}...">
   <link rel="canonical" href="{canonical_url}">
-  <meta name="theme-color" content="#121211">
+  <meta name="theme-color" content="#0a0a09">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="article">
@@ -229,7 +245,7 @@ for i, p in enumerate(PROJECTS):
   <!-- Google Fonts: Newsreader & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../styles.css">
 
@@ -275,13 +291,10 @@ for i, p in enumerate(PROJECTS):
         <a href="../index.html#credentials" class="nav-item">Credentials</a>
         <a href="../index.html#leadership" class="nav-item">Leadership</a>
         <a href="../index.html#clients" class="nav-item">Clients</a>
-        <a href="../index.html#contact" class="nav-item">Contact</a>
       </nav>
 
       <div class="header-tools">
-        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle visual theme" title="Toggle theme">
-          <span class="theme-toggle-label">Theme</span>
-        </button>
+        {theme_toggle_button()}
         <a href="../IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="monograph-btn" title="Download Monograph PDF">
           Monograph PDF
         </a>
@@ -348,14 +361,14 @@ for i, p in enumerate(PROJECTS):
             </div>
 
             <div class="project-inquiry-box">
-              <h3 class="inquiry-title-serif">Commission Consultation</h3>
-              <p class="inquiry-desc">Discuss technical specifications, structural calculations, or site planning for similar typologies directly with IVY partners.</p>
+              <h3 class="inquiry-title-serif">Commission Inquiries</h3>
+              <p class="inquiry-desc">Discuss technical specifications, structural engineering parameters, or turnkey contracting schedules directly with IVY partners.</p>
               <div class="inquiry-actions">
                 <a href="{whatsapp_url}" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
-                  Inquire via WhatsApp
+                  WhatsApp Partner Bureau &rarr;
                 </a>
-                <a href="../index.html#contact" class="btn-editorial-secondary">
-                  General Consultation Brief
+                <a href="mailto:info@ivyconstruction.com?subject=Inquiry%20regarding%20{code}%20{title.replace(' ', '%20')}" class="btn-editorial-secondary">
+                  Executive Partner Email &rarr;
                 </a>
               </div>
             </div>
@@ -592,7 +605,7 @@ homepage_html = f"""<!DOCTYPE html>
   <title>IVY Architecture &amp; Construction &mdash; Integrated Practice &amp; Portfolio</title>
   <meta name="description" content="IVY Architecture & Construction is a multidisciplinary practice combining architecture, engineering, project management, and construction. Delivering coordinated solutions across the built environment.">
   <link rel="canonical" href="{SITE_URL}/">
-  <meta name="theme-color" content="#121211">
+  <meta name="theme-color" content="#0a0a09">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
@@ -611,7 +624,7 @@ homepage_html = f"""<!DOCTYPE html>
   <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (Clean Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -665,13 +678,10 @@ homepage_html = f"""<!DOCTYPE html>
         <a href="#credentials" class="nav-item">Credentials</a>
         <a href="#leadership" class="nav-item">Leadership</a>
         <a href="#clients" class="nav-item">Clients</a>
-        <a href="#contact" class="nav-item">Contact</a>
       </nav>
 
       <div class="header-tools">
-        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle visual theme" title="Toggle theme">
-          <span class="theme-toggle-label">Theme</span>
-        </button>
+        {theme_toggle_button()}
         <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="monograph-btn" title="Download Official Monograph (81 Pages PDF)">
           Monograph PDF
         </a>
@@ -687,7 +697,7 @@ homepage_html = f"""<!DOCTYPE html>
 
   <main id="main-content">
     <!-- ========================================================================
-         HERO SECTION: EDITORIAL COMPOSITION
+         HERO SECTION: HIGH CONTRAST ARCHITECTURAL COMPOSITION
          ======================================================================== -->
     <section class="editorial-hero">
       <div class="hero-image-wrap">
@@ -709,7 +719,7 @@ homepage_html = f"""<!DOCTYPE html>
         </h1>
 
         <p class="hero-editorial-lead">
-          IVY Architecture &amp; Construction is a multidisciplinary practice combining architecture, engineering, project management, and construction. We deliver coordinated solutions across the built environment.
+          IVY Architecture &amp; Construction is an integrated multidisciplinary practice combining architectural design, structural engineering, and Grade-1 general contracting. We deliver coordinated solutions across the built environment.
         </p>
 
         <div class="hero-actions-row">
@@ -720,14 +730,14 @@ homepage_html = f"""<!DOCTYPE html>
             Portfolio Grid
           </a>
           <a href="https://wa.me/251911234567" target="_blank" rel="noopener noreferrer" class="btn-editorial-whatsapp">
-            WhatsApp Bureau
+            WhatsApp Bureau &rarr;
           </a>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         SHORT INTRO: STATS LEDGER
+         SHORT INTRO: HIGH-CONTRAST STATS LEDGER
          ======================================================================== -->
     <section id="intro" class="editorial-section intro-section">
       <div class="editorial-container">
@@ -792,7 +802,7 @@ homepage_html = f"""<!DOCTYPE html>
     </section>
 
     <!-- ========================================================================
-         HYBRID PROJECT CARD GRID WITH CATEGORY TABS & LIVE SEARCH
+         HYBRID PROJECT CARD GRID WITH GLOW SHADOW & LIVE SEARCH
          ======================================================================== -->
     <section id="portfolio" class="editorial-section portfolio-section">
       <div class="editorial-container">
@@ -805,7 +815,7 @@ homepage_html = f"""<!DOCTYPE html>
           <span class="portfolio-verified-count">33 Verified Commissions</span>
         </div>
 
-        <!-- Category Filter Tabs Bar (Exact User Counts, Horizontal Swipe on Mobile) -->
+        <!-- Category Filter Tabs Bar (Horizontal Swipe on Mobile & Tablet) -->
         <div class="category-filter-bar" role="tablist" aria-label="Portfolio Category Filters">
           <button class="category-tab-btn active" data-category="all" role="tab" aria-selected="true">
             <span>All Projects</span> <span class="tab-count">(33)</span>
@@ -842,7 +852,7 @@ homepage_html = f"""<!DOCTYPE html>
           <div id="gridCountIndicator" class="portfolio-count-indicator">Showing 33 of 33 projects</div>
         </div>
 
-        <!-- 3-Column Architectural Project Grid -->
+        <!-- 3-Column Architectural Project Grid with Ambient Glow Shadows -->
         <div id="projectsGrid" class="projects-grid">
           {cards_html}
         </div>
@@ -1031,120 +1041,6 @@ homepage_html = f"""<!DOCTYPE html>
         </ul>
       </div>
     </section>
-
-    <!-- ========================================================================
-         CONTACT: 4-FIELD FORM, WHATSAPP, AND REGIONAL BUREAUS
-         ======================================================================== -->
-    <section id="contact" class="editorial-section contact-section">
-      <div class="editorial-container">
-        <div class="section-heading-bar">
-          <div>
-            <span class="section-label">Initiate Contact</span>
-            <h2 class="section-title-serif">Discuss a Project</h2>
-            <p class="section-subtext">Connect with our principal architects and engineering directors for site feasibility, architectural design, or general contracting inquiries.</p>
-          </div>
-        </div>
-
-        <div class="contact-editorial-layout">
-          <!-- Left Column: Bureaus & Direct Channels -->
-          <div class="contact-channels-col">
-            <div class="channel-group">
-              <h3 class="channel-heading">Direct Channels</h3>
-              <p class="channel-line">
-                <strong>WhatsApp:</strong> 
-                <a href="https://wa.me/251911234567?text=Hello%20IVY%20Architecture,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="whatsapp-accent-link">
-                  +251 91 123 4567 (Instant Partner Chat) &rarr;
-                </a>
-              </p>
-              <p class="channel-line">
-                <strong>Telephone:</strong> 
-                <a href="tel:+251911234567">+251 91 123 4567</a>
-              </p>
-              <p class="channel-line">
-                <strong>Executive Inquiries:</strong> 
-                <a href="mailto:info@ivyconstruction.com">info@ivyconstruction.com</a>
-              </p>
-            </div>
-
-            <div class="channel-group">
-              <h3 class="channel-heading">Permanent Bureaus</h3>
-              <div class="bureau-entry">
-                <strong>Principal Design Studio [HQ]</strong>
-                <p>Bole Commercial District, Addis Ababa, Ethiopia</p>
-              </div>
-              <div class="bureau-entry">
-                <strong>Regional Operations Bureau</strong>
-                <p>Central Commercial Sector, Juba, South Sudan</p>
-              </div>
-              <div class="bureau-entry">
-                <strong>Logistics &amp; Prefabrication Partner</strong>
-                <p>Specialized Procurement &amp; Freight Forwarding, Erbil, Iraq</p>
-              </div>
-            </div>
-
-            <div class="channel-group">
-              <h3 class="channel-heading">Portfolio Monograph</h3>
-              <p class="monograph-summary-text">
-                Download the official 81-page high-resolution architectural monograph containing all floor plans, structural sections, and complete specifications.
-              </p>
-              <a href="IVY-CONSTRUCTION-PORTFOLIO.pdf" download class="btn-editorial-secondary">
-                Download Monograph (81 Pages, 7.3 MB)
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: 4-Field Consultation Brief Form -->
-          <div class="contact-form-col">
-            <form id="consultationBriefForm" class="editorial-form" novalidate>
-              <div class="form-instruction-bar">
-                <span>Direct Commission Inquiry</span>
-                <span class="required-note">* All fields required</span>
-              </div>
-
-              <!-- Field 1: Name -->
-              <div class="form-group">
-                <label for="clientName" class="form-label">Full Name &amp; Organization</label>
-                <input type="text" id="clientName" name="name" class="editorial-input" placeholder="e.g. Dr. Almaz Bekele / Horizon Developments" required>
-              </div>
-
-              <!-- Field 2: Contact Information -->
-              <div class="form-group">
-                <label for="clientContact" class="form-label">Email Address or Phone Number</label>
-                <input type="text" id="clientContact" name="contact" class="editorial-input" placeholder="e.g. contact@example.com / +251 91 000 0000" required>
-              </div>
-
-              <!-- Field 3: Typology / Sector -->
-              <div class="form-group">
-                <label for="projectSector" class="form-label">Project Typology &amp; Approximate Location</label>
-                <select id="projectSector" name="sector" class="editorial-select" required>
-                  <option value="" disabled selected>Select typology...</option>
-                  <option value="Commercial High-Rise">Commercial High-Rise &amp; Office Tower</option>
-                  <option value="Residential Multi-Family">Residential &amp; Multi-Family Housing</option>
-                  <option value="Mixed-Use Development">Mixed-Use Commercial &amp; Residential</option>
-                  <option value="Institutional & Masterplan">Civic, Educational or Healthcare Masterplan</option>
-                  <option value="Industrial & Warehousing">Industrial Facility or Logistics Center</option>
-                  <option value="General Turnkey Contracting">Turnkey General Construction Execution</option>
-                </select>
-              </div>
-
-              <!-- Field 4: Scope Brief -->
-              <div class="form-group">
-                <label for="projectBrief" class="form-label">Project Scope &amp; Target Timeline</label>
-                <textarea id="projectBrief" name="brief" rows="4" class="editorial-textarea" placeholder="Provide site location, approximate floor area (m²), intended scope (Architectural Design / Turnkey Construction), and target commencement date." required></textarea>
-              </div>
-
-              <div class="form-submit-row">
-                <button type="submit" class="btn-editorial-submit">
-                  Transmit Consultation Request &rarr;
-                </button>
-              </div>
-
-              <div id="formFeedbackBanner" class="form-feedback-banner" role="status" aria-live="polite"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   {render_professional_footer("")}
@@ -1156,7 +1052,7 @@ homepage_html = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as hf:
     hf.write(homepage_html)
 
-print("Generated editorial index.html without table ledger successfully.")
+print("Generated editorial index.html without contact section successfully.")
 
 # ==============================================================================
 # 3. BUILD SITEMAP (sitemap.xml)
@@ -1186,3 +1082,22 @@ with open("sitemap.xml", "w", encoding="utf-8") as sf:
     sf.write(sitemap_xml)
 
 print(f"Generated sitemap.xml with {len(sitemap_urls)} URLs.")
+
+# ==============================================================================
+# 4. SYNC TO PUBLIC/ DIRECTORY FOR VERCEL DEPLOYMENT
+# ==============================================================================
+public_dir = "public"
+os.makedirs(public_dir, exist_ok=True)
+public_projects = os.path.join(public_dir, "projects")
+os.makedirs(public_projects, exist_ok=True)
+
+for f in ["index.html", "styles.css", "app.js", "sitemap.xml"]:
+    if os.path.exists(f):
+        shutil.copy2(f, os.path.join(public_dir, f))
+
+if os.path.exists("projects"):
+    for pf in os.listdir("projects"):
+        if pf.endswith(".html"):
+            shutil.copy2(os.path.join("projects", pf), os.path.join(public_projects, pf))
+
+print("Successfully synchronized all files and static project pages to public/.")

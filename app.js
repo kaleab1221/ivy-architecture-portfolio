@@ -63,10 +63,9 @@
 
   function updateThemeButtonLabel() {
     if (!dom.themeToggleBtn) return;
-    const label = dom.themeToggleBtn.querySelector('.theme-toggle-label');
-    if (label) {
-      label.textContent = state.theme === 'dark' ? 'Light' : 'Dark';
-    }
+    const nextTheme = state.theme === 'dark' ? 'light' : 'dark';
+    dom.themeToggleBtn.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+    dom.themeToggleBtn.setAttribute('title', `Switch to ${nextTheme} theme`);
   }
 
   // ============================================================================
