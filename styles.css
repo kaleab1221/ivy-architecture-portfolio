@@ -1660,7 +1660,9 @@ img {
 
 .footer-cols {
   display: flex;
-  gap: 4.5rem;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3.5rem;
   flex-wrap: wrap;
 }
 
