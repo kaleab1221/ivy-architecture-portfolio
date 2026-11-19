@@ -28,7 +28,12 @@
       "images/projects/ivy-01/page_04_img1.jpeg",
       "images/projects/ivy-01/page_05_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-01/page_02_img1.jpeg"
+    "heroImage": "images/projects/ivy-01/page_02_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-02",
@@ -59,7 +64,12 @@
       "images/projects/ivy-02/page_07_img3.jpeg",
       "images/projects/ivy-02/page_07_img4.jpeg"
     ],
-    "heroImage": "images/projects/ivy-02/page_06_img1.jpeg"
+    "heroImage": "images/projects/ivy-02/page_06_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-03",
@@ -92,7 +102,12 @@
       "images/projects/ivy-03/page_12_img1.jpeg",
       "images/projects/ivy-03/page_13_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-03/page_08_img1.jpeg"
+    "heroImage": "images/projects/ivy-03/page_08_img1.jpeg",
+    "structure": "Dual Reinforced Concrete Shear-Wall Towers & Steel Spaceframe Atrium",
+    "envelope": "Low-Iron High-Transmittance Structural Glazing with Brise-Soleil",
+    "climate": "Central Atrium Stack Effect Natural Evaporative Cooling",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-04",
@@ -122,7 +137,12 @@
       "images/projects/ivy-04/page_16_img1.jpeg",
       "images/projects/ivy-04/page_14_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-04/page_15_img1.jpeg"
+    "heroImage": "images/projects/ivy-04/page_15_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-05",
@@ -151,7 +171,12 @@
       "images/projects/ivy-05/page_17_img1.jpeg",
       "images/projects/ivy-05/page_18_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-05/page_17_img1.jpeg"
+    "heroImage": "images/projects/ivy-05/page_17_img1.jpeg",
+    "structure": "Cast-in-Place Concrete Core with Outrigger Cantilever Trusses",
+    "envelope": "Unitized High-Performance Reflective Solar Control Glazing",
+    "climate": "Automated Sun-Tracking Louvers & LED Thermal Dissipation",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-06",
@@ -179,7 +204,12 @@
     "images": [
       "images/projects/ivy-06/page_19_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-06/page_19_img1.jpeg"
+    "heroImage": "images/projects/ivy-06/page_19_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-07",
@@ -208,7 +238,12 @@
       "images/projects/ivy-07/page_20_img1.jpeg",
       "images/projects/ivy-07/page_20_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-07/page_20_img1.jpeg"
+    "heroImage": "images/projects/ivy-07/page_20_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-08",
@@ -237,7 +272,12 @@
       "images/projects/ivy-08/page_21_img1.jpeg",
       "images/projects/ivy-08/page_22_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-08/page_21_img1.jpeg"
+    "heroImage": "images/projects/ivy-08/page_21_img1.jpeg",
+    "structure": "Monolithic Cantilevered Post-Tensioned Concrete Volumes",
+    "envelope": "Motorized Minimal-Profile Sliding Glass Pocket Facades",
+    "climate": "Waterbody Microclimate Cooling via Negative-Edge Pool",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-09",
@@ -266,7 +306,12 @@
       "images/projects/ivy-09/page_23_img1.jpeg",
       "images/projects/ivy-09/page_24_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-09/page_23_img1.jpeg"
+    "heroImage": "images/projects/ivy-09/page_23_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-10",
@@ -295,7 +340,12 @@
       "images/projects/ivy-10/page_25_img1.jpeg",
       "images/projects/ivy-10/page_26_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-10/page_25_img1.jpeg"
+    "heroImage": "images/projects/ivy-10/page_25_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-11",
@@ -328,7 +378,12 @@
       "images/projects/ivy-11/page_31_img1.jpeg",
       "images/projects/ivy-11/page_32_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-11/page_27_img1.jpeg"
+    "heroImage": "images/projects/ivy-11/page_27_img1.jpeg",
+    "structure": "Reinforced Concrete Frame with Acoustic Parametric Secondary Frame",
+    "envelope": "Double-Glazed Curtain Wall with Timber Louver Screen",
+    "climate": "Acoustic Slatted Timber Baffles & Warm Recessed Indirect Lighting",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-12",
@@ -357,7 +412,12 @@
       "images/projects/ivy-12/page_33_img1.jpeg",
       "images/projects/ivy-12/page_34_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-12/page_33_img1.jpeg"
+    "heroImage": "images/projects/ivy-12/page_33_img1.jpeg",
+    "structure": "Curved Steel Tubular Aerofoil Trusses with 28m Clear Spans",
+    "envelope": "Frameless Structural Glass Fin Wall System with Silicone Joints",
+    "climate": "Aerodynamic Airfoil Roof Natural Air Induction",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-13",
@@ -390,7 +450,12 @@
       "images/projects/ivy-13/page_14_img1.jpeg",
       "images/projects/ivy-13/page_37_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-13/page_35_img1.jpeg"
+    "heroImage": "images/projects/ivy-13/page_35_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-14",
@@ -418,7 +483,12 @@
     "images": [
       "images/projects/ivy-14/page_37_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-14/page_37_img1.jpeg"
+    "heroImage": "images/projects/ivy-14/page_37_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-15",
@@ -447,7 +517,12 @@
       "images/projects/ivy-15/page_38_img1.jpeg",
       "images/projects/ivy-15/page_67_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-15/page_38_img1.jpeg"
+    "heroImage": "images/projects/ivy-15/page_38_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-16",
@@ -476,7 +551,12 @@
       "images/projects/ivy-16/page_39_img1.jpeg",
       "images/projects/ivy-16/page_40_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-16/page_39_img1.jpeg"
+    "heroImage": "images/projects/ivy-16/page_39_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-17",
@@ -512,7 +592,12 @@
       "images/projects/ivy-17/page_48_img1.jpeg",
       "images/projects/ivy-17/page_62_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-17/page_41_img1.jpeg"
+    "heroImage": "images/projects/ivy-17/page_41_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-18",
@@ -550,7 +635,12 @@
       "images/projects/ivy-18/page_60_img1.jpeg",
       "images/projects/ivy-18/page_61_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-18/page_49_img1.jpeg"
+    "heroImage": "images/projects/ivy-18/page_49_img1.jpeg",
+    "structure": "Elevated Hot-Dip Galvanized Stilt Modular Steel Substructures",
+    "envelope": "High-R Insulated Pre-Engineered Architectural Panels",
+    "climate": "Elevated Floor Plenums for Ground Heat Isolation & Monsoonal Runoff",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-19",
@@ -579,7 +669,12 @@
       "images/projects/ivy-19/page_50_img1.jpeg",
       "images/projects/ivy-19/page_50_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-19/page_50_img1.jpeg"
+    "heroImage": "images/projects/ivy-19/page_50_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-20",
@@ -608,7 +703,12 @@
       "images/projects/ivy-20/page_51_img1.jpeg",
       "images/projects/ivy-20/page_51_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-20/page_51_img1.jpeg"
+    "heroImage": "images/projects/ivy-20/page_51_img1.jpeg",
+    "structure": "Cast-in-Place Concrete Frames & Post-Tensioned Stadium Grandstand",
+    "envelope": "Polychromatic Precast Panels with Shading Fins",
+    "climate": "Passive Tropical Breezeways & Shaded Pedestrian Canopies",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-21",
@@ -639,7 +739,12 @@
       "images/projects/ivy-21/page_55_img1.jpeg",
       "images/projects/ivy-21/page_55_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-21/page_54_img1.jpeg"
+    "heroImage": "images/projects/ivy-21/page_54_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-22",
@@ -669,7 +774,12 @@
       "images/projects/ivy-22/page_56_img2.jpeg",
       "images/projects/ivy-22/page_57_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-22/page_56_img1.jpeg"
+    "heroImage": "images/projects/ivy-22/page_56_img1.jpeg",
+    "structure": "Cantilevered Reinforced Concrete Beams with Steel Columns",
+    "envelope": "Floor-to-Ceiling Thermal Break Aluminum Glazing",
+    "climate": "Cross-Ventilated Fairway Breezeways & Shaded Terraces",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-23",
@@ -702,7 +812,12 @@
       "images/projects/ivy-23/page_59_img2.jpeg",
       "images/projects/ivy-23/page_59_img3.jpeg"
     ],
-    "heroImage": "images/projects/ivy-23/page_58_img1.jpeg"
+    "heroImage": "images/projects/ivy-23/page_58_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-24",
@@ -730,7 +845,12 @@
     "images": [
       "images/projects/ivy-24/page_63_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-24/page_63_img1.jpeg"
+    "heroImage": "images/projects/ivy-24/page_63_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-25",
@@ -759,7 +879,12 @@
       "images/projects/ivy-25/page_65_img1.jpeg",
       "images/projects/ivy-25/page_65_img11.jpeg"
     ],
-    "heroImage": "images/projects/ivy-25/page_65_img1.jpeg"
+    "heroImage": "images/projects/ivy-25/page_65_img1.jpeg",
+    "structure": "Engineered Industrial Steel Portal Frames & Heavy Concrete Pads",
+    "envelope": "Insulated Sandwich Panels with Anti-Corrosive Coating",
+    "climate": "Solar Farm Integration & Closed-Loop Zero-Waste Agro-Hydrology",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-26",
@@ -788,7 +913,12 @@
       "images/projects/ivy-26/page_66_img1.jpeg",
       "images/projects/ivy-26/page_66_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-26/page_66_img1.jpeg"
+    "heroImage": "images/projects/ivy-26/page_66_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-27",
@@ -817,7 +947,12 @@
       "images/projects/ivy-27/page_68_img1.jpeg",
       "images/projects/ivy-27/page_69_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-27/page_68_img1.jpeg"
+    "heroImage": "images/projects/ivy-27/page_68_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-28",
@@ -848,7 +983,12 @@
       "images/projects/ivy-28/page_72_img1.jpeg",
       "images/projects/ivy-28/page_73_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-28/page_70_img1.jpeg"
+    "heroImage": "images/projects/ivy-28/page_70_img1.jpeg",
+    "structure": "Composite Post-Tensioned Core with Diagonal Mega-Truss Arch",
+    "envelope": "Double-Glazed Low-E Curtain Wall with Gold Geometric Mashrabiya",
+    "climate": "Solar-Responsive Solar Chimney & Cross-Draft Piazza Ventilation",
+    "featured": true,
+    "gridSpan": "span-2"
   },
   {
     "id": "ivy-29",
@@ -877,7 +1017,12 @@
       "images/projects/ivy-29/page_76_img1.jpeg",
       "images/projects/ivy-29/page_77_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-29/page_76_img1.jpeg"
+    "heroImage": "images/projects/ivy-29/page_76_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-30",
@@ -906,7 +1051,12 @@
       "images/projects/ivy-30/page_74_img1.jpeg",
       "images/projects/ivy-30/page_74_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-30/page_74_img1.jpeg"
+    "heroImage": "images/projects/ivy-30/page_74_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-31",
@@ -936,7 +1086,12 @@
       "images/projects/ivy-31/page_75_img2.jpeg",
       "images/projects/ivy-31/page_75_img3.jpeg"
     ],
-    "heroImage": "images/projects/ivy-31/page_75_img1.jpeg"
+    "heroImage": "images/projects/ivy-31/page_75_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-32",
@@ -965,7 +1120,12 @@
       "images/projects/ivy-32/page_78_img1.jpeg",
       "images/projects/ivy-32/page_79_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-32/page_78_img1.jpeg"
+    "heroImage": "images/projects/ivy-32/page_78_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-33",
@@ -993,7 +1153,12 @@
     "images": [
       "images/projects/ivy-33/page_80_img1.jpeg"
     ],
-    "heroImage": "images/projects/ivy-33/page_80_img1.jpeg"
+    "heroImage": "images/projects/ivy-33/page_80_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   },
   {
     "id": "ivy-34",
@@ -1022,6 +1187,11 @@
       "images/projects/ivy-34/page_81_img1.jpeg",
       "images/projects/ivy-34/page_81_img2.jpeg"
     ],
-    "heroImage": "images/projects/ivy-34/page_81_img1.jpeg"
+    "heroImage": "images/projects/ivy-34/page_81_img1.jpeg",
+    "structure": "Reinforced Cast-in-Place Concrete Framework",
+    "envelope": "High-Performance Glazing with Architectural Masonry",
+    "climate": "Passive Solar Shading & Natural Cross Ventilation",
+    "featured": false,
+    "gridSpan": "span-1"
   }
 ]

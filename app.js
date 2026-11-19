@@ -1,6 +1,6 @@
 /**
- * IVY CONSTRUCTION & TRADING CO. LTD.
- * Interactive Architectural Platform (BIG.DK Reference)
+ * IVY ARCHITECTURE & CONSTRUCTION PRACTICE
+ * Modern Architectural Monograph Platform (BIG.DK Reference)
  */
 
 (function () {
@@ -16,24 +16,31 @@
     currentModalProjectId: null,
     currentGalleryIndex: 0,
     heroIndex: 0,
+    heroTimer: null,
     theme: localStorage.getItem('ivy-theme') || 'dark',
-    activeRegion: 'all'
+    activeRegion: 'all',
+    sortColumn: 'code',
+    sortAsc: true
   };
 
   // Flagship Hero Showcase IDs
-  const HERO_PROJECT_IDS = ['ivy-28', 'ivy-03', 'ivy-05', 'ivy-12', 'ivy-08', 'ivy-22'];
+  const HERO_PROJECT_IDS = ['ivy-28', 'ivy-03', 'ivy-05', 'ivy-12', 'ivy-08', 'ivy-11'];
 
-  // DOM Elements
+  // DOM Elements Cache
   const el = {
     // Header
     themeToggleBtn: document.getElementById('themeToggleBtn'),
     mobileMenuBtn: document.getElementById('mobileMenuBtn'),
     mobileNavDrawer: document.getElementById('mobileNavDrawer'),
     mobileNavClose: document.getElementById('mobileNavClose'),
+    liveStudioClock: document.getElementById('liveStudioClock'),
     
     // Hero
     heroSliderContainer: document.getElementById('heroSliderContainer'),
-    heroTag: document.getElementById('heroTag'),
+    heroProgressBars: document.getElementById('heroProgressBars'),
+    heroIndexBadge: document.getElementById('heroIndexBadge'),
+    heroCodeSpan: document.getElementById('heroCodeSpan'),
+    heroTypologySpan: document.getElementById('heroTypologySpan'),
     heroTitle: document.getElementById('heroTitle'),
     heroLocation: document.getElementById('heroLocation'),
     heroTypology: document.getElementById('heroTypology'),
@@ -70,8 +77,10 @@
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     modalPrevBtn: document.getElementById('modalPrevBtn'),
     modalNextBtn: document.getElementById('modalNextBtn'),
+    modalShareBtn: document.getElementById('modalShareBtn'),
     modalCodeTag: document.getElementById('modalCodeTag'),
     modalProjectTitle: document.getElementById('modalProjectTitle'),
+    galleryViewer: document.getElementById('galleryViewer'),
     galleryStage: document.getElementById('galleryStage'),
     galleryPrevBtn: document.getElementById('galleryPrevBtn'),
     galleryNextBtn: document.getElementById('galleryNextBtn'),
@@ -84,10 +93,14 @@
     specTypology: document.getElementById('specTypology'),
     specStatus: document.getElementById('specStatus'),
     specScale: document.getElementById('specScale'),
+    specStructure: document.getElementById('specStructure'),
+    specEnvelope: document.getElementById('specEnvelope'),
+    specClimate: document.getElementById('specClimate'),
     specScope: document.getElementById('specScope'),
     specYear: document.getElementById('specYear'),
     
-    // Contact Form & Toast
+    // Back to Top & Toast
+    backToTopBtn: document.getElementById('backToTopBtn'),
     rfpForm: document.getElementById('rfpForm'),
     toastNotice: document.getElementById('toastNotice')
   };
@@ -95,6 +108,7 @@
   // Initialize
   async function init() {
     setupTheme();
+    setupClock();
     setupEventListeners();
     await loadProjectData();
     initHero();
@@ -118,6 +132,23 @@
     if (el.statProjects) {
       el.statProjects.textContent = `${state.projects.length}+`;
     }
+  }
+
+  // Live Studio Clock
+  function setupClock() {
+    function updateClock() {
+      if (!el.liveStudioClock) return;
+      const now = new Date();
+      // EAT is UTC+3
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const eat = new Date(utc + (3600000 * 3));
+      const hours = String(eat.getHours()).padStart(2, '0');
+      const mins = String(eat.getMinutes()).padStart(2, '0');
+      const secs = String(eat.getSeconds()).padStart(2, '0');
+      el.liveStudioClock.textContent = `ADDIS ABABA ${hours}:${mins}:${secs} EAT`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
   }
 
   // Theme setup
@@ -174,8 +205,8 @@
     });
 
     // Hero buttons
-    el.heroPrevBtn.addEventListener('click', prevHero);
-    el.heroNextBtn.addEventListener('click', nextHero);
+    el.heroPrevBtn.addEventListener('click', () => { prevHero(); resetHeroTimer(); });
+    el.heroNextBtn.addEventListener('click', () => { nextHero(); resetHeroTimer(); });
     el.heroExploreBtn.addEventListener('click', () => {
       const heroProjects = getHeroProjects();
       const current = heroProjects[state.heroIndex];
@@ -189,17 +220,65 @@
     });
     el.modalPrevBtn.addEventListener('click', prevModalProject);
     el.modalNextBtn.addEventListener('click', nextModalProject);
+    
+    // Modal share button
+    if (el.modalShareBtn) {
+      el.modalShareBtn.addEventListener('click', copyProjectLink);
+    }
 
     // Gallery controls
-    el.galleryPrevBtn.addEventListener('click', prevGalleryImage);
-    el.galleryNextBtn.addEventListener('click', nextGalleryImage);
+    el.galleryPrevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevGalleryImage(); });
+    el.galleryNextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextGalleryImage(); });
 
-    // Keyboard navigation
+    // Click gallery to view fullscreen
+    if (el.galleryViewer) {
+      el.galleryViewer.addEventListener('click', () => {
+        const project = state.projects.find(p => p.id === state.currentModalProjectId);
+        if (project && project.images) {
+          const imgUrl = project.images[state.currentGalleryIndex] || project.heroImage;
+          window.open(imgUrl, '_blank');
+        }
+      });
+    }
+
+    // Back to top
+    if (el.backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          el.backToTopBtn.classList.add('visible');
+        } else {
+          el.backToTopBtn.classList.remove('visible');
+        }
+      });
+      el.backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Global Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
-      if (!el.modalBackdrop.classList.contains('open')) return;
-      if (e.key === 'Escape') closeModal();
-      else if (e.key === 'ArrowLeft') prevGalleryImage();
-      else if (e.key === 'ArrowRight') nextGalleryImage();
+      const isInput = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA';
+      
+      // Modal open shortcuts
+      if (el.modalBackdrop.classList.contains('open')) {
+        if (e.key === 'Escape') closeModal();
+        else if (e.key === 'ArrowLeft') prevGalleryImage();
+        else if (e.key === 'ArrowRight') nextGalleryImage();
+        return;
+      }
+
+      if (isInput) return;
+
+      if (e.key === '/') {
+        e.preventDefault();
+        el.searchInput.focus();
+      } else if (e.key === 'g' || e.key === 'G') {
+        setView('grid');
+      } else if (e.key === 'i' || e.key === 'I') {
+        setView('list');
+      } else if (e.key === 'm' || e.key === 'M') {
+        setView('map');
+      }
     });
 
     // Hash change
@@ -209,13 +288,12 @@
     if (el.rfpForm) {
       el.rfpForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        showToast('Inquiry received. An IVY partner will contact you within 24 hours.');
+        showToast('Inquiry received. Reference #IVY-' + Math.floor(1000 + Math.random() * 9000) + ' sent to your email.');
         el.rfpForm.reset();
       });
     }
 
-    // Auto hero slider
-    setInterval(nextHero, 6500);
+    resetHeroTimer();
   }
 
   // Toast notification
@@ -228,6 +306,17 @@
     }, 4000);
   }
 
+  // Copy Project Link
+  function copyProjectLink() {
+    if (!state.currentModalProjectId) return;
+    const url = window.location.origin + window.location.pathname + '#project/' + state.currentModalProjectId;
+    navigator.clipboard.writeText(url).then(() => {
+      showToast('Project link copied to clipboard: ' + url);
+    }).catch(() => {
+      showToast('Deep-link active: ' + window.location.hash);
+    });
+  }
+
   // Hero section management
   function getHeroProjects() {
     return state.projects.filter(p => HERO_PROJECT_IDS.includes(p.id));
@@ -237,11 +326,29 @@
     const heroProjects = getHeroProjects();
     if (!heroProjects || heroProjects.length === 0) return;
 
+    // Render slides
     el.heroSliderContainer.innerHTML = heroProjects.map((p, idx) => `
       <div class="hero-slide ${idx === 0 ? 'active' : ''}" data-index="${idx}">
         <img src="${p.heroImage}" alt="${p.title}" loading="${idx === 0 ? 'eager' : 'lazy'}">
       </div>
     `).join('');
+
+    // Render segmented progress bars
+    if (el.heroProgressBars) {
+      el.heroProgressBars.innerHTML = heroProjects.map((_, idx) => `
+        <div class="progress-segment ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+          <div class="progress-fill"></div>
+        </div>
+      `).join('');
+
+      el.heroProgressBars.querySelectorAll('.progress-segment').forEach(seg => {
+        seg.addEventListener('click', (e) => {
+          state.heroIndex = parseInt(e.currentTarget.dataset.index, 10);
+          updateHeroDisplay();
+          resetHeroTimer();
+        });
+      });
+    }
 
     updateHeroDisplay();
   }
@@ -257,8 +364,18 @@
       slide.classList.toggle('active', idx === state.heroIndex);
     });
 
+    // Update progress segments
+    if (el.heroProgressBars) {
+      el.heroProgressBars.querySelectorAll('.progress-segment').forEach((seg, idx) => {
+        seg.classList.toggle('active', idx === state.heroIndex);
+        seg.classList.toggle('completed', idx < state.heroIndex);
+      });
+    }
+
     // Update textual meta
-    el.heroTag.innerHTML = `<span>[${p.code}]</span> <span>/</span> <span>${p.typology}</span>`;
+    el.heroIndexBadge.textContent = `${String(state.heroIndex + 1).padStart(2, '0')} / ${String(heroProjects.length).padStart(2, '0')}`;
+    el.heroCodeSpan.textContent = `[${p.code}]`;
+    el.heroTypologySpan.textContent = p.typology.toUpperCase();
     el.heroTitle.textContent = p.title;
     el.heroLocation.textContent = p.location;
     el.heroTypology.textContent = p.typology;
@@ -277,6 +394,11 @@
     if (!heroProjects.length) return;
     state.heroIndex = (state.heroIndex - 1 + heroProjects.length) % heroProjects.length;
     updateHeroDisplay();
+  }
+
+  function resetHeroTimer() {
+    if (state.heroTimer) clearInterval(state.heroTimer);
+    state.heroTimer = setInterval(nextHero, 6500);
   }
 
   // Typology filters rendering
@@ -317,11 +439,9 @@
 
   // Filter projects helper
   function getFilteredProjects() {
-    return state.projects.filter(p => {
-      // Typology match
+    let list = state.projects.filter(p => {
       const matchTypology = state.currentTypology === 'all' || p.category === state.currentTypology;
 
-      // Status match
       let matchStatus = true;
       if (state.currentStatus !== 'all') {
         if (state.currentStatus === 'completed') matchStatus = p.statusType === 'completed';
@@ -329,7 +449,6 @@
         else if (state.currentStatus === 'design') matchStatus = p.statusType === 'design';
       }
 
-      // Search match
       let matchSearch = true;
       if (state.searchQuery) {
         const q = state.searchQuery;
@@ -349,6 +468,20 @@
 
       return matchTypology && matchStatus && matchSearch;
     });
+
+    // Sorting
+    list.sort((a, b) => {
+      let valA = a[state.sortColumn] || '';
+      let valB = b[state.sortColumn] || '';
+      if (typeof valA === 'string') valA = valA.toLowerCase();
+      if (typeof valB === 'string') valB = valB.toLowerCase();
+
+      if (valA < valB) return state.sortAsc ? -1 : 1;
+      if (valA > valB) return state.sortAsc ? 1 : -1;
+      return 0;
+    });
+
+    return list;
   }
 
   // Set View mode ('grid' | 'list' | 'map')
@@ -369,7 +502,6 @@
   function render() {
     const filtered = getFilteredProjects();
 
-    // Results count label
     if (el.resultsCount) {
       el.resultsCount.textContent = `Showing ${filtered.length} of ${state.projects.length} Works`;
     }
@@ -383,12 +515,12 @@
     }
   }
 
-  // Render Grid View
+  // Render Grid View (Editorial Masonry)
   function renderGridView(projects) {
     if (projects.length === 0) {
       el.viewGridContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; padding: 4rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
-          NO PROJECTS FOUND MATCHING THE SELECTED CRITERIA.
+        <div style="grid-column: 1 / -1; padding: 5rem 2rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
+          NO PROJECTS FOUND MATCHING CRITERIA.
         </div>
       `;
       return;
@@ -401,9 +533,13 @@
         ? 'status-construction' 
         : 'status-design';
 
+      const isFeatured = p.featured ? 'featured' : '';
+
       return `
-        <article class="project-card" data-id="${p.id}">
+        <article class="project-card ${isFeatured}" data-id="${p.id}">
           <div class="card-media">
+            <span class="corner-crosshair corner-tl">+</span>
+            <span class="corner-crosshair corner-br">+</span>
             <span class="card-badge-code">${p.code}</span>
             <span class="card-badge-status ${statusClass}">
               <span class="status-dot"></span>${p.status}
@@ -416,7 +552,7 @@
             <div class="card-meta">
               <span>${p.city}, ${p.country}</span>
               <span class="card-action-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -427,7 +563,6 @@
       `;
     }).join('');
 
-    // Attach click listeners to cards
     el.viewGridContainer.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', () => {
         openModal(card.dataset.id);
@@ -435,16 +570,21 @@
     });
   }
 
-  // Render List / Index View (The BIG Table)
+  // Render List / Index View (The BIG Table with column sorting)
   function renderListView(projects) {
     if (projects.length === 0) {
       el.viewListContainer.innerHTML = `
-        <div style="padding: 4rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
+        <div style="padding: 5rem; text-align: center; color: var(--text-muted); font-family: var(--font-mono);">
           NO PROJECTS FOUND.
         </div>
       `;
       return;
     }
+
+    const sortIndicator = (col) => {
+      if (state.sortColumn !== col) return '';
+      return state.sortAsc ? '<span class="sort-icon">▲</span>' : '<span class="sort-icon">▼</span>';
+    };
 
     el.viewListContainer.innerHTML = `
       <div class="index-table-wrapper">
@@ -452,13 +592,13 @@
           <thead>
             <tr>
               <th style="width: 50px;">NO.</th>
-              <th style="width: 90px;">CODE</th>
-              <th>PROJECT NAME</th>
-              <th>TYPOLOGY</th>
-              <th>LOCATION</th>
-              <th>STATUS</th>
-              <th>SCALE / AREA</th>
-              <th>CLIENT</th>
+              <th class="sortable" data-sort="code" style="width: 100px;">CODE ${sortIndicator('code')}</th>
+              <th class="sortable" data-sort="title">PROJECT NAME ${sortIndicator('title')}</th>
+              <th class="sortable" data-sort="typology">TYPOLOGY ${sortIndicator('typology')}</th>
+              <th class="sortable" data-sort="location">LOCATION ${sortIndicator('location')}</th>
+              <th class="sortable" data-sort="status">STATUS ${sortIndicator('status')}</th>
+              <th class="sortable" data-sort="scale">SCALE / AREA ${sortIndicator('scale')}</th>
+              <th class="sortable" data-sort="client">CLIENT ${sortIndicator('client')}</th>
             </tr>
           </thead>
           <tbody>
@@ -485,6 +625,20 @@
       </div>
     `;
 
+    // Sort column clicks
+    el.viewListContainer.querySelectorAll('th.sortable').forEach(th => {
+      th.addEventListener('click', (e) => {
+        const col = e.currentTarget.dataset.sort;
+        if (state.sortColumn === col) {
+          state.sortAsc = !state.sortAsc;
+        } else {
+          state.sortColumn = col;
+          state.sortAsc = true;
+        }
+        render();
+      });
+    });
+
     // Row clicks & Floating preview card
     const rows = el.viewListContainer.querySelectorAll('.table-row');
     rows.forEach(row => {
@@ -492,7 +646,7 @@
         openModal(row.dataset.id);
       });
 
-      row.addEventListener('mouseenter', (e) => {
+      row.addEventListener('mouseenter', () => {
         el.hoverPreviewImg.src = row.dataset.img;
         el.hoverPreviewTitle.textContent = row.dataset.title;
         el.hoverPreviewMeta.textContent = row.dataset.loc;
@@ -502,9 +656,8 @@
       row.addEventListener('mousemove', (e) => {
         const x = e.clientX + 20;
         const y = e.clientY + 20;
-        // Keep within viewport bounds
-        const cardWidth = 280;
-        const cardHeight = 220;
+        const cardWidth = 320;
+        const cardHeight = 240;
         const maxX = window.innerWidth - cardWidth - 20;
         const maxY = window.innerHeight - cardHeight - 20;
 
@@ -521,15 +674,14 @@
   // Render Map / Territory Matrix View
   function renderMapView(projects) {
     const territories = [
-      { id: 'all', name: 'All Regions', count: projects.length },
-      { id: 'addis', name: 'Addis Ababa Metro', count: projects.filter(p => p.city === 'Addis Ababa').length },
-      { id: 'oromia', name: 'Bishoftu & Oromia', count: projects.filter(p => p.city === 'Bishoftu' || p.city === 'Assela').length },
+      { id: 'all', name: 'All Territories', count: projects.length },
+      { id: 'addis', name: 'Addis Ababa Capital Metro', count: projects.filter(p => p.city === 'Addis Ababa').length },
+      { id: 'oromia', name: 'Bishoftu & Oromia Corridor', count: projects.filter(p => p.city === 'Bishoftu' || p.city === 'Assela').length },
       { id: 'south-sudan', name: 'South Sudan (Juba & Unity)', count: projects.filter(p => p.country === 'South Sudan').length },
       { id: 'regional-et', name: 'Regional Ethiopia (Afar, Gondar, Hosanna)', count: projects.filter(p => ['Afar Region', 'Afedera', 'Gondar', 'Hosanna', 'Gambella', 'Bensa'].includes(p.city)).length },
-      { id: 'international', name: 'Middle East (Erbil, Iraq)', count: projects.filter(p => p.country === 'Iraq').length }
+      { id: 'international', name: 'Middle East International (Erbil, Iraq)', count: projects.filter(p => p.country === 'Iraq').length }
     ];
 
-    // Filter projects for selected territory
     let displayedProjects = projects;
     if (state.activeRegion === 'addis') {
       displayedProjects = projects.filter(p => p.city === 'Addis Ababa');
@@ -545,9 +697,9 @@
 
     el.viewMapContainer.innerHTML = `
       <div class="territory-sidebar">
-        <h3 class="font-display" style="font-size: 1.25rem; text-transform: uppercase;">Operating Hubs</h3>
-        <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6;">
-          Select a geographic territory to inspect localized project nodes and infrastructural deployments across East Africa and the Middle East.
+        <h3 class="font-display" style="font-size: 1.35rem; text-transform: uppercase;">Regional Hubs</h3>
+        <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">
+          Select an operational territory to inspect localized project nodes, civic infrastructure, and construction sites across East Africa and the Middle East.
         </p>
         <div class="territory-hub-list">
           ${territories.map(t => `
@@ -559,12 +711,12 @@
         </div>
       </div>
       <div class="territory-map-canvas">
-        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
-          <span class="mono" style="font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase;">
-            REGIONAL DEPLOYMENTS // ${state.activeRegion.toUpperCase()}
+        <div style="margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-color); padding-bottom: 0.85rem;">
+          <span class="mono" style="font-size: 0.78rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 700;">
+            TERRITORY // ${state.activeRegion.toUpperCase()}
           </span>
-          <span class="mono" style="font-size: 0.7rem; color: var(--text-muted);">
-            ${displayedProjects.length} COMMISSIONS
+          <span class="mono" style="font-size: 0.75rem; color: var(--text-muted);">
+            ${displayedProjects.length} ACTIVE COMMISSIONS
           </span>
         </div>
         <div class="matrix-nodes-grid">
@@ -579,7 +731,6 @@
       </div>
     `;
 
-    // Territory button clicks
     el.viewMapContainer.querySelectorAll('.territory-hub-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         state.activeRegion = e.currentTarget.dataset.region;
@@ -587,7 +738,6 @@
       });
     });
 
-    // Node card clicks
     el.viewMapContainer.querySelectorAll('.matrix-node-card').forEach(card => {
       card.addEventListener('click', () => {
         openModal(card.dataset.id);
@@ -631,6 +781,9 @@
     el.specTypology.textContent = project.typology;
     el.specStatus.textContent = project.status;
     el.specScale.textContent = project.scale || 'N/A';
+    el.specStructure.textContent = project.structure || 'Cast-in-Place Concrete Framework';
+    el.specEnvelope.textContent = project.envelope || 'High-Performance Glazing';
+    el.specClimate.textContent = project.climate || 'Passive Climatic Shading';
     el.specScope.textContent = project.scope || 'Turnkey Architecture & Engineering';
     el.specYear.textContent = project.year || '2024';
 

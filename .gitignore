@@ -9,3 +9,6 @@ public/
 
 # Logs
 *.log
+
+.vercel
+enrich_projects.py
