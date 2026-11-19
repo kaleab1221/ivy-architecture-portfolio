@@ -29,7 +29,7 @@
 
   /* Typography */
   --font-serif: 'Newsreader', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout Spacing */
@@ -279,9 +279,10 @@ button {
 }
 
 .nav-item {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-secondary);
   position: relative;
@@ -353,14 +354,16 @@ button {
 }
 
 .monograph-btn {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-inverse);
   background-color: var(--text-primary);
   border: 1px solid var(--text-primary);
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 2px;
   transition: all var(--transition-subtle);
 }
 .monograph-btn:hover {
@@ -794,21 +797,21 @@ button {
 }
 
 .category-tab-btn {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.65rem 1.15rem;
   background: var(--bg-surface);
   border: 1px solid var(--rule-color);
   color: var(--text-secondary);
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: all var(--transition-subtle);
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .category-tab-btn:hover {
@@ -825,14 +828,15 @@ button {
 }
 
 [data-theme="light"] .category-tab-btn.active {
-  background: #121211;
-  border-color: #121211;
-  color: #f6f4ee;
+  background: #0a0a09;
+  border-color: #0a0a09;
+  color: #faf9f6;
 }
 
 .category-tab-btn .tab-count {
-  font-size: 0.7rem;
-  opacity: 0.75;
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 .portfolio-toolbar {
@@ -840,7 +844,7 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-bottom: 2.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--rule-subtle);
@@ -854,7 +858,7 @@ button {
 
 .project-search-icon {
   position: absolute;
-  left: 0.95rem;
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
@@ -866,10 +870,10 @@ button {
   background: var(--bg-surface);
   border: 1px solid var(--rule-color);
   color: var(--text-primary);
-  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
   font-family: var(--font-sans);
-  font-size: 0.86rem;
-  border-radius: 2px;
+  font-size: 0.95rem;
+  border-radius: 3px;
   outline: none;
   transition: border-color var(--transition-subtle), background-color var(--transition-subtle);
 }
@@ -880,19 +884,19 @@ button {
 }
 
 .portfolio-count-indicator {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent-muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* 3-Column Editorial Project Grid */
+/* 4-Column Modern Editorial Project Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.25rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
 }
 
 .project-card {
@@ -900,7 +904,7 @@ button {
   background: var(--bg-surface);
   border: 1px solid var(--rule-color);
   box-shadow: var(--card-shadow);
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -950,29 +954,29 @@ button {
 }
 
 .card-badge-code {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  padding: 0.25rem 0.6rem;
-  background: rgba(18, 18, 17, 0.88);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.65rem;
+  background: rgba(10, 10, 9, 0.88);
   backdrop-filter: blur(8px);
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
 }
 
 .card-badge-status {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.55rem;
-  background: rgba(18, 18, 17, 0.88);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  background: rgba(10, 10, 9, 0.88);
   backdrop-filter: blur(8px);
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
 }
 
 .card-badge-status.status-completed {
@@ -987,7 +991,7 @@ button {
 
 /* Card Content Underneath Image */
 .card-content-block {
-  padding: 1.6rem 1.5rem 1.4rem;
+  padding: 1.35rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -997,19 +1001,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent-muted);
   margin-bottom: 0.5rem;
 }
 
 .card-title {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-family: var(--font-sans);
+  font-size: 1.22rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
   margin-bottom: 0.45rem;
   letter-spacing: -0.015em;
 }
@@ -1025,14 +1030,17 @@ button {
 }
 
 .card-location {
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
 .card-description {
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
   flex-grow: 1;
@@ -1045,16 +1053,21 @@ button {
   border-top: 1px solid var(--rule-subtle);
   padding-top: 0.85rem;
   margin-top: auto;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
 }
 
 .card-scale {
+  font-family: var(--font-sans);
   color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .card-link-arrow {
   color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -1068,14 +1081,21 @@ button {
   transform: translateX(4px);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1360px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 980px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+  }
+}
+
+@media (max-width: 620px) {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1296,14 +1316,15 @@ button {
 .service-name-serif {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
 .service-detail {
-  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 880px;
@@ -1332,15 +1353,16 @@ button {
 
 .credential-name {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 
 .credential-auth {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-muted);
@@ -1348,7 +1370,8 @@ button {
 }
 
 .credential-desc {
-  font-size: 0.98rem;
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
@@ -1376,24 +1399,26 @@ button {
 
 .leader-role {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.65rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .leader-title {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--accent-muted);
   margin-bottom: 1rem;
 }
 
 .leader-bio {
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
@@ -1422,7 +1447,13 @@ button {
 }
 
 .client-item {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule-subtle);
+}
   font-size: 1.15rem;
   color: var(--text-secondary);
   padding-bottom: 0.75rem;
@@ -1602,10 +1633,10 @@ button {
 }
 
 .footer-heading-mono {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-muted);
   margin-bottom: 1.5rem;
@@ -1621,21 +1652,24 @@ button {
 
 .footer-bureau-item .bureau-city {
   display: block;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .footer-bureau-item .bureau-addr {
-  font-size: 0.84rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
   line-height: 1.5;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 0.2rem;
 }
 
 .footer-bureau-item .bureau-comm {
-  font-size: 0.84rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
@@ -1659,18 +1693,20 @@ button {
 }
 
 .footer-contact-links li {
-  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 .footer-contact-links .contact-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--accent-muted);
 }
 
 .footer-contact-links a {
