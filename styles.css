@@ -1690,7 +1690,7 @@ button {
 
 .footer-brand-lockup {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: clamp(1rem, 1.8vw, 2rem);
   flex-wrap: wrap;
 }
@@ -1883,20 +1883,30 @@ button {
   flex-direction: column;
   gap: 0.95rem;
   margin-top: 0.25rem;
+  padding: 0;
+  margin-left: 0;
 }
 
 .footer-index-nav a {
   font-family: var(--font-sans);
   font-size: clamp(0.98rem, 1.05vw, 1.08rem);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: all var(--transition-subtle);
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  text-align: left;
+  transition: color var(--transition-subtle);
 }
 
-.footer-index-nav a:hover {
+.footer-index-nav a:hover,
+.footer-index-nav a:focus,
+.footer-index-nav a:active {
   color: var(--text-primary);
-  transform: translateX(4px);
+  font-weight: 500;
+  transform: none;
 }
 
 /* Sub-Footer Bar with Icon-Only Back to Top */

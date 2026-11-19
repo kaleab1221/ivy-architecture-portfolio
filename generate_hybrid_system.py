@@ -131,7 +131,6 @@ def render_professional_footer(home_prefix=""):
             <p class="footer-address-line">Addis Ababa, Ethiopia</p>
           </div>
           <div class="footer-col-contact">
-            <p>Direct: <a href="tel:+251911234567">+251 91 123 4567</a></p>
             <p>Email: <a href="mailto:addis@ivyconstruction.com">addis@ivyconstruction.com</a></p>
           </div>
         </div>
@@ -149,7 +148,6 @@ def render_professional_footer(home_prefix=""):
             <p class="footer-address-line">Juba, Republic of South Sudan</p>
           </div>
           <div class="footer-col-contact">
-            <p>Direct: <a href="tel:+251911234567">+251 91 123 4567</a></p>
             <p>Email: <a href="mailto:juba@ivyconstruction.com">juba@ivyconstruction.com</a></p>
           </div>
         </div>
